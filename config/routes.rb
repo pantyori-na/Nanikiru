@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :site do
-    resources :reports
-  end
   namespace :manager do
       devise_for :admin_users, controllers: {
       sessions: 'manager/admin_users/sessions',
@@ -15,5 +12,11 @@ Rails.application.routes.draw do
       registrations: 'site/users/registrations',
       passwords: 'site/users/passwords'
     }
+    resources :post_images
+    resources :game_records
+    resources :reports
+    resources :favorites
+    resources :selections
+    resources :answers
   end
 end
