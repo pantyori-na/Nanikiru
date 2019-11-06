@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @site_report.comment %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @site_report.type %>
+</p>
+
+<%= link_to 'Edit', edit_site_report_path(@site_report) %> |
+<%= link_to 'Back', site_reports_path %>

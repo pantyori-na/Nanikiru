@@ -1,0 +1,27 @@
+<%= form_with(model: site_report, local: true) do |form| %>
+  <% if site_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(site_report.errors.count, "error") %> prohibited this site_report from being saved:</h2>
+
+      <ul>
+      <% site_report.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.number_field :type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
