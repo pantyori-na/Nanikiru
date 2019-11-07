@@ -1,4 +1,4 @@
-class SelectionsController < ApplicationController
+class Site::SelectionsController < Site::Base
   before_action :set_selection, only: [:show, :edit, :update, :destroy]
 
   # GET /selections
@@ -72,3 +72,4 @@ class SelectionsController < ApplicationController
       params.require(:selection).permit(:post_image_id, :name)
     end
 end
+

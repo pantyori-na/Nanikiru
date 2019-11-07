@@ -1,4 +1,4 @@
-class PostImagesController < ApplicationController
+class Site::PostImagesController < Site::Base
   before_action :set_post_image, only: [:show, :edit, :update, :destroy]
 
   # GET /post_images

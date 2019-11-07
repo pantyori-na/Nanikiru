@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     resources :favorites
     resources :selections
     resources :answers
+    resources :users, only: [:show, :edit, :update, :index, :destroy]
+    root to: 'post_images#index'
   end
 end

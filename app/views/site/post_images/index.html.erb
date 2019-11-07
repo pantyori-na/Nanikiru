@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Post Images</h1>
+<h1>TOP</h1>
 
 <table>
   <thead>
@@ -15,15 +15,15 @@
 
   <tbody>
     <% @post_images.each do |post_image| %>
-      <tr>
-        <td><%= post_image.user_id %></td>
-        <td><%= post_image.type %></td>
-        <td><%= post_image.image_id %></td>
-        <td><%= post_image.comment %></td>
-        <td><%= link_to 'Show', post_image %></td>
-        <td><%= link_to 'Edit', edit_post_image_path(post_image) %></td>
-        <td><%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= post_image.user_id %></td>
+      <td><%= post_image.type %></td>
+      <td><%= post_image.image_id %></td>
+      <td><%= post_image.comment %></td>
+      <td><%= link_to 'Show', post_image %></td>
+      <td><%= link_to 'Edit', edit_post_image_path(post_image) %></td>
+      <td><%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>

@@ -1,4 +1,4 @@
-class FavoritesController < ApplicationController
+class Site::FavoritesController < Site::Base
   before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
   # GET /favorites

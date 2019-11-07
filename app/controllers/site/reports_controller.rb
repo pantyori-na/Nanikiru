@@ -1,4 +1,4 @@
-class ReportsController < ApplicationController
+class Site::ReportsController < Site::Base
   before_action :set_report, only: [:show, :edit, :update, :destroy]
 
   # GET /reports

@@ -75,3 +75,5 @@ gem 'jquery-ui-rails'
 gem 'paranoia', '~> 2.3', '>= 2.3.1'
 gem 'faker'
 gem 'gimei'
+
+gem 'solargraph'

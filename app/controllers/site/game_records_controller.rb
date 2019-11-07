@@ -1,4 +1,4 @@
-class GameRecordsController < ApplicationController
+class Site::GameRecordsController < Site::Base
   before_action :set_game_record, only: [:show, :edit, :update, :destroy]
 
   # GET /game_records
