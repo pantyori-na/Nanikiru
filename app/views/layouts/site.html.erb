@@ -11,8 +11,11 @@
 </head>
 
 <body>
-    <%= render 'shared/site/header_signed_in' %>
-    <%= render 'shared/site/header_sign_out' %>
+    <% if user_signed_in? %>
+    <%= render 'shared_site/header_signed_in' %>
+    <% else %>
+    <%= render 'shared_site/header_sign_out' %>
+    <% end %>
     <%= yield %>
 </body>
 
