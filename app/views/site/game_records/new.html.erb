@@ -1,5 +1,28 @@
 <h1>New Game Record</h1>
 
-<%= render 'form', game_record: @game_record %>
+<%= form_for('@game_record') do |f| %>
 
-<%= link_to 'Back', game_records_path %>
+<div class="field">
+  <%= f.label :handle_name %>
+  <%= f.text_field :handle_name %>
+</div>
+
+<div class="field">
+  <%= f.label :type %>
+  <%= f.number_field :type %>
+</div>
+
+<div class="field">
+  <%= f.label :ability %>
+  <%= f.number_field :ability %>
+</div>
+
+<div class="field">
+  <%= f.label :game_name %>
+  <%= f.number_field :game_name %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

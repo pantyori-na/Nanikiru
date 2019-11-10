@@ -1,28 +1,12 @@
 class Site::GameRecordsController < Site::Base
   before_action :set_game_record, only: [:show, :edit, :update, :destroy]
-
-  # GET /game_records
-  # GET /game_records.json
-  def index
-    @game_records = GameRecord.all
-  end
-
-  # GET /game_records/1
-  # GET /game_records/1.json
-  def show
-  end
-
-  # GET /game_records/new
   def new
     @game_record = GameRecord.new
   end
 
-  # GET /game_records/1/edit
   def edit
   end
 
-  # POST /game_records
-  # POST /game_records.json
   def create
     @game_record = GameRecord.new(game_record_params)
 
@@ -37,8 +21,6 @@ class Site::GameRecordsController < Site::Base
     end
   end
 
-  # PATCH/PUT /game_records/1
-  # PATCH/PUT /game_records/1.json
   def update
     respond_to do |format|
       if @game_record.update(game_record_params)
@@ -51,8 +33,6 @@ class Site::GameRecordsController < Site::Base
     end
   end
 
-  # DELETE /game_records/1
-  # DELETE /game_records/1.json
   def destroy
     @game_record.destroy
     respond_to do |format|
