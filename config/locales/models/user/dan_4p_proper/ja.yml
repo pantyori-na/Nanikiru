@@ -1,0 +1,17 @@
+ja:
+  enums:
+    user:
+      dan_4p_proper:
+        please_select_your_dan: 段位未登録
+        until_dan: 新人〜初級
+        dan_1: 初段
+        dan_2: 二段
+        dan_3: 三段
+        dan_4: 四段
+        dan_5: 五段
+        dan_6: 六段
+        dan_7: 七段
+        dan_8: 八段
+        dan_9: 九段
+        dan_10: 十段
+        dan_11: 天鳳位

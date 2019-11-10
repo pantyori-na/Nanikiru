@@ -11,13 +11,16 @@
   <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
 </div>
 <div>
-  <label for="">[4麻]天鳳段位(最高段位orメインアカウント実力)</label>
-  <% binding.pry %>
-  <%= f.select :dan_4p_proper, User.dan_4p_propers.map { |k, v| [t("users.dan_4p_propers.#{k}"), v]} %>
+  <label for="">４人麻雀実力[天鳳段位相当]</label>
+  <%= f.select :dan_4p_proper, User.dan_4p_propers_i18n.keys.map { |k| [User.dan_4p_propers_i18n[k], k]} %>
 </div>
 <div>
-  <label for="">[3麻]天鳳段位(最高段位orメインアカウント実力)</label>
-  <%= f.select :dan_3p_proper, User.dan_4p_propers.keys.to_a, {} %>
+  <label for="">３人麻雀実力[天鳳段位相当]</label>
+  <%= f.select :dan_3p_proper, User.dan_3p_propers_i18n.keys.map { |k| [User.dan_3p_propers_i18n[k], k]} %>
+</div>
+<div>
+  <label for="">自己紹介文</label>
+  <%= f.text :dan_4p_proper, User.dan_4p_propers_i18n.keys.map { |k| [User.dan_4p_propers_i18n[k], k]} %>
 </div>
 
 <%= f.submit "変更を保存", class:"btn btn-lg btn-block btn-base-1 mt-20" %>

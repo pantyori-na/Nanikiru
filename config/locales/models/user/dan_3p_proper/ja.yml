@@ -1,9 +1,9 @@
 ja:
   enums:
     user:
-      dan_4p_proper:
-        please_select_your_dan: [Select]４人麻雀の天鳳段位
-        until_dan: 新人~初級まで
+      dan_3p_proper:
+        please_select_your_dan: 段位未登録
+        until_dan: 新人〜初級
         dan_1: 初段
         dan_2: 二段
         dan_3: 三段

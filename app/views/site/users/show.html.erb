@@ -1,0 +1,12 @@
+<div class="profile-container">
+  <h3 class="profile-name"><%= @user.name %></h3>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+  <%= @user.introduction %>
+  <label>現在の４人麻雀段位</label>
+  <%= @user.dan_4p_proper_i18n %>
+  <label>現在の３人麻雀段位</label>
+  <%= @user.dan_3p_proper_i18n %>
+  <% if @user.id == current_user.id %>
+  <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p>
+  <% end %>
+</div>
