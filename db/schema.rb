@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
     t.string "last_sign_in_ip"
     t.string "name"
     t.string "profile_image_id"
-    t.string "dan_4p_proper"
-    t.string "dan_3p_proper"
+    t.integer "dan_4p_proper", limit: 1, default: 0, null: false
+    t.integer "dan_3p_proper", limit: 1, default: 0, null: false
     t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

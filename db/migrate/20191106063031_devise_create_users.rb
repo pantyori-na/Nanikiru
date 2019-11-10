@@ -34,8 +34,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :name
       t.string :profile_image_id
-      t.string :dan_4p_proper
-      t.string :dan_3p_proper
+      t.integer :dan_4p_proper,default: 0, null: false, limit: 1
+      t.integer :dan_3p_proper,default: 0, null: false, limit: 1
       t.text :introduction
       t.timestamps null: false
     end

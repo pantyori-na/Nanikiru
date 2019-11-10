@@ -1,3 +1,24 @@
-<h1></h1>
+<%= form_for(@user) do |f| %>
+<div class="form-group has-icon">
+  <label>Name</label>
+  <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%>
+</div>
+<div class="form-group has-icon">
+  <div>
+    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+  </div>
+  <label>ProfileImage</label>
+  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+</div>
+<div>
+  <label for="">[4麻]天鳳段位(最高段位orメインアカウント実力)</label>
+  <% binding.pry %>
+  <%= f.select :dan_4p_proper, User.dan_4p_propers.map { |k, v| [t("users.dan_4p_propers.#{k}"), v]} %>
+</div>
+<div>
+  <label for="">[3麻]天鳳段位(最高段位orメインアカウント実力)</label>
+  <%= f.select :dan_3p_proper, User.dan_4p_propers.keys.to_a, {} %>
+</div>
 
-<p></p>
+<%= f.submit "変更を保存", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+<% end %>
