@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_073128) do
+ActiveRecord::Schema.define(version: 2019_11_06_101343) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,9 +29,51 @@ ActiveRecord::Schema.define(version: 2019_11_06_073128) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "site_reports", force: :cascade do |t|
+  create_table "answers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "selection_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_records", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "handle_name"
+    t.integer "game_type"
+    t.integer "ability"
+    t.integer "game_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_images", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "type"
+    t.string "image_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "user_id"
     t.text "comment"
     t.integer "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "selections", force: :cascade do |t|
+    t.integer "post_image_id"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,10 +89,10 @@ ActiveRecord::Schema.define(version: 2019_11_06_073128) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "name", null: false
+    t.string "name"
     t.string "profile_image_id"
-    t.string "dan_4p_proper"
-    t.string "dan_3p_proper"
+    t.integer "dan_4p_proper", limit: 1, default: 0, null: false
+    t.integer "dan_3p_proper", limit: 1, default: 0, null: false
     t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

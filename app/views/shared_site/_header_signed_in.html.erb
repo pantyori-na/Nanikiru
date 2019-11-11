@@ -1,0 +1,23 @@
+<header>
+	<div class="container">
+		<div class="row">
+			<nav class="nav navbar-nav navbar-left logo">
+				<%= link_to "Home", root_path %>
+			</nav>
+			<nav class="header-icon">
+				<p>
+					<%= link_to root_path do %>
+					<i class="fas fa-home fa-3x"></i>
+					<br>ホーム</p><% end %>
+				<p>
+					<%= link_to user_path(current_user.id) do %>
+					<i class="fas fa-cogs fa-3x"></i>
+					<br>ユーザー情報詳細</p> <% end %>
+				<p>
+					<%= link_to destroy_user_session_path, method: :delete do %>
+					<i class="fas fa-shoe-prints fa-3x"></i>
+					<br>Log Out</p><% end %>
+			</nav>
+		</div>
+	</div>
+</header>
