@@ -67,13 +67,10 @@ gem "refile-mini_magick"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'pry-byebug'
-gem 'cocoon'
 gem 'enum_help'
 gem 'rails-i18n'
-gem "nested_form"
 gem 'jquery-ui-rails'
 gem 'paranoia', '~> 2.3', '>= 2.3.1'
-gem 'faker'
-gem 'gimei'
-
-gem 'solargraph'
+group :production do
+  gem 'mysql2'
+end

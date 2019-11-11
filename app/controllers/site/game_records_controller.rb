@@ -9,14 +9,12 @@ class Site::GameRecordsController < Site::Base
 
   def create
     @game_record = GameRecord.new(game_record_params)
-
+    @game_record.user_id = current_user.id
     respond_to do |format|
       if @game_record.save
-        format.html { redirect_to @game_record, notice: 'Game record was successfully created.' }
-        format.json { render :show, status: :created, location: @game_record }
+        format.html { redirect_to user_path(current_user), notice: 'Game record was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @game_record.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -25,10 +23,8 @@ class Site::GameRecordsController < Site::Base
     respond_to do |format|
       if @game_record.update(game_record_params)
         format.html { redirect_to @game_record, notice: 'Game record was successfully updated.' }
-        format.json { render :show, status: :ok, location: @game_record }
       else
         format.html { render :edit }
-        format.json { render json: @game_record.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -49,6 +45,6 @@ class Site::GameRecordsController < Site::Base
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_record_params
-      params.require(:game_record).permit(:user_id, :handle_name, :type, :ability, :game_name)
+      params.require(:game_record).permit(:user_id, :handle_name, :game_type, :ability, :game_name)
     end
 end
