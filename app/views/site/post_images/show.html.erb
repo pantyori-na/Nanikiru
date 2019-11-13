@@ -2,17 +2,16 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post_image.user_id %>
+  <%= @post_image.user.name %>
 </p>
 
 <p>
   <strong>Type:</strong>
-  <%= @post_image.type %>
+  <%= @post_image.image_type_i18n %>
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @post_image.image_id %>
+  <%= attachment_image_tag @post_image, :image, :fill, 300, 300, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
 </p>
 
 <p>

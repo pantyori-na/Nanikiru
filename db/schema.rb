@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
   create_table "game_records", force: :cascade do |t|
     t.integer "user_id"
     t.string "handle_name"
-    t.integer "game_type"
+    t.integer "game_type", limit: 1, default: 0, null: false
     t.integer "ability"
     t.integer "game_name"
     t.datetime "created_at", null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
 
   create_table "post_images", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "image_type"
+    t.integer "image_type", limit: 1, default: 0, null: false
     t.string "image_id"
     t.text "comment"
     t.datetime "created_at", null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
   create_table "reports", force: :cascade do |t|
     t.integer "user_id"
     t.text "comment"
-    t.integer "report_type"
+    t.integer "report_type", limit: 1, default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
