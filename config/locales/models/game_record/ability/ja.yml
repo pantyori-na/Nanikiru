@@ -1,0 +1,26 @@
+ja:
+  enums:
+    game_record:
+      ability:
+        beginner: 初心者
+        until_dan: 新人〜初級
+        dan_1: 初段
+        dan_2: 二段
+        dan_3: 三段
+        dan_4: 四段
+        dan_5: 五段
+        dan_6: 六段
+        dan_7: 七段
+        dan_8: 八段
+        dan_9: 九段
+        dan_10: 十段
+        dan_11: 天鳳位
+        ou: 王クラス
+        ryu: 龍クラス
+        kami: 神クラス
+        jyan: 雀クラス
+        saikyoui: 最強位クラス
+        so_strong: そこそこつよい
+        strong: つよい
+        very_strong: とてもつよい
+        weak: よわい

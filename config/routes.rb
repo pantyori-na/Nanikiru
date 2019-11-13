@@ -14,11 +14,13 @@ Rails.application.routes.draw do
     }
     resources :post_images
     resources :game_records, only: [:new, :create, :update, :destroy]
-    resources :reports
     resources :favorites
     resources :selections
     resources :answers
-    resources :users, only: [:show, :edit, :update, :index, :destroy]
+    resources :reports, only: [:show]
+    resources :users, only: [:show, :edit, :update, :index, :destroy] do
+      resources :reports, only: [:create]
+    end
     root to: 'post_images#index'
   end
 end

@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
 
   create_table "post_images", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "type"
+    t.integer "image_type"
     t.string "image_id"
     t.text "comment"
     t.datetime "created_at", null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
   create_table "reports", force: :cascade do |t|
     t.integer "user_id"
     t.text "comment"
-    t.integer "type"
+    t.integer "report_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

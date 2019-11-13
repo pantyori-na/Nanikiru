@@ -3,7 +3,7 @@ class CreateReports < ActiveRecord::Migration[5.2]
     create_table :reports do |t|
       t.integer :user_id
       t.text :comment
-      t.integer :type
+      t.integer :report_type
 
       t.timestamps
     end
