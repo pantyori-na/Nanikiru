@@ -19,5 +19,9 @@
   <%= @post_image.comment %>
 </p>
 
+<% @post_image.selections.each do |selection| %>
+<p><%= selection.name %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_post_image_path(@post_image) %> |
 <%= link_to 'Back', post_images_path %>

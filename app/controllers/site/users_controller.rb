@@ -12,7 +12,7 @@ class Site::UsersController < Site::Base
 	def update
 		@user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user.id)
+		redirect_to user_path(@user.id)
 	end
 	def leave
 	end

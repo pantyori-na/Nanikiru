@@ -10,6 +10,7 @@ class Site::PostImagesController < Site::Base
 
   def new
     @post_image = PostImage.new
+    @post_image.selections.build
   end
 
   # GET /post_images/1/edit
@@ -21,7 +22,6 @@ class Site::PostImagesController < Site::Base
   def create
     @post_image = PostImage.new(post_image_params)
     @post_image.user_id = current_user.id
-
     respond_to do |format|
       if @post_image.save
         format.html { redirect_to @post_image, notice: 'Post image was successfully created.' }
@@ -65,6 +65,6 @@ class Site::PostImagesController < Site::Base
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_image_params
-      params.require(:post_image).permit(:user_id, :image_type, :image, :comment)
+      params.require(:post_image).permit(:user_id, :image_type, :image, :comment, selections_attributes: [:id, :name, :_destroy])
     end
 end

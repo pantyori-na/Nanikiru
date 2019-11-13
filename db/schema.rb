@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
 
   create_table "selections", force: :cascade do |t|
     t.integer "post_image_id"
-    t.string "name"
+    t.integer "name", limit: 1, default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
