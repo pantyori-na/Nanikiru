@@ -6,6 +6,7 @@ class Site::PostImagesController < Site::Base
   end
 
   def show
+    @answer = Answer.new
   end
 
   def new
@@ -17,18 +18,23 @@ class Site::PostImagesController < Site::Base
   def edit
   end
 
-  # POST /post_images
-  # POST /post_images.json
   def create
     @post_image = PostImage.new(post_image_params)
     @post_image.user_id = current_user.id
+    @post_image.save
+    Selection.all.each do |selection|
+      selection.destroy
+    end
+    # @post_image.selections.each do |select|
+    #   if select.name == "select"
+    #      #Selection.find_by(name: "select").destroy
+    #   end
+    # end
     respond_to do |format|
       if @post_image.save
         format.html { redirect_to @post_image, notice: 'Post image was successfully created.' }
-        format.json { render :show, status: :created, location: @post_image }
       else
         format.html { render :new }
-        format.json { render json: @post_image.errors, status: :unprocessable_entity }
       end
     end
   end
