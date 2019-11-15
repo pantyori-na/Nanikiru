@@ -43,10 +43,8 @@ class Site::SelectionsController < Site::Base
     respond_to do |format|
       if @selection.update(selection_params)
         format.html { redirect_to @selection, notice: 'Selection was successfully updated.' }
-        format.json { render :show, status: :ok, location: @selection }
       else
         format.html { render :edit }
-        format.json { render json: @selection.errors, status: :unprocessable_entity }
       end
     end
   end

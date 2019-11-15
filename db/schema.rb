@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_101343) do
+ActiveRecord::Schema.define(version: 2019_11_15_074722) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "selection_id"
-    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +49,13 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
     t.integer "game_type", limit: 1, default: 0, null: false
     t.integer "ability"
     t.integer "game_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_comments", force: :cascade do |t|
+    t.integer "answer_id"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,7 +79,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
 
   create_table "selections", force: :cascade do |t|
     t.integer "post_image_id"
-    t.integer "name", limit: 1, default: 0, null: false
+    t.integer "name", limit: 1, default: 18
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

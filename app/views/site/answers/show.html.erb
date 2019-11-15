@@ -1,4 +1,21 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <h1>Nanikiru Answers</h1>
+    <div class="well col-lg-3">
+      <div>
+        <p><%= @answer.user.name %> answer</p>
+        <%= @answer.selection.name_i18n %>
+      </div>
+      <div>
+        <%= form_for @post_comment, url: post_comments_path do |form| %>
+        <%= form.text_field :comment %>
+        <%= form.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <p>
   <strong>User:</strong>
@@ -8,11 +25,6 @@
 <p>
   <strong>Selection:</strong>
   <%= @answer.selection_id %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @answer.comment %>
 </p>
 
 <%= link_to 'Edit', edit_answer_path(@answer) %> |

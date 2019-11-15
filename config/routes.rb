@@ -12,11 +12,14 @@ Rails.application.routes.draw do
       registrations: 'site/users/registrations',
       passwords: 'site/users/passwords'
     }
-    resources :post_images
+    resources :post_images do
+      resources :answers, only: [:create, :show]
+    end
     resources :game_records, only: [:new, :create, :update, :destroy]
     resources :favorites
     resources :selections
     resources :answers
+    resources :post_comments
     resources :reports, only: [:show]
     resources :users, only: [:show, :edit, :update, :index, :destroy] do
       resources :reports, only: [:create]
