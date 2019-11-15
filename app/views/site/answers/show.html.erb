@@ -2,6 +2,9 @@
 <div class="container">
   <div class="row">
     <h1>Nanikiru Answers</h1>
+    <div class="col-lg-6">
+      <%= attachment_image_tag @post_image, :image, :fill, 300, 300, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
+    </div>
     <div class="well col-lg-3">
       <div>
         <p><%= @answer.user.name %> answer</p>
@@ -10,22 +13,32 @@
       <div>
         <%= form_for @post_comment, url: post_comments_path do |form| %>
         <%= form.text_field :comment %>
+        <%= hidden_field_tag :answer_id, @answer.id %>
         <%= form.submit %>
         <% end %>
       </div>
     </div>
   </div>
+  <div class="row">
+    <% @post_image.selections.each do |selection| %>
+    <% selection.answers.each do |answer| %>
+    <% answer.post_comments.each do |post_comment| %>
+    <div class="row">
+      <div class="col-lg-2">
+        <p>Handle name：<%= answer.user.name %></p>
+      </div>
+      <div class="col-lg-2">
+        <p>Answer：<%= answer.selection.name_i18n %></p>
+      </div>
+      <div class="col-lg-8">
+        <p>Comment:<%= post_comment.comment %></p>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
 </div>
-
-<p>
-  <strong>User:</strong>
-  <%= @answer.user_id %>
-</p>
-
-<p>
-  <strong>Selection:</strong>
-  <%= @answer.selection_id %>
-</p>
 
 <%= link_to 'Edit', edit_answer_path(@answer) %> |
 <%= link_to 'Back', answers_path %>
