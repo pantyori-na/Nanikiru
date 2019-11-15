@@ -1,0 +1,7 @@
+ja:
+  enums:
+    post_image:
+      image_type:
+        player_4: ４人麻雀
+        player_3: ３人麻雀
+        others: その他

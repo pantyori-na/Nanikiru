@@ -22,7 +22,7 @@ class Site::GameRecordsController < Site::Base
   def update
     respond_to do |format|
       if @game_record.update(game_record_params)
-        format.html { redirect_to @game_record, notice: 'Game record was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Game record was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -32,7 +32,7 @@ class Site::GameRecordsController < Site::Base
   def destroy
     @game_record.destroy
     respond_to do |format|
-      format.html { redirect_to game_records_url, notice: 'Game record was successfully destroyed.' }
+      format.html { redirect_to user_path(@game_record.user_id), notice: 'Game record was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

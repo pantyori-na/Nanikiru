@@ -1,0 +1,16 @@
+ja:
+  enums:
+    game_record:
+      game_name:
+        tenhou: 天鳳
+        mj: セガNET麻雀【MJ】
+        tengokuhai: 天極牌
+        jantama: 雀魂
+        kakutoukurabu: 麻雀格闘倶楽部
+        marujan: Maru-Jan
+        mahjong4: 麻雀4【Hangame】
+        janrevo: 雀REVO
+        freemahjong: フリー麻雀
+        setmahjong: セット麻雀
+        pro: 麻雀プロ
+        others: その他

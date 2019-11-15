@@ -17,8 +17,10 @@
     <% @post_images.each do |post_image| %>
     <tr>
       <td><%= post_image.user_id %></td>
-      <td><%= post_image.type %></td>
-      <td><%= post_image.image_id %></td>
+      <td><%= post_image.image_type_i18n %></td>
+      <td>
+        <%= attachment_image_tag post_image, :image, :fill, 200, 200, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
+      </td>
       <td><%= post_image.comment %></td>
       <td><%= link_to 'Show', post_image %></td>
       <td><%= link_to 'Edit', edit_post_image_path(post_image) %></td>

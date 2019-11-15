@@ -1,0 +1,5 @@
+<div class="nested-fields">
+  <%= f.select :name, Selection.names_i18n.keys.map { |k| [Selection.names_i18n[k], k]} %>
+  <%#= f.select :game_type, GameRecord.game_types_i18n.keys.map { |k| [GameRecord.game_types_i18n[k], k]} %>
+  <%= link_to_remove_association "削除", f %>
+</div>

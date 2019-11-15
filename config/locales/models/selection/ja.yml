@@ -1,0 +1,47 @@
+ja:
+  enums:
+    selection:
+      name:
+        m_1: 1m
+        m_2: 2m
+        m_3: 3m
+        m_4: 4m
+        m_5: 5m
+        m_6: 6m
+        m_7: 7m
+        m_8: 8m
+        m_9: 9m
+        p_1: 1p
+        p_2: 2p
+        p_3: 3p
+        p_4: 4p
+        p_5: 5p
+        p_6: 6p
+        p_7: 7p
+        p_8: 8p
+        p_9: 9p
+        s_1: 1s
+        s_2: 2s
+        s_3: 3s
+        s_4: 4s
+        s_5: 5s
+        s_6: 6s
+        s_7: 7s
+        s_8: 8s
+        s_9: 9s
+        ton: 東
+        nan: 南
+        sya: 西
+        pe: 北
+        haku: 白
+        hatu: 發
+        tyun: 中
+        naku: 鳴く
+        nakanai: 鳴かない
+        reach: 立直する
+        no_reach: 立直しない
+        hora: 和了する
+        no_hora: 和了しない
+        ryuukyoku: 伏せる
+        no_ryuukyoku: 伏せない
+        others: その他

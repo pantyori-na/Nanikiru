@@ -10,17 +10,18 @@
 
 <div class="field">
   <%= f.label :game_type %>
-  <%= f.number_field :game_type %>
+  <%= f.select :game_type, GameRecord.game_types_i18n.keys.map { |k| [GameRecord.game_types_i18n[k], k]} %>
 </div>
 
 <div class="field">
   <%= f.label :ability %>
-  <%= f.number_field :ability %>
+  <%= f.select :ability, GameRecord.abilities_i18n.keys.map { |k| [GameRecord.abilities_i18n[k], k]} %>
 </div>
 
 <div class="field">
   <%= f.label :game_name %>
-  <%= f.number_field :game_name %>
+  <%= f.select :game_name, GameRecord.game_names_i18n.keys.map { |k| [GameRecord.game_names_i18n[k], k]} %>
+
 </div>
 
 <div class="actions">

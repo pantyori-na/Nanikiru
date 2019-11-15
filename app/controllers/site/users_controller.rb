@@ -1,8 +1,10 @@
 class Site::UsersController < Site::Base
 	def	index
+		@users = User.all
 	end
 	def show
 		 @user = User.find(params[:id])
+		 @report = Report.new
   end
 	def edit
     @user = User.find(params[:id])
@@ -10,7 +12,7 @@ class Site::UsersController < Site::Base
 	def update
 		@user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user.id)
+		redirect_to user_path(@user.id)
 	end
 	def leave
 	end
