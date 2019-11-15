@@ -2,23 +2,33 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post_image.user_id %>
+  <%= @post_image.user.name %>
 </p>
 
 <p>
   <strong>Type:</strong>
-  <%= @post_image.type %>
+  <%= @post_image.image_type_i18n %>
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @post_image.image_id %>
+  <%= attachment_image_tag @post_image, :image, :fill, 300, 300, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
 </p>
 
 <p>
   <strong>Comment:</strong>
   <%= @post_image.comment %>
 </p>
+
+<div>
+  <% @post_image.selections.each do |selection| %>
+  <%= form_for [@post_image, @answer] do |f| %>
+  <%= f.hidden_field :selection_id, :value => selection.id %>
+  <p><%= selection.name_i18n %></p>
+  <%= f.submit "選択する", class: "btn btn-sm btn-primary" %>
+  <% end %>
+  <% end %>
+</div>
+
 
 <%= link_to 'Edit', edit_post_image_path(@post_image) %> |
 <%= link_to 'Back', post_images_path %>

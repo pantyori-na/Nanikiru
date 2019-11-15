@@ -1,38 +1,40 @@
 class Site::PostImagesController < Site::Base
   before_action :set_post_image, only: [:show, :edit, :update, :destroy]
 
-  # GET /post_images
-  # GET /post_images.json
   def index
     @post_images = PostImage.all
   end
 
-  # GET /post_images/1
-  # GET /post_images/1.json
   def show
+    @answer = Answer.new
   end
 
-  # GET /post_images/new
   def new
     @post_image = PostImage.new
+    @post_image.selections.build
   end
 
   # GET /post_images/1/edit
   def edit
   end
 
-  # POST /post_images
-  # POST /post_images.json
   def create
     @post_image = PostImage.new(post_image_params)
-
+    @post_image.user_id = current_user.id
+    @post_image.save
+    Selection.all.each do |selection|
+      selection.destroy
+    end
+    # @post_image.selections.each do |select|
+    #   if select.name == "select"
+    #      #Selection.find_by(name: "select").destroy
+    #   end
+    # end
     respond_to do |format|
       if @post_image.save
         format.html { redirect_to @post_image, notice: 'Post image was successfully created.' }
-        format.json { render :show, status: :created, location: @post_image }
       else
         format.html { render :new }
-        format.json { render json: @post_image.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +71,6 @@ class Site::PostImagesController < Site::Base
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_image_params
-      params.require(:post_image).permit(:user_id, :type, :image_id, :comment)
+      params.require(:post_image).permit(:user_id, :image_type, :image, :comment, selections_attributes: [:id, :name, :_destroy])
     end
 end

@@ -1,0 +1,9 @@
+ja:
+  enums:
+    report:
+      report_type:
+        sensitive: 投稿が攻撃的である
+        spam: 不審な内容またはスパムである
+        hijacked: アカウントが乗っ取られている
+        impersonation: なりすましをしている
+        others: その他

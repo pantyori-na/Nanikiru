@@ -1,19 +1,20 @@
+<h1>通報確認画面</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @report.user_id %>
+  <strong>通報したユーザー</strong>
+  <%= @report.user.name %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
+  <strong>通報の種類:</strong>
+  <%# binding.pry %>
+  <%= @report.report_type_i18n %>
+</p>
+
+<p>
+  <strong>通報内容</strong>
   <%= @report.comment %>
 </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @report.type %>
-</p>
-
-<%= link_to 'Edit', edit_report_path(@report) %> |
-<%= link_to 'Back', reports_path %>
+<%= link_to "ユーザー詳細ページ", user_path(@report.user_id), class:"btn-sm btn-info"  %>

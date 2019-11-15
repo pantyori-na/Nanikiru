@@ -71,6 +71,7 @@ gem 'enum_help'
 gem 'rails-i18n'
 gem 'jquery-ui-rails'
 gem 'paranoia', '~> 2.3', '>= 2.3.1'
+gem 'cocoon'
 group :production do
   gem 'mysql2'
 end
