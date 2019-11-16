@@ -20,20 +20,28 @@
 </p>
 
 <div>
+  <!-- 選択肢一覧 -->
+  <!-- selectionsの重複を表示させない -->
+  <% selection_name_array = [] %>
   <% @post_image.selections.each do |selection| %>
+  <% if selection.name != "select" && selection_name_array.exclude?(selection.name) %>
+  <% selection_name_array.push(selection.name) %>
   <%= form_for [@post_image, @answer] do |f| %>
-  <% if selection.name != "select" %>
   <div>
     <%= f.hidden_field :selection_id, :value => selection.id %>
     <%= f.submit selection.name_i18n, class: "btn btn-sm btn-primary" %>
-    <% else %>
-    <!-- selection.name == "select"は表示しない -->
   </div>
   <% end %>
   <% end %>
   <% end %>
 </div>
-
-
+<%= form_with model: @selection, local: true do |form| %>
+<%= form.hidden_field :post_image_id, :value => @post_image.id %>
+<%= form.select :name, Selection.names_i18n.keys.map { |k| [Selection.names_i18n[k], k]} %>
+<%= form.submit "新しい選択肢を追加する",class:"btn-sm btn-primary" %>
+<% end %>
+</div>
+<% if @post_image.user_id == current_user.id %>
 <%= link_to 'Edit', edit_post_image_path(@post_image) %> |
+<% end %>
 <%= link_to 'Back', post_images_path %>

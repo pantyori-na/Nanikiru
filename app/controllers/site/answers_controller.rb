@@ -8,9 +8,9 @@ class Site::AnswersController < Site::Base
 
   def show
     @answer = Answer.find(params[:id])
-    # post_image has selections
     @post_image = PostImage.find(params[:post_image_id])
     @post_comment = PostComment.new
+    @selections = @post_image.selections
   end
 
   def new

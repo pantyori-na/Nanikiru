@@ -1,10 +1,64 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
+  <h1>Nanikiru Answers</h1>
   <div class="row">
-    <h1>Nanikiru Answers</h1>
     <div class="col-lg-6">
       <%= attachment_image_tag @post_image, :image, :fill, 300, 300, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
     </div>
+    <div class="col-lg-6">
+      <div class="charts">
+        <div class="chart chart--dev">
+          <span class="chart__title">Answers</span>
+          <ul class="chart--horiz">
+            <!-- 重複したselection削除 -->
+            <% selection_name_array = [] %>
+            <% @selections.each do |selection| %>
+            <% if selection.name != "select" && selection_name_array.exclude?(selection.name) %>
+            <% selection_name_array.push(selection.name) %>
+
+            <!-- answers のパラメータ作成 -->
+            <% answers_count = 0 %>
+            <% @selections.each do |selection| %>
+            <% answers_count += selection.answer_count %>
+            <% end %>
+            <div class="row col-lg-9">
+              <li class="chart__bar"
+                style="width: <%= ((selection.answer_count.to_f/answers_count.to_f)*100).to_f.round.to_s %>%; min-width: 2em;">
+                <span class="chart__label">
+                  <%= selection.name_i18n %>
+                </span>
+              </li>
+            </div>
+            <div class="row col-lg-3 text-left pull-left">
+              <% if selection.answer_count == 0 %>
+              回答なし
+              <% else %>
+              回答数: <%= selection.answer_count %>
+              <% end %>
+            </div>
+            <!-- <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus"
+              title="却下するポップアップ" data-content="ボタンを押しても閉じません。それ以外のところを押して閉じて下さい。">ココを押して下さい</a> -->
+
+            <% selection.answers.each do |answer| %>
+            <%= answer.user.name %>
+            <%= answer.user.dan_4p_proper_i18n %>
+            <% end %>
+
+
+
+
+            <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="row">
     <div class="well col-lg-3">
       <div>
         <p><%= @answer.user.name %> answer</p>
@@ -19,8 +73,10 @@
       </div>
     </div>
   </div>
+
+
   <div class="row">
-    <% @post_image.selections.each do |selection| %>
+    <% @selections.each do |selection| %>
     <% selection.answers.each do |answer| %>
     <% answer.post_comments.each do |post_comment| %>
     <div class="row">

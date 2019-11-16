@@ -6,6 +6,18 @@ class Site::PostImagesController < Site::Base
   end
 
   def show
+    @post_image = PostImage.find(params[:id])
+    # 回答済みのユーザーを回答済み画面にリダイレクト
+    @post_image.selections.each do |selection|
+      selection.answers.each do |answer|
+        if answer.user_id == current_user.id
+        redirect_to post_image_answer_path(params[:id],answer.id)
+        else
+          # 回答していないユーザー
+        end
+      end
+    end
+    @selection = Selection.new
     @answer = Answer.new
   end
 

@@ -1,34 +1,22 @@
 class Site::SelectionsController < Site::Base
   before_action :set_selection, only: [:show, :edit, :update, :destroy]
 
-  # GET /selections
-  # GET /selections.json
-  def index
-    @selections = Selection.all
-  end
-
-  # GET /selections/1
-  # GET /selections/1.json
   def show
   end
 
-  # GET /selections/new
   def new
     @selection = Selection.new
   end
 
-  # GET /selections/1/edit
   def edit
   end
 
-  # POST /selections
-  # POST /selections.json
   def create
     @selection = Selection.new(selection_params)
 
     respond_to do |format|
       if @selection.save
-        format.html { redirect_to @selection, notice: 'Selection was successfully created.' }
+        format.html { redirect_to post_image_path(@selection.post_image_id), notice: 'Selection was successfully created.' }
         format.json { render :show, status: :created, location: @selection }
       else
         format.html { render :new }
