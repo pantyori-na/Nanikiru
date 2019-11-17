@@ -13,14 +13,12 @@ class Site::FavoritesController < Site::Base
   end
 
   def like
-    binding.pry
     @post_image = PostImage.find(params[:post_image_id])
     current_user.like(@post_image)
     redirect_back(fallback_location:root_path)
   end
 
   def unlike
-    binding.pry
     @post_image = PostImage.find(params[:post_image_id])
     current_user.unlike(@post_image)
     redirect_back(fallback_location:root_path)
