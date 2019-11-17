@@ -1,0 +1,30 @@
+<!-- モーダル -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">回答者情報</h4>
+      </div>
+      <div class="modal-body">
+        <table>
+          <tr>
+            <th>ユーザー名</th>
+            <th>４人麻雀段位</th>
+            <th>３人麻雀段位</th>
+          </tr>
+          <tr>
+            <td><%= answer.user.name %></td>
+            <td><%= answer.user.dan_4p_proper_i18n %></td>
+            <td><%= answer.user.dan_3p_proper_i18n %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

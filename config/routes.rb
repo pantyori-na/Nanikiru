@@ -14,9 +14,9 @@ Rails.application.routes.draw do
     }
     resources :post_images do
       resources :answers, only: [:create, :show]
+      resource :favorites, only: [:create, :destroy]
     end
     resources :game_records, only: [:new, :create, :update, :destroy]
-    resources :favorites
     resources :selections
     resources :answers
     resources :post_comments
