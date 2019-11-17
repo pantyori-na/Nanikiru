@@ -14,7 +14,8 @@ Rails.application.routes.draw do
     }
     resources :post_images do
       resources :answers, only: [:create, :show]
-      resource :favorites, only: [:create, :destroy]
+      get 'like', to: 'favorites#like'
+      get 'unlike', to: 'favorites#like'
     end
     resources :game_records, only: [:new, :create, :update, :destroy]
     resources :selections

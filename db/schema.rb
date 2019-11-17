@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_15_074722) do
+ActiveRecord::Schema.define(version: 2019_11_17_073254) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2019_11_15_074722) do
     t.integer "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_image_id"], name: "index_favorites_on_post_image_id"
+    t.index ["user_id", "post_image_id"], name: "index_favorites_on_user_id_and_post_image_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "game_records", force: :cascade do |t|
