@@ -14,6 +14,7 @@ class Site::UsersController < Site::Base
     @user.update(user_params)
 		redirect_to user_path(@user.id)
 	end
+
 	def leave
 	end
 	def destroy

@@ -42,39 +42,28 @@
   </div>
 </div>
 
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Image</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<div class="container">
-  <h2>GAME RECORD</h2>
-  <% @user.game_records.each do|game_record| %>
-  <div class="row">
-    _________________________________
-    <div class="row">
-      <label>Mahjong game type:</label>
-      <%= game_record.game_type_i18n %>
-    </div>
-    <div class="row">
-      <label>Game:</label>
-      <%= game_record.game_name_i18n %>
-    </div>
-    <div class="row">
-      <label>Handle name for game :</label>
-      <%= game_record.handle_name %>
-    </div>
-    <div class="row">
-      <label>Game strength: </label>
-      <%= game_record.ability_i18n %>
-    </div>
-  </div>
-  <% end %>
-</div>
-
-<div class="container">
-  <div class="row">
-    <% if @user.id == current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-left" %></p>
+  <tbody>
+    <% @post_images.each do |post_image| %>
+    <tr>
+      <td><%= post_image.image_type_i18n %></td>
+      <td>
+        <%= attachment_image_tag post_image, :image, :fill, 200, 200, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
+      </td>
+      <td><%= post_image.comment %></td>
+      <td><%= link_to 'Show', post_image %></td>
+      <td><%= link_to 'Edit', edit_post_image_path(post_image) %></td>
+      <td><%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
-  </div>
-  <div class="row">
-    <p><%= link_to  @user.name+"が作成したNanikiru", user_created_path(@user) %></p>
-  </div>
-</div>
+  </tbody>
+</table>

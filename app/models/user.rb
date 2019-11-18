@@ -44,4 +44,14 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+
+  # user has Answers の中のselection_idの重複をなくす
+  def same_answer_destroy
+    answers = self.answers
+    if answers.group(:selection_id).having('count(*) >= 2').present?
+			hash = answers.group(:selection_id).having('count(*) >= 2').maximum(:created_at)
+			answer_ids = answers.where(selection_id: hash.keys, created_at: hash.values).pluck(:id)
+			answers.where(selection_id: hash.keys).where.not(id: answer_ids).destroy_all
+    end
+  end
 end

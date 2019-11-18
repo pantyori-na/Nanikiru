@@ -1,6 +1,9 @@
 class Site::FavoritesController < Site::Base
   before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
+  def index
+   @user = User.find(param)
+  end
   def create
     redirect_back(fallback_location:root_path)
   end

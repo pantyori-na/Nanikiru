@@ -1,15 +1,22 @@
 class Site::PostImagesController < Site::Base
   before_action :set_post_image, only: [:show, :edit, :update, :destroy]
-
   def index
     @post_images = PostImage.all
   end
 
   def show
+    # 重複した選択肢を削除する
+    current_user.same_answer_destroy
     @post_image = PostImage.find(params[:id])
     # 回答済みのユーザーを回答済み画面にリダイレクト
     if @post_image.answered?(current_user)
-      redirect_to post_image_answer_path(params[:id],@post_image.answered_id(current_user))
+      answered_id = @post_image.answered_id(current_user)
+      if answered_id
+        redirect_to post_image_answer_path(@post_image.id,answered_id)
+      else
+        flash[:danger] = '[Error!]回答が存在しません'
+        redirect_to root_path
+      end
     end
     @selection = Selection.new
     @answer = Answer.new
@@ -20,7 +27,6 @@ class Site::PostImagesController < Site::Base
     @post_image.selections.build
   end
 
-  # GET /post_images/1/edit
   def edit
   end
 
@@ -35,6 +41,18 @@ class Site::PostImagesController < Site::Base
       end
     end
   end
+  def created
+    @user = User.find(params[:user_id])
+    @post_images = @user.post_images
+    @report = Report.new
+  end
+  def selected
+    @user = User.find(params[:user_id])
+    @answers = @user.answers
+    # 重複した選択肢を削除する
+    @user.same_answer_destroy
+  end
+
 
   # PATCH/PUT /post_images/1
   # PATCH/PUT /post_images/1.json

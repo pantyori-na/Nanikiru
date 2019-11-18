@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     resources :reports, only: [:show]
     resources :users, only: [:show, :edit, :update, :index, :destroy] do
       resources :reports, only: [:create]
+      get 'created', to: 'post_images#created'
+      get 'selected', to: 'post_images#selected'
     end
     resources :relationships, only: [:create, :destroy]
     root to: 'post_images#index'

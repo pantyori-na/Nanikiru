@@ -24,6 +24,7 @@
   <!-- selectionsの重複を表示させない -->
   <% selection_name_array = [] %>
   <% @post_image.selections.each do |selection| %>
+  <!-- 選択肢に初期設定のselectを表示させないかつ選択肢が重複していない -->
   <% if selection.name != "select" && selection_name_array.exclude?(selection.name) %>
   <% selection_name_array.push(selection.name) %>
   <%= form_for [@post_image, @answer] do |f| %>
