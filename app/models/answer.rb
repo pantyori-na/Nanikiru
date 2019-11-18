@@ -14,14 +14,4 @@ class Answer < ApplicationRecord
       end
     end
   end
-  def answered_route(post_image)
-    post_image.selections.each do |selection|
-      selection.answers.each do |answer|
-        if answer.user_id == current_user.id
-          redirect_to post_image_answer_path(post_image.id,answer.id)
-        end
-      end
-    end
-  end
-
 end

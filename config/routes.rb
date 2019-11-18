@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update, :index, :destroy] do
       resources :reports, only: [:create]
     end
+    resources :relationships, only: [:create, :destroy]
     root to: 'post_images#index'
   end
 end

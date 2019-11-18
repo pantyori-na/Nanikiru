@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
 <div class="profile-container">
+  <p id="notice"><%= notice %></p>
+  <%= flash[:success] %>
+  <%= flash.now[:alert] %>
+  <%= render 'layouts/flash_messages' %>
   <div class="container">
     <div class="row">
       <div class="row col-lg-4">
         <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+        <!-- follow機能 -->
+        <div>
+          <%= render 'site/relationships/follow_button', user: @user %>
+        </div>
+
         <div>
           <!-- 通報機能 -->
           <%= form_for [@user, @report] do |f| %>
@@ -39,7 +47,7 @@
 
 <div class="container">
   <h2>GAME RECORD</h2>
-  <%= @user.game_records.each do|game_record| %>
+  <% @user.game_records.each do|game_record| %>
   <div class="row">
     _________________________________
     <div class="row">
