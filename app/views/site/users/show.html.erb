@@ -77,4 +77,11 @@
   <div class="row">
     <p><%= link_to  @user.name+"が作成したNanikiru", user_created_path(@user) %></p>
   </div>
+  <div class="row">
+    <p><%= link_to  @user.name+"がお気に入りに追加したNanikiru", user_favorites_path(@user) %></p>
+  </div>
+  user_follow
+  <div class="row">
+    <p><%= link_to  @user.name+"が作成したNanikiru", user_favorites_path(@user) %></p>
+  </div>
 </div>

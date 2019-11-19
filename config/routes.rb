@@ -26,6 +26,8 @@ Rails.application.routes.draw do
       resources :reports, only: [:create]
       get 'created', to: 'post_images#created'
       get 'selected', to: 'post_images#selected'
+      get 'fav_nanikiru', to: 'favorite#nanikiru'
+      get 'follow', to: 'user#follow_index'
     end
     resources :relationships, only: [:create, :destroy]
     root to: 'post_images#index'

@@ -19,6 +19,12 @@ class Site::UsersController < Site::Base
 	end
 	def destroy
 	end
+
+	def follow_index
+		@user = User.find(params[:user_id])
+		binding.pry
+		@following = @user
+	end
 private
 def user_params
     params.require(:user).permit(:name, :profile_image, :dan_4p_proper, :dan_3p_proper, :introduction)

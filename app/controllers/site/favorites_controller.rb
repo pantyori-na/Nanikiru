@@ -1,9 +1,12 @@
 class Site::FavoritesController < Site::Base
   before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
-  def index
-   @user = User.find(param)
+  def nanikiru
+   @user = User.find(params[:user_id])
+   @favorites = @user.favorites
   end
+
+
   def create
     redirect_back(fallback_location:root_path)
   end
@@ -26,6 +29,7 @@ class Site::FavoritesController < Site::Base
     current_user.unlike(@post_image)
     redirect_back(fallback_location:root_path)
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

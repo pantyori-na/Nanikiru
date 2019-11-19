@@ -36,16 +36,19 @@ class Site::PostImagesController < Site::Base
     respond_to do |format|
       if @post_image.save
         format.html { redirect_to @post_image, notice: 'Post image was successfully created.' }
-      else
+        else
         format.html { render :new }
       end
     end
+    @post_image.same_selection_destroy
   end
+  # user_created_nanikiruページ
   def created
     @user = User.find(params[:user_id])
     @post_images = @user.post_images
     @report = Report.new
   end
+  # user_selected_nanikiru
   def selected
     @user = User.find(params[:user_id])
     @answers = @user.answers

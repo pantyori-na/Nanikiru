@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Favorite Nanikirus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Post image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favorites.each do |favorite| %>
+    <tr>
+      <td>
+        <%= attachment_image_tag favorite.post_image, :image, :fill, 300, 300, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

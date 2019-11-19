@@ -19,6 +19,7 @@ class PostImage < ApplicationRecord
     end
      return false
   end
+  # userが回答済みかどうか
   def answered?(user)
     self.selections.each do |selection|
       if selection.answers.exists?
@@ -28,5 +29,14 @@ class PostImage < ApplicationRecord
       end
     end
     return false
+  end
+  # 同じselection.nameを削除する
+  def same_selection_destroy
+    selectons = self.selections
+    if selections.group(:name).having('count(*) >= 2').present?
+			hash = selections.group(:name).having('count(*) >= 2').maximum(:created_at)
+			selection_ids = selections.where(name: hash.keys, created_at: hash.values).pluck(:id)
+			selections.where(name: hash.keys).where.not(id: selection_ids).destroy_all
+    end
   end
 end
