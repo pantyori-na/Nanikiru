@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Following</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>follow</th>
+      <th>4人麻雀段位</th>
+      <th>3人麻雀段位</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.followings.each do |following| %>
+    <tr>
+      <td>
+        <%= following.name %>
+      </td>
+      <td>
+        <%= following.dan_4p_proper_i18n %>
+      </td>
+      <td>
+        <%= following.dan_3p_proper_i18n %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

@@ -44,6 +44,8 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+  def follwers(user)
+  end
 
   # user has Answers の中のselection_idの重複をなくす
   def same_answer_destroy

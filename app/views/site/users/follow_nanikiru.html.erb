@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Following</h1>
+
+  <table>
+    <div class="row">
+      <thead>
+        <tr>
+          <th>follow</th>
+          <th>4人麻雀段位</th>
+          <th>3人麻雀段位</th>
+        </tr>
+      </thead>
+    </div>
+    <div class="row">
+      <tbody>
+        <% @user.followings.each do |following| %>
+        <tr>
+          <div class="row">
+            <td>
+              <%= following.name %>
+            </td>
+            <td>
+              <%= following.dan_4p_proper_i18n %>
+            </td>
+            <td>
+              <%= following.dan_3p_proper_i18n %>
+            </td>
+          </div>
+          <div class="row">
+            <% following.post_images.each do |post_image| %>
+            <%= attachment_image_tag post_image, :image, :fill, 300, 300, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
+            <% end %>
+          </div>
+        </tr>
+        <% end %>
+      </tbody>
+    </div>
+  </table>
+
+</div>

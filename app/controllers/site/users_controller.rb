@@ -20,10 +20,16 @@ class Site::UsersController < Site::Base
 	def destroy
 	end
 
-	def follow_index
+	def following_index
 		@user = User.find(params[:user_id])
-		binding.pry
-		@following = @user
+	end
+
+	def follow_nanikiru
+		@user = User.find(params[:user_id])
+	end
+
+	def follower_index
+		@user = User.find(params[:user_id])
 	end
 private
 def user_params

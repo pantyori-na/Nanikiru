@@ -1,36 +1,24 @@
-<header>
-	<div class="container">
-		<div class="row">
-			<nav class="nav navbar-nav navbar-left logo">
-				<%= link_to "Home", root_path %>
-			</nav>
-			<nav class="header-icon">
-				<%= link_to new_post_image_path do %>
-				<i class=""></i>
-				<br>新規投稿</p><% end %>
-				<p>
-					<%= link_to users_path do %>
-					<i class="fas fa-home fa-3x"></i>
-					<br>ユーザー一覧</p><% end %>
-				<p>
-					<%= link_to user_path(current_user.id) do %>
-					<i class="fas fa-cogs fa-3x"></i>
-					<br>ユーザー情報詳細</p> <% end %>
-				<p>
-					<%= link_to destroy_user_session_path, method: :delete do %>
-					<i class="fas fa-shoe-prints fa-3x"></i>
-					<br>Log Out</p><% end %>
-
-				<div class="row">
-					<p><%= link_to  current_user.name+"が作成したNanikiru", user_created_path(current_user) %></p>
-				</div>
-				<div class="row">
-					<p><%= link_to  current_user.name+"が回答したNanikiru", user_selected_path(current_user) %></p>
-				</div>
-				<div class="row">
-					<p><%= link_to  current_user.name+"がお気に入りに追加したNanikiru", user_favorites_path(current_user) %></p>
-				</div>
-			</nav>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<%= link_to "Nanikiru?", root_path ,class:"navbar-brand" %>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><%= link_to new_post_image_path do%>
+					<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>新規投稿
+					<% end %>
+				</li>
+				<li class="active"><a href="#">About</a></li>
+				<li><a href="#">Gallery</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			</ul>
 		</div>
 	</div>
-</header>
+</nav>
