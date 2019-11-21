@@ -1,10 +1,10 @@
 class Site::PostImagesController < Site::Base
   before_action :set_post_image, only: [:show, :edit, :update, :destroy]
   def index
-    @post_images = PostImage.page(params[:page]).reverse_order.per(5)
-    @post_4p_images = PostImage.where(image_type: "player_4").page(params[:page]).reverse_order.per(5)
-    @post_3p_images = PostImage.where(image_type: "player_3").page(params[:page]).reverse_order.per(5)
-    @post_other_images = PostImage.where(image_type: "others").page(params[:page]).reverse_order.per(5)
+    @post_images = PostImage.page(params[:page]).reverse_order.per(10)
+    @post_4p_images = PostImage.where(image_type: "player_4").page(params[:page]).reverse_order.per(10)
+    @post_3p_images = PostImage.where(image_type: "player_3").page(params[:page]).reverse_order.per(10)
+    @post_other_images = PostImage.where(image_type: "others").page(params[:page]).reverse_order.per(10)
   end
 
   def index_all

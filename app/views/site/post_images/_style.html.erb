@@ -1,0 +1,16 @@
+<div class="index-content">
+  <div class="container-fluid">
+    <% post_images.each do |post_image| %>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-md-2">
+      <div class="card">
+        <%= attachment_image_tag post_image, :image,class: "pull-left img-responsive", fallback: "no_image.jpg"%>
+        投稿者：<%= post_image.user.name %>
+        </p>
+        <p>
+          コメント：<%= post_image.comment %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

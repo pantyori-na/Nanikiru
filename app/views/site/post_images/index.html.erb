@@ -12,45 +12,23 @@
   <div class="tab-content">
     <!-- 新着順全て -->
     <div class="tab-pane fade in active" id="index">
-      <div class="container-fluid">
-        <% @post_images.each do |post_image| %>
-        <%= attachment_image_tag post_image, :image, :fill, 400, 400, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
-        <% end %>
-      </div>
-
-
+      <%= render 'site/post_images/style', post_images: @post_images %>
     </div>
     <!-- 4人麻雀 -->
     <div class="tab-pane fade in" id="index-4p">
-      <div class="container-fluid">
-        <% @post_4p_images.each do |post_image| %>
-        <%= attachment_image_tag post_image, :image, :fill, 400, 400, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
-        <% end %>
-
-
-      </div>
+      <%= render 'site/post_images/style', post_images: @post_4p_images %>
     </div>
     <!-- 3人麻雀 -->
     <div class="tab-pane fade in" id="index-3p">
-      <div class="container-fluid">
-        <% @post_3p_images.each do |post_image| %>
-        <%= attachment_image_tag post_image, :image, :fill, 400, 400, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
-        <% end %>
-
-
-      </div>
+      <%= render 'site/post_images/style', post_images: @post_3p_images %>
     </div>
     <!-- その他 -->
     <div class="tab-pane fade in" id="index-others">
-      <div class="container-fluid">
-        <% @post_other_images.each do |post_image| %>
-        <%= attachment_image_tag post_image, :image, :fill, 400, 400, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
-        <% end %>
-
-
-      </div>
+      <%= render 'site/post_images/style', post_images: @post_other_images %>
     </div>
   </div>
+
+  <!-- footer -->
   <div class="fixed">
     <span>
       <%= link_to nanikiru_all_path do%>
