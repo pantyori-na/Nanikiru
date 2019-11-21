@@ -33,5 +33,9 @@ Rails.application.routes.draw do
     end
     resources :relationships, only: [:create, :destroy]
     root to: 'post_images#index'
+    get 'nanikiru_all', to: 'post_images#index_all'
+    get 'nanikiru_4p', to: 'post_images#index_4p'
+    get 'nanikiru_3p', to: 'post_images#index_3p'
+    get 'nanikiru_other', to: 'post_images#index_other'
   end
 end

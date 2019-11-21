@@ -201,3 +201,80 @@ footer {
 .glyphicon {
   margin-right: 1px;
 }
+
+.dropdown-menu {
+  background-color: rgb(39, 38, 38);
+
+  >li>a {
+    color: rgb(189, 187, 187);
+    cursor: pointer;
+  }
+
+}
+
+.container-fluid {
+  margin: 0px;
+  padding: 0px;
+}
+
+.tab-content {
+  .container-fluid {
+    margin: 0px 0px 14px 0px;
+  }
+}
+
+.fixed {
+  position: fixed;
+  bottom: 0;
+  // right: 0;
+  text-align: center;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  height: 20px;
+
+  span {
+    font-size: 15px;
+    margin: 0px, 5px;
+
+    a {
+      color: blanchedalmond;
+      margin: auto 35px;
+    }
+  }
+}
+
+.pagination {
+  clear: left;
+  margin: 5px 0;
+  color: #eee;
+
+  a:visited {
+    color: #817d7d;
+  }
+
+  a {
+    color: #858686;
+  }
+}
+
+a:visited {
+  color: #3a3838;
+}
+
+a {
+  color: #252525;
+}
+
+.nav-tabs {
+  border-bottom: 0px;
+}
+
+.center {
+  width: 60%;
+  margin: 0 35%;
+}
+
+.nav-back {
+  background-color: rgb(121, 120, 120);
+  border-bottom: 1px solid rgb(85, 84, 84);
+}

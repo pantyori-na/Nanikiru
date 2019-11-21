@@ -21,3 +21,12 @@
 $(function () {
   $('[data-toggle="popover"]').popover();
 });
+
+$(function () {
+  $('.linkInThePage').click(function () {
+    var hrefValue = $(this).attr('href');
+    $(hrefValue).animatescroll({
+      padding: 112
+    });
+  });
+});

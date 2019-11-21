@@ -10,14 +10,97 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><%= link_to new_post_image_path do%>
-					<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>新規投稿
+				<li class="">
+					<%= link_to new_post_image_path do%>
+					<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+					新規投稿
 					<% end %>
 				</li>
-				<li class="active"><a href="#">About</a></li>
-				<li><a href="#">Gallery</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<!-- nanikiru一覧 -->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<span class="glyphicon glyphicon-th" aria-hidden="true"></<span>
+							Nanikiru
+							<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<%= link_to "新着順", nanikiru_all_path %>
+						</li>
+						<li>
+							<%= link_to "4人麻雀", nanikiru_4p_path %>
+						</li>
+						<li>
+							<%= link_to  "3人麻雀", nanikiru_3p_path %>
+						</li>
+						<li>
+							<%= link_to  "その他", nanikiru_other_path %>
+						</li>
+					</ul>
+				</li>
+				<!-- userページ -->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						<%= current_user.name %>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<%= link_to "ユーザー情報詳細ページ", user_path(current_user.id) %>
+						</li>
+						<li>
+							<%= link_to "ユーザー情報編集ページ", edit_user_path(current_user.id) %>
+						</li>
+						<li>
+							<%= link_to  current_user.name+"が作成したNanikiru", user_created_path(current_user) %>
+						</li>
+						<li>
+							<%= link_to  current_user.name+"が回答したNanikiru", user_selected_path(current_user) %>
+						</li>
+					</ul>
+				</li>
+				<!-- フォロー -->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+						follow
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<%= link_to  current_user.name+"がフォローしている", user_following_path(current_user) %>
+						</li>
+						<li>
+							<%= link_to  current_user.name+"がフォローされている", user_follower_path(current_user) %>
+						</li>
+						<li>
+							<%= link_to  current_user.name+"がフォローしているユーザーのNanikiru", user_follow_nanikiru_path(current_user) %>
+						</li>
+					</ul>
+				</li>
+				<!-- 一覧 -->
+				<li class="dropdown ">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<%= link_to "ユーザー一覧", users_path %>
+						</li>
+						<li>
+							<%= link_to "Nanikiru一覧", root_path %>
+						</li>
+					</ul>
+				</li>
+				<!-- logout -->
+				<li class="">
+					<%= link_to destroy_user_session_path, method: :delete do %>
+					<span class="glyphicon glyphicon-log-in"></span>
+					Loout
+					<% end %>
+				</li>
 			</ul>
 		</div>
 	</div>
