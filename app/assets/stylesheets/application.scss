@@ -230,7 +230,7 @@ footer {
   text-align: center;
   width: 100%;
   background-color: rgb(0, 0, 0);
-  height: 20px;
+  height: 25px;
 
   span {
     font-size: 15px;
@@ -326,3 +326,62 @@ a {
   margin: 20px;
   opacity: 0.65;
 }
+
+// プロフィール画像埋め込み用
+.index-content .card .profile img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-position: right top;
+}
+
+// 追従
+.nav-sticky {
+  position: sticky;
+  top: -13px;
+  z-index: 30;
+}
+
+.sticky {
+  position: sticky;
+  top: 30px;
+  z-index: 20;
+}
+
+// user show====
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.circle {
+  img {
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+  }
+}
+
+
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+
+  .row.content {
+    height: auto;
+  }
+
+  .col-sm-12 {
+    position: static;
+  }
+
+
+}
+
+// usershowここまで

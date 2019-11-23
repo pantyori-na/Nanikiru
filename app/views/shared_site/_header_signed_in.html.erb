@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse nav-sticky">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -10,7 +10,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="">
+				<li>
 					<%= link_to new_post_image_path do%>
 					<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 					新規投稿
@@ -38,6 +38,32 @@
 						</li>
 					</ul>
 				</li>
+				<!-- お気に入り -->
+				<li>
+					<%= link_to user_fav_nanikiru_path(current_user) do%>
+					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					お気に入り
+					<% end %>
+				</li>
+				<!-- フォロー -->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+						follow
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<%= link_to  current_user.name+"がフォローしている", user_following_path(current_user) %>
+						</li>
+						<li>
+							<%= link_to  current_user.name+"がフォローされている", user_follower_path(current_user) %>
+						</li>
+						<li>
+							<%= link_to  current_user.name+"がフォローしているユーザーのNanikiru", user_follow_nanikiru_path(current_user) %>
+						</li>
+					</ul>
+				</li>
 				<!-- userページ -->
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -60,25 +86,6 @@
 						</li>
 					</ul>
 				</li>
-				<!-- フォロー -->
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-						<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-						follow
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li>
-							<%= link_to  current_user.name+"がフォローしている", user_following_path(current_user) %>
-						</li>
-						<li>
-							<%= link_to  current_user.name+"がフォローされている", user_follower_path(current_user) %>
-						</li>
-						<li>
-							<%= link_to  current_user.name+"がフォローしているユーザーのNanikiru", user_follow_nanikiru_path(current_user) %>
-						</li>
-					</ul>
-				</li>
 				<!-- 一覧 -->
 				<li class="dropdown ">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -95,7 +102,7 @@
 					</ul>
 				</li>
 				<!-- logout -->
-				<li class="">
+				<li>
 					<%= link_to destroy_user_session_path, method: :delete do %>
 					<span class="glyphicon glyphicon-log-in"></span>
 					Loout

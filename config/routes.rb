@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       resources :reports, only: [:create]
       get 'created', to: 'post_images#created'
       get 'selected', to: 'post_images#selected'
-      get 'fav_nanikiru', to: 'favorite#nanikiru'
+      get 'fav_nanikiru', to: 'favorites#nanikiru'
       get 'following', to: 'users#following_index'
       get 'follower', to: 'users#follower_index'
       get 'follow_nanikiru', to: 'users#follow_nanikiru'
