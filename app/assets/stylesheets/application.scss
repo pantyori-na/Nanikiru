@@ -40,7 +40,6 @@ body {
     sans-serif
 }
 
-//Demo
 .skills {
   width: 80%;
   max-width: 960px;
@@ -297,6 +296,7 @@ a:link {
 .index-content {
   margin-bottom: 10px;
   padding: 20px 0px;
+  background-color: floralwhite;
 }
 
 .index-content .row {
@@ -393,13 +393,7 @@ a:link {
 
 // usershowここまで
 
-.back {
-  background-color: rgb(89, 89, 95);
 
-  h1 {
-    margin-left: 5%;
-  }
-}
 
 .back-prof {
   background-color: #cacaca;
@@ -423,5 +417,15 @@ a:link {
 
 
 .back-all {
-  background-color: black;
+  background-color: rgb(89, 89, 95);
+  height: 100vh;
+}
+
+.back {
+  background-color: rgb(89, 89, 95);
+  overflow: auto;
+
+  h1 {
+    margin-left: 5%;
+  }
 }
