@@ -214,7 +214,7 @@ footer {
 
 .container-fluid {
   margin: 0px;
-  padding: 0px;
+  padding: 0px
 }
 
 .tab-content {
@@ -263,6 +263,10 @@ a:visited {
 
 a {
   color: #252525;
+}
+
+a:link {
+  color: rgb(54, 54, 54);
 }
 
 .nav-tabs {
@@ -363,6 +367,9 @@ a {
   }
 }
 
+.report {
+  margin: 0px;
+}
 
 
 
@@ -385,3 +392,36 @@ a {
 }
 
 // usershowここまで
+
+.back {
+  background-color: rgb(89, 89, 95);
+
+  h1 {
+    margin-left: 5%;
+  }
+}
+
+.back-prof {
+  background-color: #cacaca;
+  z-index: 20;
+  margin: 30px 30px;
+  padding: 10px;
+  border: medium solid #610c61;
+}
+
+.back-prof:hover {
+  background-color: #8892cc;
+}
+
+.back-title {
+  background-color: #cacaca;
+  z-index: 20;
+  margin: 30px 30px;
+  padding: 10px;
+  border: medium solid #5d035d;
+}
+
+
+.back-all {
+  background-color: black;
+}

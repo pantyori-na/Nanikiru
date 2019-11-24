@@ -1,0 +1,71 @@
+<div class="container">
+  <%= form_for(@user) do |f| %>
+  <div class="row col-lg-4">
+    <div class="form-group has-icon">
+      <div>
+        <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+      </div>
+      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+    </div>
+  </div>
+  <div class="row col-lg-8">
+    <div class="form-group has-icon">
+      <label>Name</label>
+      <%= f.text_field :name, autofocus: true, placeholder:"名前"%>
+    </div>
+    <div>
+      <label for="">４人麻雀実力[天鳳相当]</label>
+      <%= f.select :dan_4p_proper, User.dan_4p_propers_i18n.keys.map { |k| [User.dan_4p_propers_i18n[k], k]} %>
+    </div>
+    <div>
+      <label for="">３人麻雀実力[天鳳相当]</label>
+      <%= f.select :dan_3p_proper, User.dan_3p_propers_i18n.keys.map { |k| [User.dan_3p_propers_i18n[k], k]} %>
+    </div>
+    <div>
+      <label for="">自己紹介文</label>
+      <%= f.text_field :introduction %>
+    </div>
+  </div>
+  <%= f.submit "変更を保存", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+  <% end %>
+</div>
+<div class="container">
+  <h2>GAME RECORD</h2>
+  <% current_user.game_records.each do|game_record| %>
+  <div class="row">
+    _________________________________
+    <%= form_for (game_record) do |f| %>
+
+    <div class="field">
+      <%= f.label :handle_name %>
+      <%= f.text_field :handle_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :game_type %>
+      <%= f.select :game_type, GameRecord.game_types_i18n.keys.map { |k| [GameRecord.game_types_i18n[k], k]} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :ability %>
+      <%= f.select :ability, GameRecord.abilities_i18n.keys.map { |k| [GameRecord.abilities_i18n[k], k]} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :game_name %>
+      <%= f.select :game_name, GameRecord.game_names_i18n.keys.map { |k| [GameRecord.game_names_i18n[k], k]} %>
+
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <div class="actions"></div>
+    <%= link_to game_record_path(game_record), method: "delete", data:{ confirm: "本当に削除しますか"} do %>
+    削除
+  </div>
+  <% end %>
+  <% end %>
+  <% end %>
+  <%= link_to "麻雀成績を追加する", new_game_record_path, class:"btn-sm btn-success" %>
+</div>
