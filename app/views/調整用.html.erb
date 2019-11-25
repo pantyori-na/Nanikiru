@@ -4,8 +4,12 @@
 <%= current_user.name %>
 
 <div class="field">
-  <label for="">Game type</label>
-  <%= form.select :image_type, PostImage.image_types_i18n.keys.map { |k| [PostImage.image_types_i18n[k], k]} %>
+  <label>４人麻雀</label>
+  <%= form.radio_button :image_type, :player_4, checked: "checked" %>
+  <label>３人麻雀</label>
+  <%= form.radio_button :image_type, :player_3%>
+  <label>その他</label>
+  <%= form.radio_button :image_type, :others%>
 </div>
 
 <div class="field">

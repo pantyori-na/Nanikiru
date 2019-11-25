@@ -26,6 +26,9 @@ class Site::UsersController < Site::Base
 
 	def follow_nanikiru
 		@user = User.find(params[:user_id])
+		# userがfollowしているユーザーの投稿したimages
+		@follow_post_images = @user.follow_images
+		@post_images = Kaminari.paginate_array(@follow_post_images).page(params[:page]).per(12)
 	end
 
 	def follower_index

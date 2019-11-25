@@ -45,7 +45,17 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
-  def follwers(user)
+  # followしているusersが持っているpost_imagesを取得する
+  def follow_images
+    follow_post_images = []
+    self.followings.each do |following|
+      if PostImage.where(user_id: following.id).exists?
+        PostImage.where(user_id: following.id).each do |post_image|
+         follow_post_images.push(post_image.id)
+        end
+      end
+    end
+    return PostImage.find(follow_post_images)
   end
 
   # user has Answers の中のselection_idの重複をなくす

@@ -1,6 +1,76 @@
-<p id="notice"><%= notice %></p>
-<h1>New Nanikiru</h1>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-lg-3  col-sm-12 sidenav">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12">
+          <h1>Name:<%= current_user.name %></h1>
+          <!-- current-user編集 -->
+          <span class="row">
+            <% if current_user.id == current_user.id %>
+            <p>
+              <%= link_to "プロフィール編集", edit_user_path(current_user), class: "pull-left"%>
+            </p>
+            <% end %>
+          </span>
+        </div>
+        <div class="col-lg-12 col-sm-3">
+          <div class="circle">
+            <%= attachment_image_tag current_user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+          </div>
+        </div>
+        <div class="col-lg-12 col-sm-6 col-lg-offset-0 col-sm-offset-3">
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to current_user.name+"が作成したNanikiru", user_created_path(current_user) %></li>
+            <li><%= link_to current_user.name+"がお気に入りに追加したNanikiru",user_fav_nanikiru_path(current_user) %></li>
+            <li><%= link_to current_user.name+"がfollowしている", user_following_path(current_user) %></li>
+            <li><%= link_to current_user.name+"がfollowされている", user_follower_path(current_user) %></li>
+          </ul><br>
+        </div>
+      </div>
+    </div>
+    <!-- 右側 -->
+    <div class="col-lg-9 col-sm-12">
+      <div class="row">
+        <h1>新規投稿</h1>
+        <%= form_with model: @post_image,local: true do |form|%>
 
-<%= render 'form', post: @post_image %>
+        <div class="">
+          <label for="">画像投稿</label>
+          <div>
+            <%= form.attachment_field :image %>
+          </div>
+        </div>
 
-<%= link_to 'Back', post_images_path %>
+        <div class="">
+          <label>４人麻雀</label>
+          <%= form.radio_button :image_type, :player_4, checked: "checked" %>
+          <label>３人麻雀</label>
+          <%= form.radio_button :image_type, :player_3%>
+          <label>その他</label>
+          <%= form.radio_button :image_type, :others%>
+        </div>
+
+        <!-- cocoonによる選択肢追加 -->
+        <div class="selections">
+          <%= form.fields_for :selections do |f| %>
+          <%= render "selection_fields", f: f %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association "選択肢追加", form, :selections %>
+          </div>
+        </div>
+
+        <div class="">
+          <%= form.label :comment %>
+          <%= form.text_area :comment %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
