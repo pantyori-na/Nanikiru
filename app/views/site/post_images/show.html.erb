@@ -1,48 +1,108 @@
-<p id="notice"><%= notice %></p>
+      <div class="container-fluid">
+        <div class="row content content-back">
+          <!-- 左側 -->
+          <div class="col-lg-3  col-sm-12 sidenav">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12">
+                <h1>Name:<%= current_user.name %></h1>
+                <!-- current-user編集 -->
+                <span class="row">
+                  <% if current_user.id == current_user.id %>
+                  <p>
+                    <%= link_to "プロフィール編集", edit_user_path(current_user), class: "pull-left"%>
+                  </p>
+                  <% end %>
+                </span>
+              </div>
+              <div class="col-lg-12 col-sm-3">
+                <div class="circle">
+                  <%= attachment_image_tag current_user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6 col-lg-offset-0 col-sm-offset-3">
+                <ul class="nav nav-pills nav-stacked">
+                  <li><%= link_to current_user.name+"が作成したNanikiru", user_created_path(current_user) %></li>
+                  <li><%= link_to current_user.name+"がお気に入りに追加したNanikiru",user_fav_nanikiru_path(current_user) %></li>
+                  <li><%= link_to current_user.name+"がfollowしている", user_following_path(current_user) %></li>
+                  <li><%= link_to current_user.name+"がfollowされている", user_follower_path(current_user) %></li>
+                </ul><br>
+              </div>
+            </div>
+          </div>
+          <!-- 右側 -->
+          <div class="col-lg-9 col-sm-12">
+            <div class="row">
+              <div class="index-content mg-none">
+                <div class="col-xs-12 col-sm-12 col-lg-6 col-lg-offset-2">
+                  <%= link_to post_image_path(@post_image.id) do %>
+                  <div class="card">
+                    <!-- Nanikiru画像 -->
+                    <div>
+                      <%= attachment_image_tag @post_image, :image,:fill, 800, 800,class: "pull-left img-responsive", fallback: "no_image.jpg", size:'600x600'%>
+                    </div>
+                    <!-- プロフィール画像 -->
+                    <div class="row">
+                      <div class="profile col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <%= attachment_image_tag @post_image.user, :profile_image,class: "img-circle profile-thumb", fallback: "no_image.jpg", size:'200x200' %><br>
+                      </div>
+                      <div class="col-lg-9">
+                        <h4 class="text-right">
+                          投稿者：<%= @post_image.user.name %>
+                        </h4>
+                      </div>
+                      <!-- コメント有無で条件分岐 -->
+                      <% if @post_image.comment.present? %>
+                      <p>
+                        <%= @post_image.comment %>
+                      </p>
+                      <% else %>
+                      <p>
+                        コメントなし
+                      </p>
+                      <% end %>
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @post_image.user.name %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @post_image.image_type_i18n %>
-</p>
-
-<p>
-  <%= attachment_image_tag @post_image, :image, :fill, 300, 300, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @post_image.comment %>
-</p>
-
-<div>
-  <!-- 選択肢一覧 -->
-  <!-- selectionsの重複を表示させない -->
-  <% selection_name_array = [] %>
-  <% @post_image.selections.each do |selection| %>
-  <!-- 選択肢に初期設定のselectを表示させないかつ選択肢が重複していない -->
-  <% if selection.name != "select" && selection_name_array.exclude?(selection.name) %>
-  <% selection_name_array.push(selection.name) %>
-  <%= form_for [@post_image, @answer] do |f| %>
-  <div>
-    <%= f.hidden_field :selection_id, :value => selection.id %>
-    <%= f.submit selection.name_i18n, class: "btn btn-sm btn-primary" %>
-  </div>
-  <% end %>
-  <% end %>
-  <% end %>
-</div>
-<%= form_with model: @selection, local: true do |form| %>
-<%= form.hidden_field :post_image_id, :value => @post_image.id %>
-<%= form.select :name, Selection.names_i18n.keys.map { |k| [Selection.names_i18n[k], k]} %>
-<%= form.submit "新しい選択肢を追加する",class:"btn-sm btn-primary" %>
-<% end %>
-</div>
-<% if @post_image.user_id == current_user.id %>
-<%= link_to 'Edit', edit_post_image_path(@post_image) %> |
-<% end %>
-<%= link_to 'Back', post_images_path %>
+              <div class="row">
+                <div class="col-lg-12">
+                  <h3><small>あなたは何切る？？</small></h3>
+                  <h4><small>クリックするとアンケート結果画面に飛びます！！</small></h4>
+                </div>
+                <div class="col-lg-12 mt-10">
+                  <!-- 選択肢一覧 -->
+                  <!-- selectionsの重複を表示させない -->
+                  <div class="col-sm-12">
+                    <div class="select-back">
+                      <% selection_name_array = [] %>
+                      <% if @post_image.selections.blank? %>
+                      <h5>選択肢がありません!!新しく選択肢を追加して下さい</h5>
+                      <% end %>
+                      <% @post_image.selections.each do |selection| %>
+                      <!-- 選択肢に初期設定のselectを表示させないかつ選択肢が重複していない -->
+                      <% if selection.name != "select" && selection_name_array.exclude?(selection.name) %>
+                      <% selection_name_array.push(selection.name) %>
+                      <%= form_for [@post_image, @answer] do |f| %>
+                      <%= f.hidden_field :selection_id, :value => selection.id %>
+                      <%= f.submit selection.name_i18n, class: "btn btn-lg btn-success active" %>
+                      <% end %>
+                      <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <%= form_with model: @selection, local: true do |form| %>
+                  <%= form.hidden_field :post_image_id, :value => @post_image.id %>
+                  <%= form.select :name, Selection.names_i18n.keys.map { |k| [Selection.names_i18n[k], k]} %>
+                  <%= form.submit "新しい選択肢を追加する",class:"btn-sm btn-info" %>
+                  <% end %>
+                  <% if @post_image.user_id == current_user.id %>
+                  <%= link_to 'Edit', edit_post_image_path(@post_image),class:"btn btn-primary btn-sm" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
