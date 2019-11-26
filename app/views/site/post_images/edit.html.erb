@@ -2,30 +2,32 @@
   <div class="row content">
     <!-- 左側 -->
     <div class="col-lg-3  col-sm-12 sidenav">
-      <div class="row">
-        <div class="col-lg-12 col-sm-12">
-          <h1>Name:<%= current_user.name %></h1>
-          <!-- current-user編集 -->
-          <span class="row">
-            <% if current_user.id == current_user.id %>
-            <p>
-              <%= link_to "プロフィール編集", edit_user_path(current_user), class: "pull-left"%>
-            </p>
-            <% end %>
-          </span>
-        </div>
-        <div class="col-lg-12 col-sm-3">
-          <div class="circle">
-            <%= attachment_image_tag current_user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+      <div class="reponsive">
+        <div class="row">
+          <div class="col-lg-12 col-sm-12">
+            <h1>Name:<%= current_user.name %></h1>
+            <!-- current-user編集 -->
+            <span class="row">
+              <% if current_user.id == current_user.id %>
+              <p>
+                <%= link_to "プロフィール編集", edit_user_path(current_user), class: "pull-left"%>
+              </p>
+              <% end %>
+            </span>
           </div>
-        </div>
-        <div class="col-lg-12 col-sm-6 col-lg-offset-0 col-sm-offset-3">
-          <ul class="nav nav-pills nav-stacked">
-            <li><%= link_to current_user.name+"が作成したNanikiru", user_created_path(current_user) %></li>
-            <li><%= link_to current_user.name+"がお気に入りに追加したNanikiru",user_fav_nanikiru_path(current_user) %></li>
-            <li><%= link_to current_user.name+"がfollowしている", user_following_path(current_user) %></li>
-            <li><%= link_to current_user.name+"がfollowされている", user_follower_path(current_user) %></li>
-          </ul><br>
+          <div class="col-lg-12 col-sm-3">
+            <div class="circle">
+              <%= attachment_image_tag current_user, :profile_image,class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+            </div>
+          </div>
+          <div class="col-lg-12 col-sm-6 col-lg-offset-0 col-sm-offset-3">
+            <ul class="nav nav-pills nav-stacked">
+              <li><%= link_to current_user.name+"が作成したNanikiru", user_created_path(current_user) %></li>
+              <li><%= link_to current_user.name+"がお気に入りに追加したNanikiru",user_fav_nanikiru_path(current_user) %></li>
+              <li><%= link_to current_user.name+"がfollowしている", user_following_path(current_user) %></li>
+              <li><%= link_to current_user.name+"がfollowされている", user_follower_path(current_user) %></li>
+            </ul><br>
+          </div>
         </div>
       </div>
     </div>
@@ -127,9 +129,12 @@
         </div>
 
         <div class="col-lg-12 mt-10">
-          <%= form.submit "変更を保存", class:"btn-primary btn-lg btn-block btn-base-1 mt-20" %>
+          <%= form.submit "変更を保存", class:"btn-primary btn-lg btn-block btn-base-1 mt-20 active" %>
         </div>
         <% end %>
+        <div class="col-lg-12 mt-10">
+          <%= link_to "Nanikiruを削除", post_image_path(@post_image.id), method: :delete, data: { confirm: '作成したNanikiruを削除しますか？' },  class:"btn-danger btn-lg btn-block btn-base-1 mt-20 active" %>
+        </div>
 
       </div>
     </div>

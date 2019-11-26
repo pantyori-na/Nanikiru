@@ -111,14 +111,3 @@ class Site::PostImagesController < Site::Base
       params.require(:post_image).permit(:user_id, :image_type, :image, :comment, selections_attributes: [:id, :name, :_destroy])
     end
 end
-
-
-# @post_image.save
-    # Selection.all.each do |selection|
-    #   selection.destroy
-    # end
-    # @post_image.selections.each do |select|
-    #   if select.name == "select"
-    #      #Selection.find_by(name: "select").destroy
-    #   end
-    # end
