@@ -6,20 +6,22 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="myModalLabel">回答者情報</h4>
+        <h4 class="modal-title" id="myModalLabel">回答者情報:<%= answer.selection.name_i18n %></h4>
       </div>
       <div class="modal-body">
-        <table>
+        <table class="table table-stripe">
           <tr>
-            <th>ユーザー名</th>
-            <th>４人麻雀段位</th>
-            <th>３人麻雀段位</th>
+            <th class="info">ユーザー名</th>
+            <th class="warning">４人麻雀段位</th>
+            <th class="warning">３人麻雀段位</th>
           </tr>
+          <% answer.selection.answers.each do |answer| %>
           <tr>
             <td><%= answer.user.name %></td>
             <td><%= answer.user.dan_4p_proper_i18n %></td>
             <td><%= answer.user.dan_3p_proper_i18n %></td>
           </tr>
+          <% end %>
         </table>
       </div>
       <div class="modal-footer">

@@ -101,9 +101,7 @@ body {
 .charts {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  margin-top: 30px;
   z-index: none;
 }
 
@@ -487,8 +485,7 @@ a:link {
 
 .nested-fields>input,
 button,
-select,
-textarea {
+select {
   font-family: inherit;
   font-size: 25px;
   line-height: inherit;
@@ -525,4 +522,35 @@ textarea {
 .new_answer {
   display: inline;
   margin: auto;
+}
+
+.back-none {
+  background-color: transparent;
+}
+
+.wel {
+  margin-top: 20px;
+}
+
+.text-size {
+  font-size: large;
+  font-weight: bold;
+}
+
+.container-fluid {
+  .row {
+    .col-lg-6 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.text-fav {
+  font-size: large;
+  color: #282828;
+}
+
+.modal-footer {
+  border-top: 0px !important;
 }
