@@ -72,6 +72,8 @@ gem 'rails-i18n'
 gem 'jquery-ui-rails'
 gem 'paranoia', '~> 2.3', '>= 2.3.1'
 gem 'cocoon'
+gem 'kaminari','~> 1.1.1'
+gem 'faker'
 group :production do
   gem 'mysql2'
 end

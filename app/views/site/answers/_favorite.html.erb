@@ -1,0 +1,13 @@
+<div>
+  <% if current_user.favorited_by?(@post_image) %>
+  <%= link_to post_image_unlike_path do %>
+  <i class="fas fa-heart fa-3x" aria-hidden="true" style="color: red;"></i>
+  <span class="text-fav"><%= @post_image.favorites.count %> いいね</span>
+  <% end %>
+  <% else %>
+  <%=  link_to post_image_like_path do %>
+  <i class="far fa-heart fa-3x" aria-hidden="true" style="color: red;"></i>
+  <span class="text-fav"><%= @post_image.favorites.count %> いいね</span>
+  <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,110 @@
+<div class="container-fluid">
+  <%= form_for(@user) do |f| %>
+  <div class="row content">
+    <div class="col-lg-3  col-sm-12 sidenav">
+      <div class="col-lg-12 col-sm-12">
+        <h1><%= @user.name %>編集ページ</h1>
+      </div>
+      <div class="col-lg-12 col-sm-3">
+        <div class="circle">
+          <%= attachment_image_tag @user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+        </div>
+        <em> 画像の変更</em>
+
+        <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+      </div>
+      <div class="col-lg-12 col-sm-6 col-lg-offset-0 col-sm-offset-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><%= link_to @user.name+"が作成したNanikiru", user_created_path(@user) %></li>
+          <li><%= link_to @user.name+"がお気に入りに追加したNanikiru",user_fav_nanikiru_path(@user) %></li>
+          <li><%= link_to @user.name+"がfollowしている", user_following_path(@user) %></li>
+          <li><%= link_to @user.name+"がfollowされている", user_follower_path(@user) %></li>
+        </ul><br>
+      </div>
+      <%= f.submit "変更を保存", class:"btn-primary btn-lg btn-block btn-base-1 mt-20" %>
+    </div>
+
+    <div class="col-lg-9 col-sm-12">
+      <div class="row">
+        <h4><small><%= @user.name %>の編集ページ</small></h4>
+        <hr>
+        <h2 class="col-lg-12"><%= @user.name %></h2>
+        <br>
+        <h5>
+          <span class="glyphicon glyphicon-time"></span>
+          <% if @user.post_images.present?  %>
+          最後の何切る投稿日:<%= @user.post_images.last.created_at.time.strftime("%Y年%-m月%-d日 %T") %>
+          <% end %>
+        </h5>
+        <h4><small>自己紹介</small></h4>
+        <hr>
+        <h2>Introduction</h2>
+        <p>
+          <h3><%= f.text_field :introduction %></h3>
+        </p>
+        <div class="col-lg-3 col-sm-12">
+          <%= f.submit "変更を保存", class:"btn-primary btn-lg btn-block btn-base-1 mt-20" %>
+        </div>
+        <br><br><br><br>
+
+
+        <h4><small>現在の天鳳段位</small></h4>
+        <hr>
+        <h2>Current ability</h2>
+        <div class="col-lg-6 col-sm-12">
+          <div class="row">
+            <h2>現在の４人麻雀実力[天鳳相当]</h2>
+            <h3 class="mark">
+              <p>
+                <%= f.select :dan_4p_proper, User.dan_4p_propers_i18n.keys.map { |k| [User.dan_4p_propers_i18n[k], k]} %>
+              </p>
+            </h3>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <div class="row">
+            <h2>現在の３人麻雀実力[天鳳相当]</h2>
+            <h3 class="mark">
+              <p>
+                <%= f.select :dan_3p_proper, User.dan_3p_propers_i18n.keys.map { |k| [User.dan_3p_propers_i18n[k], k]} %>
+              </p>
+            </h3>
+          </div>
+        </div>
+        <br><br>
+        <% end %>
+        <h4><small>Game record</small></h4>
+        <hr>
+        <h2>麻雀ゲーム実績</h2>
+        <% if @user.game_records.blank? %>
+        <h4><em>麻雀ゲーム実績が登録されていません</em></h4>
+        <% end %>
+        <div class="col-sm-12">
+          <p>
+            <% @user.game_records.each do|game_record| %>
+            <div class="row" style="margin: 0px;">
+              _________________________________
+              <div class="row">
+                <label>Mahjong game type:</label>
+                <%= game_record.game_type_i18n %>
+              </div>
+              <div class="row">
+                <label>Game:</label>
+                <%= game_record.game_name_i18n %>
+              </div>
+              <div class="row">
+                <label>Handle name for game :</label>
+                <%= game_record.handle_name %>
+              </div>
+              <div class="row">
+                <label>Game strength: </label>
+                <%= game_record.ability_i18n %>
+              </div>
+            </div>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

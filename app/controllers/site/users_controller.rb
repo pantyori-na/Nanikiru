@@ -14,9 +14,25 @@ class Site::UsersController < Site::Base
     @user.update(user_params)
 		redirect_to user_path(@user.id)
 	end
+
 	def leave
 	end
 	def destroy
+	end
+
+	def following_index
+		@user = User.find(params[:user_id])
+	end
+
+	def follow_nanikiru
+		@user = User.find(params[:user_id])
+		# userがfollowしているユーザーの投稿したimages
+		@follow_post_images = @user.follow_images
+		@post_images = Kaminari.paginate_array(@follow_post_images).page(params[:page]).per(12)
+	end
+
+	def follower_index
+		@user = User.find(params[:user_id])
 	end
 private
 def user_params

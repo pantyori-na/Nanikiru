@@ -1,69 +1,125 @@
-<p id="notice"><%= notice %></p>
-<div class="profile-container">
-  <div class="container">
-    <div class="row">
-      <div class="row col-lg-4">
-        <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
-        <div>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-lg-3  col-sm-12 sidenav">
+      <div class="col-lg-12 col-sm-12">
+        <h1>Name:<%= @user.name %></h1>
+        <!-- current-user編集 -->
+        <span class="row">
+          <% if @user.id == current_user.id %>
+          <p>
+            <%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-left"%>
+          </p>
+          <% end %>
+        </span>
+      </div>
+      <div class="col-lg-12 col-sm-3">
+        <div class="circle">
+          <%= attachment_image_tag @user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+        </div>
+      </div>
+      <div class="col-lg-12 col-sm-6 col-lg-offset-0 col-sm-offset-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><%= link_to @user.name+"が作成したNanikiru", user_created_path(@user) %></li>
+          <li><%= link_to @user.name+"がお気に入りに追加したNanikiru",user_fav_nanikiru_path(@user) %></li>
+          <li><%= link_to @user.name+"がfollowしている", user_following_path(@user) %></li>
+          <li><%= link_to @user.name+"がfollowされている", user_follower_path(@user) %></li>
+        </ul><br>
+      </div>
+      <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#report">
+        通報する
+      </button>
+      <div id="report" class="collapse">
+        <div class="row report">
           <!-- 通報機能 -->
           <%= form_for [@user, @report] do |f| %>
-          <label for="">Report type</label>
-          <%= f.select :report_type, Report.report_types_i18n.keys.map { |k| [Report.report_types_i18n[k], k]} %>
-          <%= f.text_field :comment, placeholder: "コメントをここに" %>
-          <%= f.submit "通報する",data: { confirm: 'このユーザーを通報しますか？' }, class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+          <div class="col-lg-6 col-sm-12">
+            <label for="">Report type</label>
+          </div>
+          <div class="col-lg-6 col-sm-12" style="padding: 10px%;"></div>
+          <%= f.select :report_type, Report.report_types_i18n.keys.map { |k|[Report.report_types_i18n[k], k]} %>
+          <%= f.text_field :comment,placeholder: "コメントをここに" %>
+          <span>
+            <%= f.submit "通報する",data: {confirm: 'このユーザーを通報しますか？' }, class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+          </span>
+          <% end %>
         </div>
       </div>
-      <% end %>
-      <div class="row col-lg-8">
-        <div class="row">
-          <label for="">User name</label>
-          <h3 class="profile-name"><%= @user.name %></h3>
+    </div>
+
+    <div class="col-lg-9 col-sm-12">
+      <div class="row">
+        <h4><small><%= @user.name %>の詳細ページ</small></h4>
+        <hr>
+        <h2 class="col-lg-12"><%= @user.name %></h2>
+        <!-- follow機能 -->
+        <div class="col-lg-12 col-sm-12" style="padding: 0px;">
+          <div class="col-lg-3 col-sm-12">
+            <%= render 'site/relationships/follow_button', user: @user %>
+          </div>
         </div>
-        <div class="row">
-          <label for="">Introduction</label>
-          <%= @user.introduction %>
+        <br>
+        <h5>
+          <span class="glyphicon glyphicon-time"></span>
+          <% if @user.post_images.present?  %>
+          最後の何切る投稿日:<%= @user.post_images.last.created_at.time.strftime("%Y年%-m月%-d日 %T") %>
+          <% end %>
+        </h5>
+        <h4><small>自己紹介</small></h4>
+        <hr>
+        <h2>Introduction</h2>
+        <p>
+          <h3><%= @user.introduction %></h3>
+        </p>
+        <br><br>
+
+        <h4><small>現在の天鳳段位</small></h4>
+        <hr>
+        <h2>Current ability</h2>
+        <div class="col-lg-6 col-sm-12">
+          <div class="row">
+            <h2>現在の４人麻雀実力[天鳳相当]</h2>
+            <h3 class="mark"><strong><%= @user.dan_4p_proper_i18n %></strong></h3>
+          </div>
         </div>
-        <div class="row">
-          <label>現在の４人麻雀実力[天鳳相当]</label>
-          <%= @user.dan_4p_proper_i18n %>
+        <div class="col-lg-6 col-sm-12">
+          <div class="row">
+            <h2>現在の３人麻雀実力[天鳳相当]</h2>
+            <h3 class="mark"><strong><%= @user.dan_3p_proper_i18n %></strong></h3>
+          </div>
         </div>
-        <div class="row">
-          <label>現在の３人麻雀実力[天鳳相当]</label>
-          <%= @user.dan_3p_proper_i18n %>
+        <br><br>
+        <h4><small>Game record</small></h4>
+        <hr>
+        <h2>麻雀ゲーム実績</h2>
+        <% if @user.game_records.blank? %>
+        <h4><em>麻雀ゲーム実績が登録されていません</em></h4>
+        <% end %>
+        <div class="col-sm-12">
+          <p>
+            <% @user.game_records.each do|game_record| %>
+            <div class="row" style="margin: 0px;">
+              _________________________________
+              <div class="row">
+                <label>Mahjong game type:</label>
+                <%= game_record.game_type_i18n %>
+              </div>
+              <div class="row">
+                <label>Game:</label>
+                <%= game_record.game_name_i18n %>
+              </div>
+              <div class="row">
+                <label>Handle name for game :</label>
+                <%= game_record.handle_name %>
+              </div>
+              <div class="row">
+                <label>Game strength: </label>
+                <%= game_record.ability_i18n %>
+              </div>
+            </div>
+            <% end %>
+          </p>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-
-<div class="container">
-  <h2>GAME RECORD</h2>
-  <%= @user.game_records.each do|game_record| %>
-  <div class="row">
-    _________________________________
-    <div class="row">
-      <label>Mahjong game type:</label>
-      <%= game_record.game_type_i18n %>
-    </div>
-    <div class="row">
-      <label>Game:</label>
-      <%= game_record.game_name_i18n %>
-    </div>
-    <div class="row">
-      <label>Handle name for game :</label>
-      <%= game_record.handle_name %>
-    </div>
-    <div class="row">
-      <label>Game strength: </label>
-      <%= game_record.ability_i18n %>
-    </div>
-  </div>
-  <% end %>
-</div>
-
-<div class="container">
-  <% if @user.id == current_user.id %>
-  <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-left" %></p>
-  <% end %>
 </div>

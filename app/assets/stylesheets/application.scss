@@ -15,3 +15,582 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+//Setup
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+@mixin stagger-anim-delay($i, $initial-delay, $stagger-delay) {
+  @while $i>0 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: $initial-delay + $stagger-delay * $i;
+    }
+
+    $i: $i - 1;
+  }
+}
+
+body {
+  margin-top: none;
+  font-family: "Open Sans", sans-serif;
+  color: #282828;
+  font-family: 'Hiragino Kaku Gothic Pro',
+    'ヒラギノ角ゴ Pro W3',
+    'メイリオ',
+    Meiryo,
+    'ＭＳ Ｐゴシック',
+    sans-serif
+}
+
+.skills {
+  width: 80%;
+  max-width: 960px;
+  height: 780px;
+  margin: auto;
+
+  position: relative;
+}
+
+.lines {
+  height: 100%;
+  position: relative;
+}
+
+.line {
+  height: inherit;
+  width: 2px;
+
+  position: absolute;
+
+  background: rgba(#eee, 0.6);
+
+  &.l--0 {
+    left: 0;
+  }
+
+  &.l--25 {
+    left: 25%;
+  }
+
+  &.l--50 {
+    left: 50%;
+  }
+
+  &.l--75 {
+    left: 75%;
+  }
+
+  &.l--100 {
+    left: calc(100% - 1px);
+  }
+}
+
+.line__label {
+  display: block;
+  width: 100px;
+  text-align: center;
+
+  position: absolute;
+  bottom: -20px;
+  right: -50px;
+
+  &.title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.charts {
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+  z-index: none;
+}
+
+.chart {
+  margin: 30px 0 0;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.chart__title {
+  display: block;
+  margin: 0 0 10px;
+
+  font-weight: bold;
+
+  opacity: 0;
+
+  animation: 1s anim-lightspeed-in ease forwards;
+
+  .chart--dev & {}
+
+  .chart--prod & {
+    animation-delay: 3.3s;
+  }
+
+  .chart--design & {
+    animation-delay: 4.5s;
+  }
+}
+
+.chart--horiz {
+  overflow: hidden;
+}
+
+.chart__bar {
+  $border-rad: 8px;
+  height: 30px;
+  margin-bottom: 10px;
+
+  background: linear-gradient(to left, #042f94, #06299c);
+  border-top-right-radius: $border-rad;
+  border-bottom-right-radius: $border-rad;
+  opacity: 0;
+
+  animation: 1s anim-lightspeed-in ease forwards;
+
+  .chart--dev & {
+    @include stagger-anim-delay(11, 0.5s, 0.2s);
+  }
+
+  .chart--prod & {
+    @include stagger-anim-delay(2, 3.8s, 0.2s);
+  }
+
+  .chart--design & {
+    @include stagger-anim-delay(3, 5s, 0.2s);
+  }
+}
+
+.chart__label {
+  padding-left: 10px;
+  line-height: 30px;
+  color: white;
+}
+
+//Keyframes
+@keyframes anim-lightspeed-in {
+  0% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+
+.glyphicon {
+  margin-right: 1px;
+}
+
+.dropdown-menu {
+  background-color: rgb(39, 38, 38);
+
+  >li>a {
+    color: rgb(189, 187, 187);
+    cursor: pointer;
+  }
+
+}
+
+.container-fluid {
+  margin: 0px;
+  padding: 0px
+}
+
+.tab-content {
+  .container-fluid {
+    margin: 0px 0px 14px 0px;
+  }
+}
+
+.fixed {
+  position: fixed;
+  bottom: 0;
+  // right: 0;
+  text-align: center;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  height: 25px;
+
+  span {
+    font-size: 15px;
+    margin: 0px, 5px;
+
+    a {
+      color: blanchedalmond;
+      margin: auto 35px;
+    }
+  }
+}
+
+.pagination {
+  clear: left;
+  margin: 5px 0;
+  color: #eee;
+
+  a:visited {
+    color: #817d7d;
+  }
+
+  a {
+    color: #858686;
+  }
+}
+
+a:visited {
+  color: #3a3838;
+}
+
+a {
+  color: #252525;
+}
+
+a:link {
+  color: rgb(54, 54, 54);
+}
+
+.nav-tabs {
+  border-bottom: 0px;
+}
+
+.center {
+  width: 60%;
+  margin: 0 35%;
+}
+
+.nav-back {
+  background-color: rgb(121, 120, 120);
+  border-bottom: 1px solid rgb(85, 84, 84);
+}
+
+.padding-none {
+  padding: 0px;
+}
+
+// card
+
+.index-content a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.index-content {
+  margin-bottom: 10px;
+  padding: 20px 0px;
+  background-color: floralwhite;
+}
+
+.content-back {
+  background-color: floralwhite;
+}
+
+.index-content .row {
+  margin-top: 20px;
+}
+
+.index-content a {
+  color: black;
+}
+
+.index-content .card {
+  background-color: #FFFFFF;
+  padding: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.index-content .card img {
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.index-content .card h4 {
+  margin: 20px;
+}
+
+.index-content .card p {
+  margin: 20px;
+  opacity: 0.65;
+}
+
+// プロフィール画像埋め込み用
+.index-content .card .profile img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-position: right top;
+}
+
+// 追従
+.nav-sticky {
+  position: sticky;
+  top: -13px;
+  z-index: 30;
+}
+
+.sticky {
+  position: sticky;
+  top: 30px;
+  z-index: 20;
+}
+
+.container-fluid {
+  .row.content {
+    .col-lg-3 {
+      .responsive {
+        position: sticky;
+        top: 30px;
+        z-index: 20;
+      }
+    }
+
+    .col-sm-12 {
+      .responsive {
+        position: relative;
+        top: 0px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .row.content {
+    .col-lg-3 {
+      position: sticky;
+      top: 30px;
+      z-index: 20;
+    }
+  }
+}
+
+
+// user show====
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.circle {
+  img {
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.report {
+  margin: 0px;
+}
+
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+
+  .row.content {
+    height: auto;
+  }
+
+  .col-sm-12 {
+    position: static;
+  }
+}
+
+// usershowここまで
+
+
+
+.back-prof {
+  background-color: #cacaca;
+  z-index: 20;
+  margin: 30px 30px;
+  padding: 10px;
+  border: medium solid #610c61;
+}
+
+.back-prof:hover {
+  background-color: #8892cc;
+}
+
+.back-title {
+  background-color: #cacaca;
+  z-index: 20;
+  margin: 30px 30px;
+  padding: 10px;
+  border: medium solid #5d035d;
+}
+
+
+.back-all {
+  background-color: rgb(89, 89, 95);
+  height: 100vh;
+}
+
+.back {
+  background-color: rgb(89, 89, 95);
+  overflow: auto;
+
+  h1 {
+    margin-left: 5%;
+  }
+}
+
+.post_select_back {
+  background-color: rgb(240, 196, 167);
+}
+
+.post_back>label {
+  background-color: rgb(240, 196, 167);
+  display: block;
+  width: auto;
+  height: auto;
+  border: medium solid #610c61;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.post_back>input {
+  font-size: 30px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.radio-back>label {
+  background-color: rgb(230, 194, 148);
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: medium solid #610c61;
+
+  >input {
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    position: absolute;
+    left: 57%;
+    line-height: normal;
+    bottom: 36%;
+  }
+}
+
+.selections.links {
+  >a {
+    font-size: 30px;
+
+    >link {
+      color: white;
+    }
+  }
+
+  a:link {
+    color: white;
+  }
+}
+
+.nested-fields>input,
+button,
+select {
+  font-family: inherit;
+  font-size: 25px;
+  line-height: inherit;
+  margin-bottom: 20px;
+}
+
+.nested-fields {
+  .btn {
+    margin-bottom: 20px;
+  }
+
+  a:link {
+    color: white;
+  }
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mg-none {
+  margin-top: -30px;
+}
+
+.select-back {
+  background-color: rgb(236, 203, 159);
+  width: 100%;
+  height: 10%;
+  border: medium solid #610c61;
+  margin: auto;
+  display: flex;
+}
+
+.new_answer {
+  display: inline;
+  margin: auto;
+}
+
+.back-none {
+  background-color: transparent;
+}
+
+.wel {
+  margin-top: 20px;
+}
+
+.text-size {
+  font-size: large;
+  font-weight: bold;
+}
+
+.container-fluid {
+  .row {
+    .col-lg-6 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.text-fav {
+  font-size: large;
+  color: #282828;
+}
+
+.modal-footer {
+  border-top: 0px !important;
+}
+
+.btn-danger {
+  color: #fff !important;
+  text-align: center;
+}
+
+.btn-info {
+  color: #fff !important;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  text-align: center;
+}

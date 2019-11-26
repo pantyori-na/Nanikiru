@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><% @user.name %>Ansewrs</h1>
+  <% @answers.each do |answer| %>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= attachment_image_tag answer.selection.post_image, :image, :fill, 300, 300, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
+    </div>
+    <div class="col-lg-6">
+      <%= answer.selection.name_i18n %>
+    </div>
+  </div>
+  <% end %>
+</div>

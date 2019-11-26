@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_101343) do
+ActiveRecord::Schema.define(version: 2019_11_17_144234) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "selection_id"
-    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +41,9 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
     t.integer "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_image_id"], name: "index_favorites_on_post_image_id"
+    t.index ["user_id", "post_image_id"], name: "index_favorites_on_user_id_and_post_image_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "game_records", force: :cascade do |t|
@@ -54,6 +56,13 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "post_comments", force: :cascade do |t|
+    t.integer "answer_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "post_images", force: :cascade do |t|
     t.integer "user_id"
     t.integer "image_type", limit: 1, default: 0, null: false
@@ -61,6 +70,16 @@ ActiveRecord::Schema.define(version: 2019_11_06_101343) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "follow_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "reports", force: :cascade do |t|

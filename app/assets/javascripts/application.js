@@ -17,3 +17,20 @@
 //= require cocoon
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function () {
+  $('[data-toggle="popover"]').popover();
+});
+
+$(function () {
+  $('.linkInThePage').click(function () {
+    var hrefValue = $(this).attr('href');
+    $(hrefValue).animatescroll({
+      padding: 112
+    });
+  });
+});
+
+$(document).ready(function () {
+  $('[data-toggle="popover"]').popover();
+});
