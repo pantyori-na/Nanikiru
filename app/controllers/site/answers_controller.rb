@@ -6,6 +6,7 @@ class Site::AnswersController < Site::Base
   end
 
 
+
   def show
     @answer = Answer.find(params[:id])
     @post_image = PostImage.find(params[:post_image_id])
