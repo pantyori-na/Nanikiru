@@ -3,14 +3,6 @@
     <div class="col-lg-3  col-sm-12 sidenav">
       <div class="col-lg-12 col-sm-12">
         <h1>Name:<%= @user.name %></h1>
-        <!-- current-user編集 -->
-        <span class="row">
-          <% if @user.id == current_user.id %>
-          <p>
-            <%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-left"%>
-          </p>
-          <% end %>
-        </span>
       </div>
       <div class="col-lg-12 col-sm-3">
         <div class="circle">
@@ -25,6 +17,8 @@
           <li><%= link_to @user.name+"がfollowされている", user_follower_path(@user) %></li>
         </ul><br>
       </div>
+      <!-- current-userには通報機能いらない -->
+      <% if @user.id != current_user.id %>
       <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#report">
         通報する
       </button>
@@ -37,13 +31,22 @@
           </div>
           <div class="col-lg-6 col-sm-12" style="padding: 10px%;"></div>
           <%= f.select :report_type, Report.report_types_i18n.keys.map { |k|[Report.report_types_i18n[k], k]} %>
-          <%= f.text_field :comment,placeholder: "コメントをここに" %>
+          <%= f.text_area :comment,placeholder: "コメントをここに" %>
           <span>
             <%= f.submit "通報する",data: {confirm: 'このユーザーを通報しますか？' }, class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
           </span>
           <% end %>
         </div>
       </div>
+      <% end %>
+      <!-- current-user編集 -->
+      <span class="row">
+        <% if @user.id == current_user.id %>
+        <p>
+          <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-sm btn-primary"%>
+        </p>
+        <% end %>
+      </span>
     </div>
 
     <div class="col-lg-9 col-sm-12">
@@ -51,6 +54,14 @@
         <h4><small><%= @user.name %>の詳細ページ</small></h4>
         <hr>
         <h2 class="col-lg-12"><%= @user.name %></h2>
+        <!-- current-user編集 -->
+        <span class="row">
+          <% if @user.id == current_user.id %>
+          <p>
+            <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-xs btn-primary"%>
+          </p>
+          <% end %>
+        </span>
         <!-- follow機能 -->
         <div class="col-lg-12 col-sm-12" style="padding: 0px;">
           <div class="col-lg-3 col-sm-12">
@@ -90,7 +101,19 @@
         <br><br>
         <h4><small>Game record</small></h4>
         <hr>
-        <h2>麻雀ゲーム実績</h2>
+        <% if @user.id == current_user.id  %>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2>麻雀ゲーム実績</h2>
+          </div>
+          <div class="col-lg-8">
+            <div class="col-lg-4 pull-left">
+              <%= link_to "麻雀成績を追加する", new_game_record_path, class:"btn-success btn-lg btn-block btn-base-1 mt-20"%></span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
         <% if @user.game_records.blank? %>
         <h4><em>麻雀ゲーム実績が登録されていません</em></h4>
         <% end %>

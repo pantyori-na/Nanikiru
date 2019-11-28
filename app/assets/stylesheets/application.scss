@@ -604,6 +604,12 @@ a:link {
   filter: blur(2px);
 }
 
+
+// imageshow
+.chart-modal {
+  float: left !important;
+}
+
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 767px) {
   .sidenav {
@@ -669,6 +675,20 @@ a:link {
     top: -13px;
     z-index: 30;
   }
+
+  .chart-modal {
+    float: right !important;
+  }
+
+  .chart-margin {
+
+    ul,
+    ol {
+      margin: 0 -10px 0 -40px;
+    }
+  }
+
+
 }
 
 .welcome_footer {

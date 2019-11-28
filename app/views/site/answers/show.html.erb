@@ -51,97 +51,99 @@
               <span class="chart__title">
                 <h2>Answers</h2>
               </span>
-              <ul class="chart--horiz">
-                <!-- 重複したselectionを表示しない -->
-                <% selection_name_array = [] %>
-                <% @selections.each do |selection| %>
-                <% if selection.name != "select" && selection_name_array.exclude?(selection.name) %>
-                <% selection_name_array.push(selection.name) %>
-                <!-- 重複したselectionを表示しない -->
+              <div class="chart-margin">
+                <ul class="chart--horiz">
+                  <!-- 重複したselectionを表示しない -->
+                  <% selection_name_array = [] %>
+                  <% @selections.each do |selection| %>
+                  <% if selection.name != "select" && selection_name_array.exclude?(selection.name) %>
+                  <% selection_name_array.push(selection.name) %>
+                  <!-- 重複したselectionを表示しない -->
 
-                <!-- answers のパラメータ作成 -->
-                <% answers_count = 0 %>
-                <% @selections.each do |selection| %>
-                <% answers_count += selection.answer_count %>
-                <% end %>
-                <div class="row col-lg-9 col-sm-9">
-                  <li class="chart__bar"
-                    style="width: <%= ((selection.answer_count.to_f/answers_count.to_f)*100).to_f.round.to_s %>%; min-width: 2em;">
-                    <span class="chart__label">
-                      <%= selection.name_i18n %>
-                    </span>
-                  </li>
-                </div>
-                <div class="row col-lg-3 col-sm-3 text-left pull-left">
-                  <!-- モーダルボタン -->
-                  <!-- selectionに対してボタンは１つ -->
-                  <% n=0 %>
-                  <!-- nが１以上になったら処理しない -->
-                  <% selection.answers.each do |answer| %>
-                  <% if n<1 %>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    回答数: <%= selection.answer_count %>
-                  </button>
-                  <!-- ==render モーダル内容== -->
-                  <%= render :partial => "modal",locals: {answer: answer} %>
+                  <!-- answers のパラメータ作成 -->
+                  <% answers_count = 0 %>
+                  <% @selections.each do |selection| %>
+                  <% answers_count += selection.answer_count %>
                   <% end %>
-                  <% n += 1 %>
+                  <div class="row col-lg-9 col-sm-9">
+                    <li class="chart__bar"
+                      style="width: <%= ((selection.answer_count.to_f/answers_count.to_f)*100).to_f.round.to_s %>%; min-width: 2em;">
+                      <span class="chart__label">
+                        <%= selection.name_i18n %>
+                      </span>
+                    </li>
+                  </div>
+                  <div class="row col-lg-3 col-sm-3 chart-modal">
+                    <!-- モーダルボタン -->
+                    <!-- selectionに対してボタンは１つ -->
+                    <% n=0 %>
+                    <!-- nが１以上になったら処理しない -->
+                    <% selection.answers.each do |answer| %>
+                    <% if n<1 %>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                      回答数: <%= selection.answer_count %>
+                    </button>
+                    <!-- ==render モーダル内容== -->
+                    <%= render :partial => "modal",locals: {answer: answer} %>
+                    <% end %>
+                    <% n += 1 %>
+                    <% end %>
+                  </div>
+
                   <% end %>
-                </div>
-                <% end %>
-                <% end %>
-              </ul>
+                  <% end %>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        <hr>
-        <!-- comment入力 -->
-        <div class="well col-lg-12">
-          <div>
-            <label for="l1">
-              <span>
-                <h3><em><%= @answer.user.name %> answer</em></h3>
-              </span>
-              <span class="btn btn-success text-size"><%= @answer.selection.name_i18n %></span>
-              <span>**意見を投稿する</span>
-            </label>
-          </div>
-          <div>
-            <%= form_for @post_comment, url: post_comments_path do |form| %>
-            <%= form.text_area :comment,id:"l1",placeholder:"意見を入力" %>
-            <%= hidden_field_tag :answer_id, @answer.id %>
-            <%= form.submit %>
-            <% end %>
-          </div>
+      </div>
+      <hr>
+      <!-- comment入力 -->
+      <div class="well col-lg-12">
+        <div>
+          <label for="l1">
+            <span>
+              <h3><em><%= @answer.user.name %> answer</em></h3>
+            </span>
+            <span class="btn btn-success text-size"><%= @answer.selection.name_i18n %></span>
+            <span>**意見を投稿する</span>
+          </label>
+        </div>
+        <div>
+          <%= form_for @post_comment, url: post_comments_path do |form| %>
+          <%= form.text_area :comment,id:"l1",placeholder:"意見を入力" %>
+          <%= hidden_field_tag :answer_id, @answer.id %>
+          <%= form.submit %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 
 
-  <div class="col-lg-12">
-    <div class="row">
-      <table class="table table-stripe">
-        <% @selections.each do |selection| %>
-        <% selection.answers.each do |answer| %>
-        <% answer.post_comments.each do |post_comment| %>
-        <tr>
-          <th class="info" width="20%">
-            <%= attachment_image_tag @post_image.user, :profile_image,class: "img-circle profile-thumb", fallback: "no_image.jpg", size:'50x50' %>
-            <span><%= answer.user.name %>：<%= answer.selection.name_i18n %></span>
-          </th>
-          <td>
-            <small>Comment</small>
-            <p><%= post_comment.comment %></p>
-          </td>
-        </tr>
-        <% end %>
-        <% end %>
-        <% end %>
-      </table>
-      <% if @post_image.user_id == current_user.id %>
-      <%= link_to 'Edit', edit_post_image_path(@post_image.id),class:"btn btn-primary btn-sm" %>
+<div class="col-lg-12">
+  <div class="row">
+    <table class="table table-stripe">
+      <% @comments.each do |comment| %>
+      <tr>
+        <th class="info" width="20%">
+          <%= attachment_image_tag comment.answer.user, :profile_image,class: "img-circle profile-thumb", fallback: "no_image.jpg", size:'50x50' %><br>
+          <span><%= comment.answer.user.name %>：<%= comment.answer.selection.name_i18n %></span>
+        </th>
+        <td>
+          <small>Comment</small>
+          <p><%= comment.comment %></p>
+          <small
+            style="position:relative; margin-right:0px;">投稿日時：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></small>
+        </td>
+      </tr>
       <% end %>
-    </div>
+    </table>
+    <% if @post_image.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_post_image_path(@post_image.id),class:"btn btn-primary btn-sm" %>
+    <% end %>
   </div>
 </div>

@@ -57,7 +57,7 @@ class User < ApplicationRecord
         end
       end
     end
-    return PostImage.find(follow_post_images)
+    return PostImage.find(follow_post_images.sort)
   end
 
   # user has Answers の中のselection_idの重複をなくす

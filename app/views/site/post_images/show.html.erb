@@ -78,9 +78,9 @@
                   <div class="col-sm-12">
                     <div class="select-back">
                       <% selection_name_array = [] %>
-                      <%# binding.pry %>
                       <% if @post_image.selections.blank? %>
-                      <h5>選択肢がありません!!新しく選択肢を追加して下さい</h5>
+                      <h5><label for="select">選択肢がありません!!新しく選択肢を追加して下さい</label>
+                      </h5>
                       <% end %>
                       <% @post_image.selections.each do |selection| %>
                       <!-- 選択肢に初期設定のselectを表示させないかつ選択肢が重複していない -->
@@ -96,8 +96,12 @@
                   </div>
                   <%= form_with model: @selection, local: true do |form| %>
                   <%= form.hidden_field :post_image_id, :value => @post_image.id %>
-                  <%= form.select :name, Selection.names_i18n.keys.map { |k| [Selection.names_i18n[k], k]} %>
-                  <%= form.submit "新しい選択肢を追加する",class:"btn-sm btn-info" %>
+                  <div class="col-lg-7 col-sm-12">
+                    <%= form.select :name, Selection.names_i18n.keys.map { |k| [Selection.names_i18n[k], k]},{},{class:"form-control"} %>
+                  </div>
+                  <div class="col-lg-5 col-sm-12">
+                    <%= form.submit "新しい選択肢を追加する",class:"btn-sm btn-info",style:"margin-bottom:30px" %>
+                  </div>
                   <% end %>
                   <% if @post_image.user_id == current_user.id %>
                   <%= link_to 'Edit', edit_post_image_path(@post_image),class:"btn btn-primary btn-sm" %>
