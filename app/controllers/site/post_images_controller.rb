@@ -27,6 +27,8 @@ class Site::PostImagesController < Site::Base
     # 重複した選択肢を削除する
     current_user.same_answer_destroy
     @post_image = PostImage.find(params[:id])
+    # selectの削除
+    @post_image.selections.where(name: "select").destroy_all
     # 回答済みのユーザーを回答済み画面にリダイレクト
     if @post_image.answered?(current_user)
       answered_id = @post_image.answered_id(current_user)
@@ -59,6 +61,7 @@ class Site::PostImagesController < Site::Base
         format.html { render :new }
       end
     end
+    # 選択肢の重複の削除
     @post_image.same_selection_destroy
   end
   # user_created_nanikiruページ
@@ -75,9 +78,6 @@ class Site::PostImagesController < Site::Base
     @user.same_answer_destroy
   end
 
-
-  # PATCH/PUT /post_images/1
-  # PATCH/PUT /post_images/1.json
   def update
     respond_to do |format|
       if @post_image.update(post_image_params)
@@ -90,8 +90,6 @@ class Site::PostImagesController < Site::Base
     end
   end
 
-  # DELETE /post_images/1
-  # DELETE /post_images/1.json
   def destroy
     @post_image.destroy
     respond_to do |format|
@@ -100,13 +98,14 @@ class Site::PostImagesController < Site::Base
     end
   end
 
+  def welcome
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_post_image
       @post_image = PostImage.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def post_image_params
       params.require(:post_image).permit(:user_id, :image_type, :image, :comment, selections_attributes: [:id, :name, :_destroy])
     end

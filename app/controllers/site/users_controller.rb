@@ -34,6 +34,8 @@ class Site::UsersController < Site::Base
 	def follower_index
 		@user = User.find(params[:user_id])
 	end
+	def welcome
+	end
 private
 def user_params
     params.require(:user).permit(:name, :profile_image, :dan_4p_proper, :dan_3p_proper, :introduction)

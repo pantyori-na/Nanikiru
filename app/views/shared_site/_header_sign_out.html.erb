@@ -1,20 +1,30 @@
-<header>
-	<div class="container">
-		<div class="row">
-			<nav class="nav navbar-nav navbar-left logo">
-				<%= link_to "Home", root_path %>
-			</nav>
-			<nav class="header-icon">
-				<%= link_to root_path do %>
-				<i class="fas fa-home fa-3x"></i>
-				<br>ホーム<% end %>
-				<%= link_to new_user_registration_path do %>
-				<i class="fas fa-cogs fa-3x"></i>
-				<br>ユーザー登録 <% end %>
-				<%= link_to new_user_session_path do %>
-				<i class="fas fa-shoe-prints fa-3x"></i>
-				<br>ログイン<% end %>
-			</nav>
+<nav class="navbar navbar-inverse nav-sticky">
+	<div class="nav_rp">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<%= link_to "Nanikiru?", root_path ,class:"navbar-brand" %>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<!-- sign_up -->
+				<li>
+					<%= link_to new_user_registration_path do %>
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+					新規登録
+					<% end %>
+				</li>
+				<!-- sign_in -->
+				<li>
+					<%= link_to new_user_session_path do %>
+					<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+					ログイン
+					<% end %>
+				</li>
+			</ul>
 		</div>
 	</div>
-</header>
+</nav>
