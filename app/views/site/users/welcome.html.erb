@@ -10,7 +10,9 @@
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <!-- 画像 -->
-      <%= image_tag 'photo1.jpg' %>
+      <div data-toggle="modal" data-target="#sampleModal" class="modal_welcome">
+        <%= image_tag 'photo1.jpg' %>
+      </div>
       <div class="carousel-caption">
         <h2>
           Post question
@@ -23,7 +25,9 @@
 
     <div class="item">
       <!-- 画像 -->
-      <%= image_tag 'photo2.jpg' %>
+      <div data-toggle="modal" data-target="#sampleModal" class="modal_welcome">
+        <%= image_tag 'photo2.jpg' %>
+      </div>
       <div class="carousel-caption">
         <h2>
           Answer questions
@@ -36,7 +40,9 @@
 
     <div class="item">
       <!-- 画像 -->
-      <%= image_tag 'photo3.jpg' %>
+      <div data-toggle="modal" data-target="#sampleModal" class="modal_welcome">
+        <%= image_tag 'photo3.jpg' %>
+      </div>
       <div class="carousel-caption">
         <h2>
           Analyze the results
@@ -68,4 +74,51 @@
   <span>
     <h6><small>NaniKiru Made By Nakamura Keisuke</small></h6>
   </span>
+</div>
+
+
+<!-- モーダル・ダイアログ -->
+<div class="modal fade" id="sampleModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+        <h4 class="modal-title">ログイン画面</h4>
+      </div>
+      <div class="modal-body">
+        <ul style="list-style: none;">
+          <!-- 一覧画面 -->
+          <li>
+            <h2>
+              <%= link_to "Nanikiru一覧画面", root_path %>
+            </h2>
+
+          </li>
+          <!-- sign_up -->
+          <li>
+            <h2>
+              <%= link_to new_user_registration_path do %>
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              新規登録
+              <% end %>
+            </h2>
+
+          </li>
+          <!-- sign_in -->
+          <li>
+            <h2>
+              <%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+              ログイン
+              <% end %>
+            </h2>
+
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
 </div>
