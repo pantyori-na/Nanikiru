@@ -6,6 +6,8 @@ class User < ApplicationRecord
   # timeouttable追加__セッションの延長
   has_many :reports, dependent: :destroy
   has_many :game_records, dependent: :destroy
+  # sign_up時に複数登録したい
+  #accepts_nested_attributes_for :game_records
   has_many :answers, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :post_images, dependent: :destroy
