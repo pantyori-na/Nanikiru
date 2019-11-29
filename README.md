@@ -1,24 +1,51 @@
-# README
+-------Nanikiru------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリは複数の選択肢が存在する問題に対して、最善の解決策を模索するためのアプリです。
 
-Things you may want to cover:
+主に麻雀における、「何を切るか？」に対して焦点を当てています。
 
-* Ruby version
+------Features------
+SNSを見ていると、選択肢が存在する問題というのはよく白熱しているように感じます。
 
-* System dependencies
+白熱した議論には必ず「専門家の意見」や「熱中的なファンの意見」が集まりやすいです。
 
-* Configuration
+私は彼らにとって、より快適なアプリがあれば良いなと思いこのアプリを作成しました。
 
-* Database creation
+今回意識した主題は以下の通りです。
+１：焦点を当てたのは"麻雀"
+２：専門家、熱中的なファンが意見を交換しやすくすること
+３：彼らが問題を気持ちよく、自然に発見できること
 
-* Database initialization
 
-* How to run the test suite
+-----Requirement-----
+"hoge"を動かすのに必要なライブラリなどを列挙する
 
-* Services (job queues, cache servers, search engines, etc.)
+ruby 2.5.7p206
+Rails 5.2.3
+Bundler version 2.0.2
 
-* Deployment instructions
+-----Usage-----
+質問投者
+1_新規作成をクリックする
+2_問題となる画像を投稿して必要な情報を投稿する
 
-* ...
+回答者
+1_回答したい問題をクリックします
+2.1_質問者から提示された選択肢の中から回答を選択します。
+2.2_提示された選択肢の中に自分の思う回答がない場合は新しく選択肢を作って回答できます。
+3_他の人たちの回答を分析します。回答しているユーザーの実力も含めて分析します。
+4_あなたの意見を投稿してください。
+
+git clone https://github.com/pantyori-na/Nanikiru
+cd Nanikiru
+rails s
+
+
+-----Note-----
+未実装の機能があります。随時更新していく予定です。
+
+-----Author-----
+作成情報を列挙する
+
+作成者　中村　圭介
+E-mail　kousu.keinaka08@gmail.com
