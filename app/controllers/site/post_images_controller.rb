@@ -1,4 +1,5 @@
 class Site::PostImagesController < Site::Base
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_post_image, only: [:show, :edit, :update, :destroy]
   def index
     @post_images = PostImage.page(params[:page]).reverse_order.per(9)
@@ -96,9 +97,6 @@ class Site::PostImagesController < Site::Base
       format.html { redirect_to post_images_url, notice: 'Post image was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def welcome
   end
 
   private

@@ -1,4 +1,5 @@
 class Site::UsersController < Site::Base
+	skip_before_action :authenticate_user!, only: [:welcome]
 	def	index
 		@users = User.all
 	end

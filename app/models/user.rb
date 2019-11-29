@@ -6,11 +6,11 @@ class User < ApplicationRecord
   # timeouttable追加__セッションの延長
   has_many :reports, dependent: :destroy
   has_many :game_records, dependent: :destroy
-  # sign_up時に複数登録したい
-  #accepts_nested_attributes_for :game_records
   has_many :answers, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :post_images, dependent: :destroy
+  validates :name, length: { in: 2..20 }
+  validates :introduction, length: { in: 2..200 }
   # お気に入り機能
   has_many :fav_post_images, through: :favorites, source: :post_image
   # follow機能

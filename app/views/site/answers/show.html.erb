@@ -112,9 +112,9 @@
         </div>
         <div>
           <%= form_for @post_comment, url: post_comments_path do |form| %>
-          <%= form.text_area :comment,id:"l1",placeholder:"意見を入力" %>
+          <%= form.text_area :comment,id:"l1",placeholder:"意見を入力",class:"form-control" %>
           <%= hidden_field_tag :answer_id, @answer.id %>
-          <%= form.submit %>
+          <%= form.submit "意見を投稿", class:"btn btn-primary btn-block btn-base-1 mt-20" %>
           <% end %>
         </div>
       </div>

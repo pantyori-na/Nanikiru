@@ -32,11 +32,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string :name
+      t.string :name, default: 'NoName'
       t.string :profile_image_id
       t.integer :dan_4p_proper,default: 0, null: false, limit: 1
       t.integer :dan_3p_proper,default: 0, null: false, limit: 1
-      t.text :introduction
+      t.text :introduction, default: 'よろしくお願いします'
       t.timestamps null: false
     end
 

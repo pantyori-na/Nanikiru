@@ -31,9 +31,8 @@ Rails.application.routes.draw do
       get 'follower', to: 'users#follower_index'
       get 'follow_nanikiru', to: 'users#follow_nanikiru'
     end
-    get 'welcome', to: 'users#welcome'
     resources :relationships, only: [:create, :destroy]
-    root to: 'post_images#index'
+    root to: 'users#welcome'
     get 'nanikiru_all', to: 'post_images#index_all'
     get 'nanikiru_4p', to: 'post_images#index_4p'
     get 'nanikiru_3p', to: 'post_images#index_3p'
