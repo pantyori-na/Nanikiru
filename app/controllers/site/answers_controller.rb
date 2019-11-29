@@ -12,6 +12,9 @@ class Site::AnswersController < Site::Base
     @post_image = PostImage.find(params[:post_image_id])
     @post_comment = PostComment.new
     @selections = @post_image.selections
+    # post_imagesに対するcommentsをidが古い順に抽出
+    comments = @answer.post_image_comments(@post_image)
+    @comments = Kaminari.paginate_array(comments).page(params[:page]).per(50)
   end
 
   def new

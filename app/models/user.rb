@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :answers, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :post_images, dependent: :destroy
+  validates :name, length: { in: 2..20 }
+  validates :introduction, length: { in: 2..200 }
   # お気に入り機能
   has_many :fav_post_images, through: :favorites, source: :post_image
   # follow機能
@@ -55,7 +57,7 @@ class User < ApplicationRecord
         end
       end
     end
-    return PostImage.find(follow_post_images)
+    return PostImage.find(follow_post_images.sort)
   end
 
   # user has Answers の中のselection_idの重複をなくす

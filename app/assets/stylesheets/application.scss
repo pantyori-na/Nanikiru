@@ -227,11 +227,11 @@ footer {
   text-align: center;
   width: 100%;
   background-color: rgb(0, 0, 0);
-  height: 25px;
+  height: auto;
 
   span {
-    font-size: 15px;
-    margin: 0px, 5px;
+    font-size: 20px;
+    margin: 5px, 0px;
 
     a {
       color: blanchedalmond;
@@ -405,21 +405,7 @@ a:link {
 
 
 
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-  .sidenav {
-    height: auto;
-    padding: 15px;
-  }
 
-  .row.content {
-    height: auto;
-  }
-
-  .col-sm-12 {
-    position: static;
-  }
-}
 
 // usershowここまで
 
@@ -511,14 +497,14 @@ a:link {
   }
 }
 
-.nested-fields>input,
-button,
-select {
-  font-family: inherit;
-  font-size: 25px;
-  line-height: inherit;
-  margin-bottom: 20px;
-}
+// .nested-fields>input,
+// button,
+// select {
+//   font-family: inherit;
+//   font-size: 25px;
+//   line-height: inherit;
+//   margin-bottom: 20px;
+// }
 
 .nested-fields {
   .btn {
@@ -592,5 +578,141 @@ select {
   color: #fff !important;
   background-color: #337ab7;
   border-color: #2e6da4;
+  text-align: center;
+}
+
+
+// home編集
+// .person {
+//   border: 10px solid transparent;
+//   margin-bottom: 25px;
+//   width: 80%;
+//   height: 80%;
+//   opacity: 0.7;
+// }
+
+// .person:hover {
+//   border-color: #f1f1f1;
+// }
+
+// welcome
+.carousel-inner .item img {
+  margin: 0 auto;
+  width: 1200px;
+  height: 700px;
+  // padding: 0 30%;
+  filter: blur(2px);
+}
+
+
+// imageshow
+.chart-modal {
+  float: left !important;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+
+  .row.content {
+    height: auto;
+  }
+
+  .col-sm-12 {
+    position: static;
+  }
+
+  .container-fluid {
+    padding: 10px 20px;
+  }
+
+  .container-flui.nav_rp {
+    padding: 5px 0px;
+  }
+
+  .nav-back.sticky {
+    top: 38px;
+
+    .center {
+      width: 100%;
+      margin: 0px auto;
+      padding-left: 30px;
+    }
+  }
+
+  .fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    height: auto;
+
+    .row {
+      .col-sm-6 {
+        width: 45%;
+        float: left;
+      }
+    }
+
+    span {
+      font-size: 20px;
+      margin: 0px -5px;
+    }
+  }
+
+  .container-fluid.top-fluid {
+    margin: -20px;
+    padding: 0px;
+  }
+
+  .nav-sticky {
+    position: sticky;
+    top: -13px;
+    z-index: 30;
+  }
+
+  .chart-modal {
+    float: right !important;
+  }
+
+  .chart-margin {
+
+    ul,
+    ol {
+      margin: 0 -10px 0 -40px;
+    }
+  }
+
+
+}
+
+.welcome_footer {
+  position: sticky;
+  display: block;
+  background-color: #f2f2f2;
+  padding: 25px;
+  text-align: center;
+
+  span {
+    font-family: verdana,
+      arial,
+      helvetica,
+      sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+
+    h6 {
+      position: absolute;
+      right: 0px;
+    }
+  }
+}
+
+.modal_welcome {
   text-align: center;
 }

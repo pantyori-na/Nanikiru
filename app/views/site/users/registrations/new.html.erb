@@ -1,34 +1,69 @@
-<h2>Sign up</h2>
+<div class="container-fluid">
+  <div class="col-lg-6 col-sm-12 col-lg-offset-3">
+    <h2>新規登録</h2>
+    <small><span class="glyphicon glyphicon-asterisk" aria-hidden="true" style="color: rgb(226, 175, 99);"></span><label
+        for="mail">必須項目</label><br><br>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-<div class="field">
-  <%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="form-group">
+        <small><span class="glyphicon glyphicon-asterisk" aria-hidden="true"
+            style="color: rgb(226, 175, 99);"></span></small>
+        <label for="mail">メールアドレス</label><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class:"form-control", placeholder:"メールアドレス",id:"mail" %>
+        <span class="fa fa-envelope form-control-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="form-group">
+        <small><span class="glyphicon glyphicon-asterisk" aria-hidden="true"
+            style="color: rgb(226, 175, 99);"></span></small>
+        <label for="pass">パスワード</label>
+        <% if @minimum_password_length %>
+        <em>(６文字以上)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" ,class:"form-control", placeholder:"パスワード",id:"pass" %>
+        <span class="fa fa-lock form-control-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="form-group">
+        <small><span class="glyphicon glyphicon-asterisk" aria-hidden="true"
+            style="color: rgb(226, 175, 99);"></span></small>
+        <label for="conf">パスワード確認用</label><br />
+        <%= f.password_field :password_confirmation, autocomplete: "confirmation-password" ,class:"form-control", placeholder:"パスワード確認",id:"conf" %>
+        <span class="fa fa-lock form-control-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="form-group">
+        <small><span class="glyphicon glyphicon-asterisk" aria-hidden="true"
+            style="color: rgb(226, 175, 99);"></span></small>
+        <label for="name">名前<em>(あとで変更可)</em></label><br />
+        <%= f.text_field :name ,autocomplete: "name" ,class:"form-control", placeholder:"名前",id:"name" %>
+        <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="intro">自己紹介文<em>(あとで変更可)</em></label><br />
+        <%= f.text_field :introduction ,autocomplete: "introduction" ,class:"form-control", placeholder:"自己紹介文",id:"intro" %>
+        <span class="fa fa-address-card form-control-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="InputSelect">現在の４人麻雀実力[天鳳相当](あとで変更可)</label><br />
+        <%= f.select :dan_4p_proper, User.dan_4p_propers_i18n.keys.map { |k| [User.dan_4p_propers_i18n[k], k]},{},{class:"form-control"} %>
+        <span class="fa fa-dice-four form-control-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="InputSelect">現在の３人麻雀実力[天鳳相当](あとで変更可)</label><br />
+        <%= f.select :dan_3p_proper, User.dan_3p_propers_i18n.keys.map { |k| [User.dan_3p_propers_i18n[k], k]},{},{class:"form-control"} %>
+        <span class="fa fa-dice-three form-control-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "新規登録", class:"btn btn-primary btn-lg btn-block btn-base-1 mt-20" %>
+      </div>
+      <% end %>
+  </div>
+
 </div>
-
-<div class="field">
-  <%= f.label :password %>
-  <% if @minimum_password_length %>
-  <em>(<%= @minimum_password_length %> characters minimum)</em>
-  <% end %><br />
-  <%= f.password_field :password, autocomplete: "new-password" %>
-</div>
-
-<div class="field">
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-</div>
-
-<div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name ,autocomplete: "NoName" %>
-</div>
-
-<div class="actions">
-  <%= f.submit "Sign up" %>
-</div>
-<% end %>
-
-<%= render "site/users/shared/links" %>

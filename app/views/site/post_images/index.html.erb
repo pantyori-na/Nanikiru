@@ -7,7 +7,7 @@
     <li><a href="#index-others" data-toggle="tab">その他</a></li>
   </ul>
 </div>
-<div class="container-fluid">
+<div class="container-fluid top-fluid">
   <!-- タブ内容 -->
   <div class="tab-content">
     <!-- 新着順全て -->
@@ -30,29 +30,39 @@
 
   <!-- footer -->
   <div class="fixed">
-    <span>
-      <%= link_to nanikiru_all_path do%>
-      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-      新着順
-      <% end %>
-    </span>
-    <span>
-      <%= link_to nanikiru_4p_path do %>
-      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-      4人麻雀
-      <% end %>
-    </span>
-    <span>
-      <%= link_to nanikiru_3p_path do %>
-      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-      3人麻雀
-      <% end %>
-    </span>
-    <span>
-      <%= link_to nanikiru_other_path do %>
-      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-      その他
-      <% end %>
-    </span>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <span>
+          <%= link_to nanikiru_all_path do%>
+          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+          新着順
+          <% end %>
+        </span>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <span>
+          <%= link_to nanikiru_4p_path do %>
+          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+          4人麻雀
+          <% end %>
+        </span>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <span>
+          <%= link_to nanikiru_3p_path do %>
+          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+          3人麻雀
+          <% end %>
+        </span>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <span>
+          <%= link_to nanikiru_other_path do %>
+          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+          その他
+          <% end %>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
