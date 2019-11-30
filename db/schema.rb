@@ -108,11 +108,11 @@ ActiveRecord::Schema.define(version: 2019_11_17_144234) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "name", default: "NoName"
+    t.string "name", default: "NoName", null: false
     t.string "profile_image_id"
     t.integer "dan_4p_proper", limit: 1, default: 0, null: false
     t.integer "dan_3p_proper", limit: 1, default: 0, null: false
-    t.text "introduction", default: "よろしくお願いします"
+    t.text "introduction", default: "よろしくお願いします", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
