@@ -36,7 +36,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :profile_image_id
       t.integer :dan_4p_proper,default: 0, null: false, limit: 1
       t.integer :dan_3p_proper,default: 0, null: false, limit: 1
-      t.text :introduction
+      t.string :introduction, default: 'HelloWorld!', null: false
       t.timestamps null: false
     end
 

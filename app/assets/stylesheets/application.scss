@@ -287,8 +287,14 @@ a:link {
 // card
 
 .index-content a:hover {
-  color: black;
-  text-decoration: none;
+  text-decoration: underline;
+  background-color: #ffcc99;
+  color: #333333;
+}
+
+.index-content .favorite a:hover {
+  text-decoration: underline;
+  background-color: white;
 }
 
 .index-content {
@@ -328,10 +334,13 @@ a:link {
   margin: 20px;
 }
 
-.index-content .card p {
-  margin: 20px;
-  opacity: 0.65;
+.index-content .card .favorite {
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
 }
+
+
 
 // プロフィール画像埋め込み用
 .index-content .card .profile img {
@@ -565,6 +574,8 @@ a:link {
   color: #282828;
 }
 
+
+
 .modal-footer {
   border-top: 0px !important;
 }
@@ -674,10 +685,6 @@ a:link {
     position: sticky;
     top: -13px;
     z-index: 30;
-  }
-
-  .chart-modal {
-    float: right !important;
   }
 
   .chart-margin {
