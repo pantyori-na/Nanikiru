@@ -382,6 +382,45 @@ a:link {
   }
 }
 
+// ユーザー詳細ボタン
+.btn-flat-simple {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4 !important;
+  transition: .4s;
+}
+
+.btn-flat-simple:hover {
+  background: #00bcd4 !important;
+  color: white !important;
+}
+
+.btn-flat-bottom-border {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 7px 10px 10px 10px;
+  text-decoration: none;
+  color: #FFF;
+  background: red;
+  transition: .4s;
+  border-radius: 2em;
+}
+
+.btn-flat-bottom-border>span {
+  border-bottom: solid 2px #FFF;
+}
+
+.btn-flat-bottom-border:hover {
+  background: #e49898;
+}
+
+
 @media screen and (min-width: 1200px) {
   .row.content {
     .col-lg-3 {
