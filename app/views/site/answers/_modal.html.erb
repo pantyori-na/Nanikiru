@@ -1,12 +1,13 @@
 <!-- モーダル -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id=<%= selection.name %> tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="myModalLabel">回答者情報:<%= answer.selection.name_i18n %></h4>
+        <h4 class="modal-title" id="myModalLabel">回答者情報:<%= selection.name_i18n %></h4>
       </div>
       <div class="modal-body">
         <table class="table table-stripe">
@@ -15,7 +16,7 @@
             <th class="warning">４人麻雀段位</th>
             <th class="warning">３人麻雀段位</th>
           </tr>
-          <% answer.selection.answers.each do |answer| %>
+          <% selection.answers.each do |answer| %>
           <tr>
             <td><%= answer.user.name %></td>
             <td><%= answer.user.dan_4p_proper_i18n %></td>
