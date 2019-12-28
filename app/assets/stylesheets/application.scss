@@ -340,6 +340,12 @@ a:link {
   right: 30px;
 }
 
+.test123 {
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
+}
+
 
 
 // プロフィール画像埋め込み用
@@ -632,18 +638,7 @@ a:link {
 }
 
 
-// home編集
-// .person {
-//   border: 10px solid transparent;
-//   margin-bottom: 25px;
-//   width: 80%;
-//   height: 80%;
-//   opacity: 0.7;
-// }
 
-// .person:hover {
-//   border-color: #f1f1f1;
-// }
 
 // welcome
 .carousel-inner .item img {
@@ -662,6 +657,10 @@ a:link {
 
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 767px) {
+  .index-content .card .favorite {
+    position: relative;
+  }
+
   .sidenav {
     height: auto;
     padding: 15px;

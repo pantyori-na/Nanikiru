@@ -11,18 +11,20 @@
       </div>
       <div class="modal-body">
         <table class="table table-stripe">
-          <tr>
-            <th class="info">ユーザー名</th>
-            <th class="warning">４人麻雀段位</th>
-            <th class="warning">３人麻雀段位</th>
-          </tr>
-          <% selection.answers.each do |answer| %>
-          <tr>
-            <td><%= answer.user.name %></td>
-            <td><%= answer.user.dan_4p_proper_i18n %></td>
-            <td><%= answer.user.dan_3p_proper_i18n %></td>
-          </tr>
-          <% end %>
+          <tbody>
+            <tr>
+              <th class="info">ユーザー名</th>
+              <th class="warning">４人麻雀段位</th>
+              <th class="warning">３人麻雀段位</th>
+            </tr>
+            <% selection.answers.each do |answer| %>
+            <tr>
+              <td><%= answer.user.name %></td>
+              <td><%= answer.user.dan_4p_proper_i18n %></td>
+              <td><%= answer.user.dan_3p_proper_i18n %></td>
+            </tr>
+            <% end %>
+          </tbody>
         </table>
       </div>
       <div class="modal-footer">
