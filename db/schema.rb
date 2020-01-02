@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_144234) do
     t.string "profile_image_id"
     t.integer "dan_4p_proper", limit: 1, default: 0, null: false
     t.integer "dan_3p_proper", limit: 1, default: 0, null: false
-    t.string "introduction", default: "HelloWorld!", null: false
+    t.string "introduction", default: "よろしくお願いします！", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
