@@ -74,10 +74,10 @@ Bundler version 2.0.2
 [ユーザーの麻雀の実力の見える化]
 
 ・ユーザーの麻雀の実力はインターネット麻雀「天鳳」における"段位"において判断できます。
- （参照URL：https://tenhou.net/）　
+ （ 参照URL：https://tenhou.net ）　
 >>麻雀の実力を判断する上で最も優れた麻雀ゲームであると私は考えております。
 >>麻雀AIの研究において、AIの実力を示す指標として、この"段位"が使用されています。
- (参照URL:https://www.itmedia.co.jp/news/articles/1908/29/news125.html)
+ ( 参照URL:https://www.itmedia.co.jp/news/articles/1908/29/news125.html )
 　
  
 [実績の登録]
