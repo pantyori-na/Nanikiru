@@ -227,11 +227,11 @@ footer {
   text-align: center;
   width: 100%;
   background-color: rgb(0, 0, 0);
-  height: 25px;
+  height: auto;
 
   span {
-    font-size: 15px;
-    margin: 0px, 5px;
+    font-size: 20px;
+    margin: 5px, 0px;
 
     a {
       color: blanchedalmond;
@@ -287,8 +287,14 @@ a:link {
 // card
 
 .index-content a:hover {
-  color: black;
-  text-decoration: none;
+  text-decoration: underline;
+  background-color: #ffcc99;
+  color: #333333;
+}
+
+.index-content .favorite a:hover {
+  text-decoration: underline;
+  background-color: white;
 }
 
 .index-content {
@@ -328,10 +334,19 @@ a:link {
   margin: 20px;
 }
 
-.index-content .card p {
-  margin: 20px;
-  opacity: 0.65;
+.index-content .card .favorite {
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
 }
+
+.test123 {
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
+}
+
+
 
 // プロフィール画像埋め込み用
 .index-content .card .profile img {
@@ -373,6 +388,45 @@ a:link {
   }
 }
 
+// ユーザー詳細ボタン
+.btn-flat-simple {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4 !important;
+  transition: .4s;
+}
+
+.btn-flat-simple:hover {
+  background: #00bcd4 !important;
+  color: white !important;
+}
+
+.btn-flat-bottom-border {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 7px 10px 10px 10px;
+  text-decoration: none;
+  color: #FFF;
+  background: red;
+  transition: .4s;
+  border-radius: 2em;
+}
+
+.btn-flat-bottom-border>span {
+  border-bottom: solid 2px #FFF;
+}
+
+.btn-flat-bottom-border:hover {
+  background: #e49898;
+}
+
+
 @media screen and (min-width: 1200px) {
   .row.content {
     .col-lg-3 {
@@ -405,21 +459,7 @@ a:link {
 
 
 
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-  .sidenav {
-    height: auto;
-    padding: 15px;
-  }
 
-  .row.content {
-    height: auto;
-  }
-
-  .col-sm-12 {
-    position: static;
-  }
-}
 
 // usershowここまで
 
@@ -511,14 +551,14 @@ a:link {
   }
 }
 
-.nested-fields>input,
-button,
-select {
-  font-family: inherit;
-  font-size: 25px;
-  line-height: inherit;
-  margin-bottom: 20px;
-}
+// .nested-fields>input,
+// button,
+// select {
+//   font-family: inherit;
+//   font-size: 25px;
+//   line-height: inherit;
+//   margin-bottom: 20px;
+// }
 
 .nested-fields {
   .btn {
@@ -579,6 +619,8 @@ select {
   color: #282828;
 }
 
+
+
 .modal-footer {
   border-top: 0px !important;
 }
@@ -592,5 +634,130 @@ select {
   color: #fff !important;
   background-color: #337ab7;
   border-color: #2e6da4;
+  text-align: center;
+}
+
+
+
+
+// welcome
+.carousel-inner .item img {
+  margin: 0 auto;
+  width: 1200px;
+  height: 700px;
+  // padding: 0 30%;
+  filter: blur(2px);
+}
+
+
+// imageshow
+.chart-modal {
+  float: left !important;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .index-content .card .favorite {
+    position: relative;
+  }
+
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+
+  .row.content {
+    height: auto;
+  }
+
+  .col-sm-12 {
+    position: static;
+  }
+
+  .container-fluid {
+    padding: 10px 20px;
+  }
+
+  .container-flui.nav_rp {
+    padding: 5px 0px;
+  }
+
+  .nav-back.sticky {
+    top: 38px;
+
+    .center {
+      width: 100%;
+      margin: 0px auto;
+      padding-left: 30px;
+    }
+  }
+
+  .fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    height: auto;
+
+    .row {
+      .col-sm-6 {
+        width: 45%;
+        float: left;
+      }
+    }
+
+    span {
+      font-size: 20px;
+      margin: 0px -5px;
+    }
+  }
+
+  .container-fluid.top-fluid {
+    margin: -20px;
+    padding: 0px;
+  }
+
+  .nav-sticky {
+    position: sticky;
+    top: -13px;
+    z-index: 30;
+  }
+
+  .chart-margin {
+
+    ul,
+    ol {
+      margin: 0 -10px 0 -40px;
+    }
+  }
+
+
+}
+
+.welcome_footer {
+  position: sticky;
+  display: block;
+  background-color: #f2f2f2;
+  padding: 25px;
+  text-align: center;
+
+  span {
+    font-family: verdana,
+      arial,
+      helvetica,
+      sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+
+    h6 {
+      position: absolute;
+      right: 0px;
+    }
+  }
+}
+
+.modal_welcome {
   text-align: center;
 }

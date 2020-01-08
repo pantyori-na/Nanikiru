@@ -1,4 +1,5 @@
 class Site::UsersController < Site::Base
+	skip_before_action :authenticate_user!, only: [:welcome]
 	def	index
 		@users = User.all
 	end
@@ -33,6 +34,8 @@ class Site::UsersController < Site::Base
 
 	def follower_index
 		@user = User.find(params[:user_id])
+	end
+	def welcome
 	end
 private
 def user_params

@@ -25,8 +25,6 @@ class Site::SelectionsController < Site::Base
     end
   end
 
-  # PATCH/PUT /selections/1
-  # PATCH/PUT /selections/1.json
   def update
     respond_to do |format|
       if @selection.update(selection_params)
@@ -37,8 +35,6 @@ class Site::SelectionsController < Site::Base
     end
   end
 
-  # DELETE /selections/1
-  # DELETE /selections/1.json
   def destroy
     @selection.destroy
     respond_to do |format|

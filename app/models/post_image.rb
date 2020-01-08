@@ -2,6 +2,7 @@ class PostImage < ApplicationRecord
   has_many :selections, dependent: :destroy
   has_many :favorites, dependent: :destroy
   belongs_to :user
+  validates :image, presence: true
   # follow機能はuserがuser(hasmany)を参照する
   has_many :users, through: :favorites
   attachment :image

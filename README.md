@@ -1,24 +1,103 @@
-# README
+-------Nanikiru------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリは複数の選択肢が存在する問題に対して、最善の解決策を模索するためのアプリです。
 
-Things you may want to cover:
+主に麻雀における、「何を切るか？」に対して焦点を当てています。
 
-* Ruby version
+------Features------
 
-* System dependencies
+SNSを見ていると、選択肢が存在する問題というのはよく白熱しているように感じます。
 
-* Configuration
+白熱した議論には必ず「専門家の意見」や「熱中的なファンの意見」が集まりやすいです。
 
-* Database creation
+私は彼らにとって、より快適なアプリがあれば良いなと思いこのアプリを作成しました。
 
-* Database initialization
+今回意識した主題は以下の通りです。
 
-* How to run the test suite
+１：焦点を当てたのは"麻雀"
 
-* Services (job queues, cache servers, search engines, etc.)
+２：専門家、熱中的なファンが意見を交換しやすくすること
 
-* Deployment instructions
+３：彼らが問題を気持ちよく、自然に発見できること
 
-* ...
+
+
+-----Requirement-----
+
+ruby 2.5.7p206
+
+Rails 5.2.3
+
+Bundler version 2.0.2
+
+
+-----Usage-----
+
+[質問投者]
+
+1_新規作成をクリックする
+
+2_問題となる画像を投稿して必要な情報を投稿する
+
+
+[回答者]
+
+1_回答したい問題をクリックします
+
+2.1_質問者から提示された選択肢の中から回答を選択します。
+
+2.2_提示された選択肢の中に自分の思う回答がない場合は新しく選択肢を作って回答できます。
+
+3_他の人たちの回答を分析します。回答しているユーザーの実力も含めて分析します。
+
+4_あなたの意見を投稿してください。
+
+
+----Others----
+
+[お気に入り機能]
+
+・面白いと思った投稿をお気に入りに追加できます。
+
+
+[フォロー機能]
+
+・あなたが気に入ったユーザーをフォローできます。
+・あなたがフォローしたユーザーが投稿した「問題」を抽出することができます。
+
+
+[通報機能]
+
+・不適切な投稿をしているユーザーを通報することができます。
+
+
+[ユーザーの麻雀の実力の見える化]
+
+・ユーザーの麻雀の実力はインターネット麻雀「天鳳」における"段位"において判断できます。（参照URL：https://tenhou.net ）　
+>>麻雀の実力を判断する上で最も優れた麻雀ゲームであると私は考えております。
+>>麻雀AIの研究において、AIの実力を示す指標として、この"段位"が使用されています。
+ ( 参照URL:https://www.itmedia.co.jp/news/articles/1908/29/news125.html )
+　
+ 
+[実績の登録]
+
+・各ユーザーの麻雀の実力を示すための指標として、それぞれの麻雀ゲームによる実績をプロフィールに登録できます。
+>>ユーザーの真の実力を判断する上で大切な情報であると考えております。
+
+
+
+git clone https://github.com/pantyori-na/Nanikiru
+
+cd Nanikiru
+
+rails s
+
+
+-----Note-----
+
+未実装の機能があります。随時更新していく予定です。
+
+-----Author-----
+
+作成者　中村　圭介
+E-mail　kousu.keinaka8@gmail.com

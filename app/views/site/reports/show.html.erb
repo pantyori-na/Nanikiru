@@ -2,18 +2,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>通報したユーザー</strong>
+  <strong>通報したユーザー:</strong>
   <%= @report.user.name %>
 </p>
 
 <p>
   <strong>通報の種類:</strong>
-  <%# binding.pry %>
   <%= @report.report_type_i18n %>
 </p>
 
 <p>
-  <strong>通報内容</strong>
+  <strong>通報内容:</strong>
   <%= @report.comment %>
 </p>
 
