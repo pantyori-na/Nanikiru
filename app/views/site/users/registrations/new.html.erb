@@ -43,19 +43,21 @@
       </div>
 
       <div class="form-group">
+        <small><span class="glyphicon glyphicon-asterisk" aria-hidden="true"
+            style="color: rgb(226, 175, 99);"></span></small>
         <label for="intro">自己紹介文<em>(あとで変更可)</em></label><br />
         <%= f.text_field :introduction ,autocomplete: "introduction" ,class:"form-control", placeholder:"自己紹介文",id:"intro" %>
         <span class="fa fa-address-card form-control-icon" aria-hidden="true"></span>
       </div>
 
       <div class="form-group">
-        <label for="InputSelect">現在の４人麻雀実力[天鳳相当](あとで変更可)</label><br />
+        <label for="InputSelect">現在の４人麻雀実力[天鳳相当]<em>(あとで変更可)</em></label><br />
         <%= f.select :dan_4p_proper, User.dan_4p_propers_i18n.keys.map { |k| [User.dan_4p_propers_i18n[k], k]},{},{class:"form-control"} %>
         <span class="fa fa-dice-four form-control-icon" aria-hidden="true"></span>
       </div>
 
       <div class="form-group">
-        <label for="InputSelect">現在の３人麻雀実力[天鳳相当](あとで変更可)</label><br />
+        <label for="InputSelect">現在の３人麻雀実力[天鳳相当]<em>(あとで変更可)</em></label><br />
         <%= f.select :dan_3p_proper, User.dan_3p_propers_i18n.keys.map { |k| [User.dan_3p_propers_i18n[k], k]},{},{class:"form-control"} %>
         <span class="fa fa-dice-three form-control-icon" aria-hidden="true"></span>
       </div>
