@@ -39,13 +39,5 @@ $(document).ready(function () {
 // load動くアニメーション
 $('#animation').css('visibility', 'hidden');
 $(window).load(function () {
-  console.log("aaa")
-  var windowHeight = $(window).height(),
-    topWindow = $(window).scrollTop();
-  $('#animation').each(function () {
-    var targetPosition = $(this).offset().top;
-    if (topWindow > targetPosition - windowHeight + 100) {
-      $(this).addClass("fadeInDown");
-    }
-  });
+  $('#animation').addClass("fadeInDown");
 });
