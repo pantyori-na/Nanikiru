@@ -40,6 +40,58 @@ body {
     sans-serif
 }
 
+
+// JS アニメーション
+
+#animation {
+  margin: 50px 0;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+}
+
+.fadeInDown {
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  visibility: visible !important;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+// JSanimation
+
 .skills {
   width: 80%;
   max-width: 960px;
@@ -208,6 +260,7 @@ footer {
   }
 
 }
+
 
 .container-fluid {
   margin: 0px;
@@ -653,6 +706,17 @@ a:link {
 // imageshow
 .chart-modal {
   float: left !important;
+}
+
+.wellcome_center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 30%;
+  background-color: transparent;
+  z-index: 30;
+  color: white;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
