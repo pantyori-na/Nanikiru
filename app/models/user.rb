@@ -24,23 +24,20 @@ class User < ApplicationRecord
   enum dan_3p_proper:{please_select_your_dan:0,until_dan:1,dan_1:2,dan_2:3, dan_3:4, dan_4:5, dan_5:6, dan_6:7, dan_7:8, dan_8:9, dan_9:10, dan_10:11, dan_11:12}, _prefix: true
 
   #twitterログイン
-  def self.find_for_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
+  def self.find_or_create_from_auth(auth)
+    provider = auth[:provider]
+    uid = auth[:uid]
+    nickname = auth[:info][:nickname]
+    name = auth[:info][:name]
+    image_url = auth[:info][:image]
+    description = auth[:info][:description]
 
-    unless user
-      user = User.create(
-        uid:      auth.uid,
-        provider: auth.provider,
-        email:    User.dummy_email(auth),
-        password: Devise.friendly_token[0, 20],
-        image: auth.info.image,
-        name: auth.info.name,
-        nickname: auth.info.nickname,
-        location: auth.info.location
-      )
+    self.find_or_create_by(provider: provider, uid: uid) do |user|
+      user.nickname = nickname
+      user.name = name
+      user.image_url = image_url
+      user.description = description
     end
-
-    user
   end
 
   private

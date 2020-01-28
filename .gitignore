@@ -32,3 +32,6 @@
 
 # Ignore_database.yml
 /config/database.yml
+
+# Ignore .evv files.
+/.env
