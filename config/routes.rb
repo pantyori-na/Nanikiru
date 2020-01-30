@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # end
   scope module: 'site' do
     devise_for :users, controllers: {
-      omniauth_callbacks: 'users/omniauth_callbacks',
+      omniauth_callbacks: 'site/users/omniauth_callbacks',
       sessions: 'site/users/sessions',
       registrations: 'site/users/registrations',
       passwords: 'site/users/passwords'
