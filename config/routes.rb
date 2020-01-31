@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   #     passwords: 'manager/admin_users/passwords'
   #   }
   # end
+
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
   scope module: 'site' do
-    devise_for :users, controllers: {
-      omniauth_callbacks: 'site/users/omniauth_callbacks',
-      sessions: 'site/users/sessions',
-      registrations: 'site/users/registrations',
-      passwords: 'site/users/passwords'
-    }
     resources :post_images do
       resources :answers, only: [:create, :show]
       get 'like', to: 'favorites#like'
