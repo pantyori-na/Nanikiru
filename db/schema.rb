@@ -108,11 +108,11 @@ ActiveRecord::Schema.define(version: 2020_01_28_104142) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "name", default: "NoName", null: false
+    t.string "name", default: "NoName"
     t.string "profile_image_id"
-    t.integer "dan_4p_proper", limit: 1, default: 0, null: false
-    t.integer "dan_3p_proper", limit: 1, default: 0, null: false
-    t.string "introduction", default: "よろしくお願いします！", null: false
+    t.integer "dan_4p_proper", default: 0
+    t.integer "dan_3p_proper", default: 0
+    t.string "introduction", default: "よろしくお願いします！"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uid"

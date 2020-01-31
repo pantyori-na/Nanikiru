@@ -75,7 +75,6 @@ gem 'cocoon'
 gem 'kaminari','~> 1.1.1'
 gem 'faker'
 gem 'omniauth'
-gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem "omniauth-rails_csrf_protection"
 gem 'dotenv-rails'
