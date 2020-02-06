@@ -404,9 +404,13 @@ a:link {
 // プロフィール画像埋め込み用
 .index-content .card .profile img {
   border-radius: 50%;
-  width: 100%;
-  height: 100%;
+  width: 90px;
+  height: 90px;
   background-position: right top;
+}
+
+.img-circle {
+  border-radius: 50%;
 }
 
 // 追従

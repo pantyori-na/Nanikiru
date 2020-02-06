@@ -2,7 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="row col-lg-4">
-        <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+        <div class="circle">
+          <% if @user.uid.nil? %>
+          <%= attachment_image_tag @user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+          <% else %>
+          <%= image_tag @user.image %>
+          <% end %>
+        </div>
         <!-- follow機能 -->
         <div>
           <%= render 'site/relationships/follow_button', user: @user %>

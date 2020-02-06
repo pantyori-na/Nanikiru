@@ -39,13 +39,11 @@ $(document).ready(function () {
 // scroll動くアニメーション
 $('#animation').css('visibility', 'hidden');
 $(window).scroll(function () {
-  console.log('hhhh')
   var windowHeight = $(window).height(),
     topWindow = $(window).scrollTop();
   $('#animation').each(function () {
     var targetPosition = $(this).offset().top;
     if (topWindow > targetPosition - windowHeight + 100) {
-      console.log('hhhh')
       $(this).addClass("fadeInDown");
     }
   });

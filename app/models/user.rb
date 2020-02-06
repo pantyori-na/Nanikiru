@@ -41,13 +41,12 @@ class User < ApplicationRecord
 
    user
   end
+    # twitterログインここまで
 
-  private
-
-  def self.dummy_email(auth)
-   "#{auth.uid}-#{auth.provider}@example.com"
+  def image_origin
+    self.image.gsub!("_normal","")
   end
-  # twitterログインここまで
+
   # お気に入り機能_method
   def like(post_image)
     favorites.find_or_create_by(post_image_id: post_image.id)
@@ -94,5 +93,10 @@ class User < ApplicationRecord
 			answer_ids = answers.where(selection_id: hash.keys, created_at: hash.values).pluck(:id)
 			answers.where(selection_id: hash.keys).where.not(id: answer_ids).destroy_all
     end
+  end
+  private
+
+  def self.dummy_email(auth)
+   "#{auth.uid}-#{auth.provider}@example.com"
   end
 end

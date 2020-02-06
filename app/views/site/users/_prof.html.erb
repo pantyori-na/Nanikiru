@@ -1,0 +1,54 @@
+<div class="col-lg-12 col-sm-12">
+  <h1>Name:<%= user.name %></h1>
+</div>
+<div class="col-lg-12 col-sm-3 col-xs-12">
+  <div class="circle">
+    <% if user.uid.nil? %>
+    <%= attachment_image_tag user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+    <% else %>
+    <%= image_tag user.image %>
+    <% end %>
+  </div>
+</div>
+<div class="col-lg-12 col-sm-6 col-xs-6 col-lg-offset-0 col-sm-offset-3 col-xs-offset-3">
+  <ul class="nav nav-pills nav-stacked">
+    <li><%= link_to user.name+"が作成したNanikiru", user_created_path(user),class:"btn-flat-simple" %></li>
+    <li><%= link_to user.name+"がお気に入りに追加したNanikiru",user_fav_nanikiru_path(user),class:"btn-flat-simple" %></li>
+    <li><%= link_to user.name+"がfollowしている", user_following_path(user),class:"btn-flat-simple" %></li>
+    <li><%= link_to user.name+"がfollowされている", user_follower_path(user),class:"btn-flat-simple" %></li>
+  </ul><br>
+</div>
+<!-- current-userには通報機能いらない -->
+<% if user.id != current_user.id %>
+<button type="button" class="btn-flat-bottom-border" data-toggle="collapse" data-target="#report">
+  通報
+</button>
+<div id="report" class="collapse">
+  <div class="row report">
+    <!-- 通報機能 -->
+    <%= form_for [user, report] do |f| %>
+    <div class="col-lg-6 col-sm-12 form-inline">
+      <label for="">Report type</label>
+    </div>
+    <div style="padding: 10px%;"></div>
+    <%= f.select :report_type, Report.report_types_i18n.keys.map { |k|[Report.report_types_i18n[k], k]},{},{class:"form-control"} %>
+    <%= f.text_area :comment,class:"form-control",placeholder: "通報内容を記入してください" %>
+    <span>
+      <%= f.submit "通報する",data: {confirm: 'このユーザーを通報しますか？' }, class:"btn btn-danger btn-lg btn-block btn-base-1 mt-20" %>
+    </span>
+    <% end %>
+  </div>
+</div>
+<span class="col-lg-11 col-sm-12">
+  <!-- followボタン -->
+  <%= render 'site/relationships/follow_button', user: user %>
+</span>
+<% end %>
+<!-- current-user編集 -->
+<span class="row">
+  <% if user.id == current_user.id %>
+  <p>
+    <%= link_to "プロフィール編集", edit_user_path(user), class: "btn btn-sm btn-primary"%>
+  </p>
+  <% end %>
+</span>

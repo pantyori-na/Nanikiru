@@ -7,11 +7,18 @@
       </div>
       <div class="col-lg-12 col-sm-3">
         <div class="circle">
+          <% if @user.uid.nil? %>
           <%= attachment_image_tag @user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+          <% else %>
+          <%= image_tag @user.image %>
+          <% end %>
         </div>
         <em> 画像の変更</em>
-
+        <% if @user.uid.nil? %>
         <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+        <% else %>
+        <p>twitterログインのため画像は変更できません</p>
+        <% end %>
       </div>
       <div class="col-lg-12 col-sm-6 col-lg-offset-0 col-sm-offset-3">
         <ul class="nav nav-pills nav-stacked">
