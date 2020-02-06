@@ -51,6 +51,7 @@ class Site::PostImagesController < Site::Base
   end
 
   def edit
+    @report = Report.new
   end
 
   def create

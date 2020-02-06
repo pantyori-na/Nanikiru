@@ -44,7 +44,10 @@ class User < ApplicationRecord
     # twitterログインここまで
 
   def image_origin
-    self.image.gsub!("_normal","")
+    if self.image.gsub!("_normal","")
+    else
+      return self.image
+    end
   end
 
   # お気に入り機能_method
@@ -92,6 +95,14 @@ class User < ApplicationRecord
 			hash = answers.group(:selection_id).having('count(*) >= 2').maximum(:created_at)
 			answer_ids = answers.where(selection_id: hash.keys, created_at: hash.values).pluck(:id)
 			answers.where(selection_id: hash.keys).where.not(id: answer_ids).destroy_all
+    end
+  end
+
+  def name_cut
+    if self.name.length <= 15
+      return self.name
+    else
+      return self.name[0,15] + ".."
     end
   end
   private

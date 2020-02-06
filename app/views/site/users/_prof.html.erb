@@ -6,7 +6,7 @@
     <% if user.uid.nil? %>
     <%= attachment_image_tag user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
     <% else %>
-    <%= image_tag user.image %>
+    <%= image_tag user.image_origin %>
     <% end %>
   </div>
 </div>

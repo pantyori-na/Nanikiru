@@ -15,6 +15,10 @@
               </div>
               <div class="row">
                 <div class="col-lg-12">
+                  <h3>コメント</h3>
+                  <p><%= @post_image.comment %></p>
+                </div>
+                <div class="col-lg-12">
                   <h3><small>あなたは何切る？？</small></h3>
                   <h4><small>クリックするとアンケート結果画面に飛びます！！</small></h4>
                 </div>
@@ -49,8 +53,9 @@
                     <%= form.submit "新しい選択肢を追加する",class:"btn-sm btn-info",style:"margin-bottom:30px" %>
                   </div>
                   <% end %>
+                  <br><br><br><br><br><br>
                   <% if @post_image.user_id == current_user.id %>
-                  <%= link_to 'Edit', edit_post_image_path(@post_image),class:"btn btn-primary btn-sm" %>
+                  <%= link_to 'Edit', edit_post_image_path(@post_image),class:"btn edit-btn btn-block" %>
                   <% end %>
                 </div>
               </div>
