@@ -42,6 +42,7 @@ class Site::PostImagesController < Site::Base
     end
     @selection = Selection.new
     @answer = Answer.new
+    @report = Report.new
   end
 
   def new
