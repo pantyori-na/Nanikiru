@@ -1,67 +1,14 @@
-<div class="profile-container">
-  <div class="container">
-    <div class="row">
-      <div class="row col-lg-4">
-        <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
-        <!-- follow機能 -->
-        <div>
-          <%= render 'site/relationships/follow_button', user: @user %>
-        </div>
-
-        <div>
-          <!-- 通報機能 -->
-          <%= form_for [@user, @report] do |f| %>
-          <label for="">Report type</label>
-          <%= f.select :report_type, Report.report_types_i18n.keys.map { |k| [Report.report_types_i18n[k], k]} %>
-          <%= f.text_field :comment, placeholder: "コメントをここに" %>
-          <%= f.submit "通報する",data: { confirm: 'このユーザーを通報しますか？' }, class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
-        </div>
-      </div>
-      <% end %>
-      <div class="row col-lg-8">
-        <div class="row">
-          <label for="">User name</label>
-          <h3 class="profile-name"><%= @user.name %></h3>
-        </div>
-        <div class="row">
-          <label for="">Introduction</label>
-          <%= @user.introduction %>
-        </div>
-        <div class="row">
-          <label>現在の４人麻雀実力[天鳳相当]</label>
-          <%= @user.dan_4p_proper_i18n %>
-        </div>
-        <div class="row">
-          <label>現在の３人麻雀実力[天鳳相当]</label>
-          <%= @user.dan_3p_proper_i18n %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Image</th>
-      <th>Comment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @post_images.each do |post_image| %>
-    <tr>
-      <td><%= post_image.image_type_i18n %></td>
-      <td>
-        <%= attachment_image_tag post_image, :image, :fill, 200, 200, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
-      </td>
-      <td><%= post_image.comment %></td>
-      <td><%= link_to 'Show', post_image %></td>
-      <td><%= link_to 'Edit', edit_post_image_path(post_image) %></td>
-      <td><%= link_to 'Destroy', post_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+ <div class="container-fluid">
+   <div class="row content content-back">
+     <!-- 左側 -->
+     <div class="col-lg-3  col-sm-12 sidenav">
+       <%= render 'site/users/prof', user: @user, report: @report %>
+     </div>
+     <!-- 右側 -->
+     <div class="col-lg-9 col-sm-12">
+       <div class="container-fluid padding-none">
+         <%= render 'site/post_images/style', post_images: @post_images %>
+       </div>
+     </div>
+   </div>
+ </div>

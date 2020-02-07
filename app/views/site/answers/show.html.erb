@@ -10,6 +10,16 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <h3>　コメント</h3>
+        <p>　<%= @post_image.comment %></p>
+      </div>
+      <div class="row">
+        <!-- editボタン -->
+        <% if @post_image.user_id == current_user.id %>
+        <%= link_to 'Edit', edit_post_image_path(@post_image.id),class:"btn btn-info btn-block edit-btn" %>
+        <% end %>
+      </div>
     </div>
     <!-- 右側 -->
     <div class="col-lg-6 col-sm-12">
@@ -103,8 +113,5 @@
       </tr>
       <% end %>
     </table>
-    <% if @post_image.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_post_image_path(@post_image.id),class:"btn btn-primary btn-sm" %>
-    <% end %>
   </div>
 </div>

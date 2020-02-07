@@ -1,13 +1,22 @@
-<div class="container">
-  <h1><% @user.name %>Ansewrs</h1>
-  <% @answers.each do |answer| %>
-  <div class="row">
-    <div class="col-lg-6">
-      <%= attachment_image_tag answer.selection.post_image, :image, :fill, 300, 300, class: "pull-left profile-thumb", fallback: "no_image.jpg"%>
+<div class="container-fluid">
+  <div class="row content content-back">
+    <!-- 左側 -->
+    <div class="col-lg-3  col-sm-12 sidenav">
+      <%= render 'site/users/prof', user: @user, report: @report %>
     </div>
-    <div class="col-lg-6">
-      <%= answer.selection.name_i18n %>
+    <!-- 右側 -->
+    <div class="col-lg-9 col-sm-12">
+      <div class="container-fluid padding-none">
+        <div class="index-content">
+          <div class="container-fluid">
+            <% @answers.each do |answer| %>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+              <!-- card -->
+              <%= render 'site/post_images/card', post_image: answer.selection.post_image %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <% end %>
-</div>

@@ -40,4 +40,12 @@ class PostImage < ApplicationRecord
 			selections.where(name: hash.keys).where.not(id: selection_ids).destroy_all
     end
   end
+  # コメントの数で判断するcard二文字数制限つける
+  def comment_cut
+    if self.comment.length <= 15
+      return self.comment
+    else
+      return self.comment[0,15] + "..."
+    end
+  end
 end

@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *=require bootstrap-social
+ *=require font-awesome
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -404,9 +406,13 @@ a:link {
 // プロフィール画像埋め込み用
 .index-content .card .profile img {
   border-radius: 50%;
-  width: 100%;
-  height: 100%;
+  width: 90px;
+  height: 90px;
   background-position: right top;
+}
+
+.img-circle {
+  border-radius: 50%;
 }
 
 // 追従
@@ -691,6 +697,13 @@ a:link {
 }
 
 
+.edit-btn {
+  color: white !important;
+  font-size: 30px;
+  font-weight: bold;
+  border: beige;
+  background-color: orange !important;
+}
 
 
 // welcome
@@ -739,7 +752,11 @@ a:link {
   }
 
   .container-fluid {
-    padding: 10px 20px;
+    // padding: 10px 20px;
+
+    .padding-none {
+      padding: 0px;
+    }
   }
 
   .container-flui.nav_rp {

@@ -2,141 +2,85 @@
   <div class="row content">
     <!-- 左側 -->
     <div class="col-lg-3  col-sm-12 sidenav">
-      <div class="reponsive">
-        <div class="row">
-          <div class="col-lg-12 col-sm-12">
-            <h1>Name:<%= current_user.name %></h1>
-            <!-- current-user編集 -->
-            <span class="row">
-              <% if current_user.id == current_user.id %>
-              <p>
-                <%= link_to "プロフィール編集", edit_user_path(current_user), class: "pull-left"%>
-              </p>
-              <% end %>
-            </span>
-          </div>
-          <div class="col-lg-12 col-sm-3">
-            <div class="circle">
-              <%= attachment_image_tag current_user, :profile_image,class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
-            </div>
-          </div>
-          <div class="col-lg-12 col-sm-6 col-lg-offset-0 col-sm-offset-3">
-            <ul class="nav nav-pills nav-stacked">
-              <li><%= link_to current_user.name+"が作成したNanikiru", user_created_path(current_user) %></li>
-              <li><%= link_to current_user.name+"がお気に入りに追加したNanikiru",user_fav_nanikiru_path(current_user) %></li>
-              <li><%= link_to current_user.name+"がfollowしている", user_following_path(current_user) %></li>
-              <li><%= link_to current_user.name+"がfollowされている", user_follower_path(current_user) %></li>
-            </ul><br>
-          </div>
-        </div>
-      </div>
+      <%= render 'site/users/prof', user: current_user, report: @report %>
     </div>
     <!-- 右側 -->
     <div class="col-lg-9 col-sm-12">
       <div class="row">
-        <div class="col-lg-9 col-sm-12 col-lg-offset-1">
-          <h4><small><%= current_user.name %>のNanikiru投稿ページ</small></h4>
-          <hr>
-          <h1>編集ページ</h1>
-          <%= form_with model: @post_image,local: true do |form|%>
-          <div class="row">
-            <div class="index-content mg-none back-none">
-              <div class="col-xs-12 col-sm-12 col-lg-6 col-lg-offset-2">
-                <%= link_to post_image_path(@post_image.id) do %>
-                <div class="card">
-                  <!-- Nanikiru画像 -->
-                  <div>
-                    <%= attachment_image_tag @post_image, :image,:fill, 800, 800,class: "pull-left img-responsive", fallback: "no_image.jpg", size:'600x600'%>
-                  </div>
-                  <!-- プロフィール画像 -->
-                  <div class="row">
-                    <div class="profile col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                      <%= attachment_image_tag @post_image.user, :profile_image,class: "img-circle profile-thumb", fallback: "no_image.jpg", size:'200x200' %><br>
-                    </div>
-                    <div class="col-lg-9">
-                      <h4 class="text-right">
-                        投稿者：<%= @post_image.user.name %>
-                      </h4>
-                    </div>
-                    <!-- コメント有無で条件分岐 -->
-                    <% if @post_image.comment.present? %>
-                    <p>
-                      <%= @post_image.comment %>
-                    </p>
-                    <% else %>
-                    <p>
-                      コメントなし
-                    </p>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
+        <div class="index-content">
+          <div class="col-lg-9 col-sm-12">
+            <h4><small><%= current_user.name %>のNanikiru投稿ページ</small></h4>
+            <hr>
+            <h1>編集ページ</h1>
+            <%= form_with model: @post_image,local: true do |form|%>
+
+            <div class="col-sm-12 col-lg-6 col-lg-offset-2" style="padding-top: 20px;">
+              <!-- render_card -->
+              <%= render 'site/post_images/card', post_image: @post_image %>
             </div>
           </div>
-          <% end %>
-          <div class="col-lg-12 col-sm-12 post_back">
-            <label for="a1">
-              <h3><em>**画像を変更</em></h3>
-            </label>
-            <%= form.attachment_field :image,id:"a1" %>
-          </div>
-        </div>
-        <div class="col-lg-9 col-sm-12">
-        </div>
-        <br><br><br><br>
-
-        <div class="col-lg-11">
-          <h2><em>**ゲームの種類を変更</em></h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-sm-4 radio-back">
-            <label for="c1">
-              <h2>４人麻雀</h2>
-              <%= form.radio_button :image_type, :player_4, checked: "checked",class:"btn-lg",id:"c1" %>
-            </label>
-          </div>
-          <div class="col-lg-4 col-sm-4 radio-back">
-            <label for="c2">
-              <h2>３人麻雀</h2>
-              <%= form.radio_button :image_type, :player_3,class:"btn-lg",id:"c2" %>
-            </label>
-          </div>
-          <div class="col-lg-4 col-sm-4 radio-back">
-            <label for="c3">
-              <h2>その他</h2>
-              <%= form.radio_button :image_type, :others,class:"btn-lg",id:"c3" %>
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <h3><em>**選択肢を変更</em></h3>
-            <!-- cocoonによる選択肢追加 -->
-            <div class="selections">
-              <%= form.fields_for :selections do |f| %>
-              <%= render "selection_fields", f: f %>
-              <% end %>
-              <div class="links">
-                <%= link_to_add_association "選択肢追加", form, :selections,class:"btn btn-info" %>
-              </div>
-            </div>
-          </div>
-          <!-- コメント追加 -->
-          <div class="col-lg-8">
-            <h3><em>**コメントを変更</em></h3>
-            <%= form.text_area :comment %>
-          </div>
         </div>
 
-        <div class="col-lg-12 mt-10">
-          <%= form.submit "変更を保存", class:"btn-primary btn-lg btn-block btn-base-1 mt-20 active" %>
+        <div class="col-lg-12 col-sm-12 post_back">
+          <label for="a1">
+            <h3><em>**画像を変更</em></h3>
+          </label>
+          <%= form.attachment_field :image,id:"a1" %>
         </div>
-        <% end %>
-        <div class="col-lg-12 mt-10">
-          <%= link_to "Nanikiruを削除", post_image_path(@post_image.id), method: :delete, data: { confirm: '作成したNanikiruを削除しますか？' },  class:"btn-danger btn-lg btn-block btn-base-1 mt-20 active" %>
-        </div>
-
       </div>
+
+      <div class="col-lg-11">
+        <h2><em>**ゲームの種類を変更</em></h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-sm-4 radio-back">
+          <label for="c1">
+            <h2>４人麻雀</h2>
+            <%= form.radio_button :image_type, :player_4, checked: "checked",class:"btn-lg",id:"c1" %>
+          </label>
+        </div>
+        <div class="col-lg-4 col-sm-4 radio-back">
+          <label for="c2">
+            <h2>３人麻雀</h2>
+            <%= form.radio_button :image_type, :player_3,class:"btn-lg",id:"c2" %>
+          </label>
+        </div>
+        <div class="col-lg-4 col-sm-4 radio-back">
+          <label for="c3">
+            <h2>その他</h2>
+            <%= form.radio_button :image_type, :others,class:"btn-lg",id:"c3" %>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <h3><em>**選択肢を変更</em></h3>
+          <!-- cocoonによる選択肢追加 -->
+          <div class="selections">
+            <%= form.fields_for :selections do |f| %>
+            <%= render "selection_fields", f: f %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association "選択肢追加", form, :selections,class:"btn btn-info" %>
+            </div>
+          </div>
+        </div>
+        <!-- コメント追加 -->
+        <div class="col-lg-8">
+          <h3><em>**コメントを変更</em></h3>
+          <%= form.text_area :comment %>
+        </div>
+      </div>
+
+      <div class="col-lg-12 mt-10">
+        <%= form.submit "変更を保存", class:"btn-primary btn-lg btn-block btn-base-1 mt-20 active" %>
+      </div>
+      <% end %>
+      <div class="col-lg-12 mt-10">
+        <%= link_to "Nanikiruを削除", post_image_path(@post_image.id), method: :delete, data: { confirm: '作成したNanikiruを削除しますか？' },  class:"btn-danger btn-lg btn-block btn-base-1 mt-20 active" %>
+      </div>
+
     </div>
   </div>
+</div>
 </div>

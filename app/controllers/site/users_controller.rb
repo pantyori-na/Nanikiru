@@ -21,6 +21,9 @@ class Site::UsersController < Site::Base
 	def destroy
 	end
 
+	def twitter
+	end
+
 	def following_index
 		@user = User.find(params[:user_id])
 	end
