@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2020_02_05_100429) do
     t.string "profile_image_id"
     t.integer "dan_4p_proper", default: 0
     t.integer "dan_3p_proper", default: 0
-    t.string "introduction", default: "よろしくお願いします！"
+    t.string "introduction", default: "hi!"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "provider"
