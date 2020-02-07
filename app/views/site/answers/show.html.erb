@@ -101,7 +101,13 @@
       <% @comments.each do |comment| %>
       <tr>
         <th class="info" width="20%">
-          <%= attachment_image_tag comment.answer.user, :profile_image,class: "img-circle profile-thumb", fallback: "no_image.jpg", size:'50x50' %><br>
+          <div class="circle">
+            <% if comment.answer.user.uid.nil? %>
+            <%= attachment_image_tag comment.answer.user, :profile_image,　class:"img-circle", fallback: "no_image.jpg", size:'200x200'%>
+            <% else %>
+            <%= image_tag comment.answer.user.image_origin, size:'200x200' %>
+            <% end %>
+          </div>
           <span><%= comment.answer.user.name %>：<%= comment.answer.selection.name_i18n %></span>
         </th>
         <td>
