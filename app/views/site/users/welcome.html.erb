@@ -125,6 +125,18 @@
             </h2>
 
           </li>
+          <!-- sign_in -->
+          <li>
+            <br>
+            <span><small><em>Twitterアカウントお持ちの方</em></small></span>
+            <h2>
+              <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-social btn-twitter", method: :post do %>
+              <span class="fab fa-twitter" style="color: antiquewhite;"></span> <span
+                style="color: antiquewhite;">Twitterアカウントでログイン</span>
+              <% end %>
+            </h2>
+
+          </li>
         </ul>
       </div>
       <div class="modal-footer">

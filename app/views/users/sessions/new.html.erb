@@ -2,6 +2,17 @@
   <div class="col-lg-6 col-sm-12 col-lg-offset-3">
     <h2>ログイン</h2>
 
+    <h5><em>Twitterアカウントお持ちの方</em></h5>
+
+    <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-block btn-social btn-twitter", method: :post do %>
+    <span class="fab fa-twitter" style="color: antiquewhite;"></span> <span
+      style="color: antiquewhite;">Twitterアカウントでログイン</span>
+    <% end %>
+    <hr>
+
+    <h5><em>Twitterアカウントをお持ち出ない方</em></h5>
+
+
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group">
       <label for="mail">メールアドレス</label><br />
@@ -22,8 +33,6 @@
       <%= f.label :remember_me %>
     </div>
     <% end %>
-
-    <%= link_to 'Twitterログイン', user_twitter_omniauth_authorize_path, method: :post %>
 
     <div class="actions">
       <%= f.submit "ログイン", class:"btn btn-primary btn-lg btn-block btn-base-1 mt-20" %>

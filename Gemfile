@@ -78,6 +78,8 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem "omniauth-rails_csrf_protection"
 gem 'dotenv-rails'
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
 group :production do
   gem 'mysql2'
 end
