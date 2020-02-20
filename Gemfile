@@ -80,6 +80,7 @@ gem "omniauth-rails_csrf_protection"
 gem 'dotenv-rails'
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
+gem 'webpacker', github: "rails/webpacker"
 group :production do
   gem 'mysql2'
 end
