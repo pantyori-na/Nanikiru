@@ -1,0 +1,367 @@
+Date : 2020-02-18 17:43:08
+Directory : /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru
+Total : 258 files,  5207 codes, 1224 comments, 1273 blanks, all 7704 lines
+
+Languages
++--------------+------------+------------+------------+------------+------------+
+| language     | files      | code       | comment    | blank      | total      |
++--------------+------------+------------+------------+------------+------------+
+| Ruby ERB     |         84 |      2,066 |         57 |        316 |      2,439 |
+| Ruby         |        118 |      1,693 |        908 |        606 |      3,207 |
+| SCSS         |         13 |        696 |         83 |        194 |        973 |
+| YAML         |         23 |        427 |         85 |         49 |        561 |
+| HTML         |          3 |        182 |          3 |         18 |        203 |
+| Markdown     |          1 |         49 |          0 |         55 |        104 |
+| Gemfile      |          1 |         49 |         25 |         11 |         85 |
+| JavaScript   |          3 |         40 |         30 |         12 |         82 |
+| JSON         |          1 |          5 |          0 |          1 |          6 |
+| CoffeeScript |         11 |          0 |         33 |         11 |         44 |
++--------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                           | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                              |        258 |      5,207 |      1,224 |      1,273 |      7,704 |
+| app                                                                                                                            |        166 |      3,522 |        565 |        750 |      4,837 |
+| app/assets                                                                                                                     |         27 |        736 |        146 |        217 |      1,099 |
+| app/assets/config                                                                                                              |          1 |          0 |          3 |          1 |          4 |
+| app/assets/javascripts                                                                                                         |         13 |         40 |         60 |         22 |        122 |
+| app/assets/javascripts/site                                                                                                    |          4 |          0 |         12 |          4 |         16 |
+| app/assets/stylesheets                                                                                                         |         13 |        696 |         83 |        194 |        973 |
+| app/assets/stylesheets/site                                                                                                    |          4 |          0 |         12 |          4 |         16 |
+| app/channels                                                                                                                   |          2 |          8 |          0 |          2 |         10 |
+| app/channels/application_cable                                                                                                 |          2 |          8 |          0 |          2 |         10 |
+| app/controllers                                                                                                                |         26 |        482 |        343 |        176 |      1,001 |
+| app/controllers/manager                                                                                                        |          7 |         13 |        159 |         50 |        222 |
+| app/controllers/manager/admin_users                                                                                            |          6 |         10 |        159 |         50 |        219 |
+| app/controllers/site                                                                                                           |         12 |        423 |         29 |         74 |        526 |
+| app/controllers/users                                                                                                          |          6 |         29 |        155 |         52 |        236 |
+| app/helpers                                                                                                                    |         12 |         24 |          0 |         12 |         36 |
+| app/helpers/site                                                                                                               |          4 |          8 |          0 |          4 |         12 |
+| app/jobs                                                                                                                       |          1 |          2 |          0 |          1 |          3 |
+| app/mailers                                                                                                                    |          1 |          4 |          0 |          1 |          5 |
+| app/models                                                                                                                     |         12 |        199 |         19 |         24 |        242 |
+| app/views                                                                                                                      |         85 |      2,067 |         57 |        317 |      2,441 |
+| app/views/layouts                                                                                                              |          6 |         74 |          1 |         19 |         94 |
+| app/views/manager                                                                                                              |         14 |        188 |          0 |         67 |        255 |
+| app/views/manager/admin_users                                                                                                  |         14 |        188 |          0 |         67 |        255 |
+| app/views/manager/admin_users/confirmations                                                                                    |          1 |         12 |          0 |          5 |         17 |
+| app/views/manager/admin_users/mailer                                                                                           |          5 |         20 |          0 |         15 |         35 |
+| app/views/manager/admin_users/passwords                                                                                        |          2 |         32 |          0 |         11 |         43 |
+| app/views/manager/admin_users/registrations                                                                                    |          2 |         56 |          0 |         18 |         74 |
+| app/views/manager/admin_users/sessions                                                                                         |          1 |         21 |          0 |          6 |         27 |
+| app/views/manager/admin_users/shared                                                                                           |          2 |         35 |          0 |          7 |         42 |
+| app/views/manager/admin_users/unlocks                                                                                          |          1 |         12 |          0 |          5 |         17 |
+| app/views/shared_site                                                                                                          |          2 |        144 |          0 |          2 |        146 |
+| app/views/site                                                                                                                 |         49 |      1,417 |         56 |        148 |      1,621 |
+| app/views/site/answers                                                                                                         |          4 |        193 |          0 |         12 |        205 |
+| app/views/site/favorites                                                                                                       |          2 |         21 |          0 |          2 |         23 |
+| app/views/site/game_records                                                                                                    |          1 |         27 |          0 |          8 |         35 |
+| app/views/site/homes                                                                                                           |          2 |          7 |          0 |          2 |          9 |
+| app/views/site/kaminari                                                                                                        |          7 |         33 |         56 |          7 |         96 |
+| app/views/site/post_images                                                                                                     |         14 |        452 |          0 |         35 |        487 |
+| app/views/site/relationships                                                                                                   |          1 |         13 |          0 |          1 |         14 |
+| app/views/site/reports                                                                                                         |          3 |         45 |          0 |         14 |         59 |
+| app/views/site/selections                                                                                                      |          6 |         66 |          0 |         22 |         88 |
+| app/views/site/users                                                                                                           |          9 |        560 |          0 |         45 |        605 |
+| app/views/users                                                                                                                |         14 |        244 |          0 |         81 |        325 |
+| app/views/users/confirmations                                                                                                  |          1 |         12 |          0 |          5 |         17 |
+| app/views/users/mailer                                                                                                         |          5 |         20 |          0 |         15 |         35 |
+| app/views/users/passwords                                                                                                      |          2 |         32 |          0 |         11 |         43 |
+| app/views/users/registrations                                                                                                  |          2 |         99 |          0 |         26 |        125 |
+| app/views/users/sessions                                                                                                       |          1 |         35 |          0 |         12 |         47 |
+| app/views/users/shared                                                                                                         |          2 |         34 |          0 |          7 |         41 |
+| app/views/users/unlocks                                                                                                        |          1 |         12 |          0 |          5 |         17 |
+| config                                                                                                                         |         33 |        532 |        497 |        179 |      1,208 |
+| config/environments                                                                                                            |          3 |         65 |         89 |         57 |        211 |
+| config/initializers                                                                                                            |         11 |         26 |        312 |         83 |        421 |
+| config/locales                                                                                                                 |         11 |        353 |         31 |         13 |        397 |
+| config/locales/models                                                                                                          |          8 |        146 |          0 |          8 |        154 |
+| config/locales/models/game_record                                                                                              |          3 |         49 |          0 |          3 |         52 |
+| config/locales/models/game_record/ability                                                                                      |          1 |         26 |          0 |          1 |         27 |
+| config/locales/models/game_record/game_name                                                                                    |          1 |         16 |          0 |          1 |         17 |
+| config/locales/models/game_record/game_type                                                                                    |          1 |          7 |          0 |          1 |          8 |
+| config/locales/models/post_image                                                                                               |          1 |          7 |          0 |          1 |          8 |
+| config/locales/models/post_image/image_type                                                                                    |          1 |          7 |          0 |          1 |          8 |
+| config/locales/models/report                                                                                                   |          1 |          9 |          0 |          1 |         10 |
+| config/locales/models/report/report_type                                                                                       |          1 |          9 |          0 |          1 |         10 |
+| config/locales/models/selection                                                                                                |          1 |         47 |          0 |          1 |         48 |
+| config/locales/models/user                                                                                                     |          2 |         34 |          0 |          2 |         36 |
+| config/locales/models/user/dan_3p_proper                                                                                       |          1 |         17 |          0 |          1 |         18 |
+| config/locales/models/user/dan_4p_proper                                                                                       |          1 |         17 |          0 |          1 |         18 |
+| db                                                                                                                             |         13 |        292 |         50 |         58 |        400 |
+| db/migrate                                                                                                                     |         11 |        131 |         32 |         37 |        200 |
+| public                                                                                                                         |          3 |        182 |          3 |         18 |        203 |
+| test                                                                                                                           |         39 |        574 |         83 |        198 |        855 |
+| test/controllers                                                                                                               |         11 |        248 |         20 |         80 |        348 |
+| test/controllers/site                                                                                                          |          4 |         20 |          9 |         10 |         39 |
+| test/fixtures                                                                                                                  |         10 |         62 |         31 |         27 |        120 |
+| test/models                                                                                                                    |         10 |         30 |         30 |         20 |         80 |
+| test/system                                                                                                                    |          6 |        224 |          0 |         66 |        290 |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| filename                                                                                                                       | language     | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/Gemfile                                                                   | Gemfile      |         49 |         25 |         11 |         85 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/README.md                                                                 | Markdown     |         49 |          0 |         55 |        104 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/config/manifest.js                                             | JavaScript   |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/answers.coffee                                     | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/application.js                                     | JavaScript   |         36 |         21 |          7 |         64 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/cable.js                                           | JavaScript   |          4 |          6 |          4 |         14 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/favorites.coffee                                   | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/game_records.coffee                                | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/post_comment.coffee                                | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/post_images.coffee                                 | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/reports.coffee                                     | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/selections.coffee                                  | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/site/homes.coffee                                  | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/site/post_comment.coffee                           | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/site/relationships.coffee                          | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/javascripts/site/sessions.coffee                               | CoffeeScript |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/answers.scss                                       | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/application.scss                                   | SCSS         |        626 |         50 |        168 |        844 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/favorites.scss                                     | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/game_records.scss                                  | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/post_comment.scss                                  | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/post_images.scss                                   | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/reports.scss                                       | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/scaffolds.scss                                     | SCSS         |         70 |          0 |         15 |         85 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/selections.scss                                    | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/site/homes.scss                                    | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/site/post_comment.scss                             | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/site/relationships.scss                            | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/assets/stylesheets/site/sessions.scss                                 | SCSS         |          0 |          3 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/channels/application_cable/channel.rb                                 | Ruby         |          4 |          0 |          1 |          5 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/channels/application_cable/connection.rb                              | Ruby         |          4 |          0 |          1 |          5 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/application_controller.rb                                 | Ruby         |         17 |          0 |          0 |         17 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/manager/admin_users/confirmations_controller.rb           | Ruby         |          2 |         22 |          7 |         31 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/manager/admin_users/omniauth_callbacks_controller.rb      | Ruby         |          0 |         23 |          8 |         31 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/manager/admin_users/passwords_controller.rb               | Ruby         |          2 |         25 |          8 |         35 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/manager/admin_users/registrations_controller.rb           | Ruby         |          2 |         48 |         13 |         63 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/manager/admin_users/sessions_controller.rb                | Ruby         |          2 |         19 |          7 |         28 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/manager/admin_users/unlocks_controller.rb                 | Ruby         |          2 |         22 |          7 |         31 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/manager/base.rb                                           | Ruby         |          3 |          0 |          0 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/answers_controller.rb                                | Ruby         |         63 |          7 |         12 |         82 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/base.rb                                              | Ruby         |          3 |          0 |          0 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/favorites_controller.rb                              | Ruby         |         30 |          5 |         10 |         45 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/game_records_controller.rb                           | Ruby         |         42 |          2 |          7 |         51 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/homes_controller.rb                                  | Ruby         |         11 |          0 |          2 |         13 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/post_comments_controller.rb                          | Ruby         |         21 |          0 |          0 |         21 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/post_images_controller.rb                            | Ruby         |         93 |          7 |         13 |        113 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/relationships_controller.rb                          | Ruby         |         29 |          0 |          4 |         33 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/reports_controller.rb                                | Ruby         |         34 |          5 |          8 |         47 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/selections_controller.rb                             | Ruby         |         45 |          2 |         11 |         58 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/sessions_controller.rb                               | Ruby         |         11 |          0 |          2 |         13 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/site/users_controller.rb                                  | Ruby         |         41 |          1 |          5 |         47 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/users/confirmations_controller.rb                         | Ruby         |          2 |         22 |          7 |         31 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/users/omniauth_callbacks_controller.rb                    | Ruby         |         19 |         19 |         10 |         48 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/users/passwords_controller.rb                             | Ruby         |          2 |         25 |          8 |         35 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/users/registrations_controller.rb                         | Ruby         |          2 |         48 |         13 |         63 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/users/sessions_controller.rb                              | Ruby         |          2 |         19 |          7 |         28 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/controllers/users/unlocks_controller.rb                               | Ruby         |          2 |         22 |          7 |         31 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/answers_helper.rb                                             | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/application_helper.rb                                         | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/favorites_helper.rb                                           | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/game_records_helper.rb                                        | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/post_comment_helper.rb                                        | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/post_images_helper.rb                                         | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/reports_helper.rb                                             | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/selections_helper.rb                                          | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/site/homes_helper.rb                                          | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/site/post_comment_helper.rb                                   | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/site/relationships_helper.rb                                  | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/helpers/site/sessions_helper.rb                                       | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/jobs/application_job.rb                                               | Ruby         |          2 |          0 |          1 |          3 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/mailers/application_mailer.rb                                         | Ruby         |          4 |          0 |          1 |          5 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/admin_user.rb                                                  | Ruby         |          4 |          2 |          1 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/answer.rb                                                      | Ruby         |         18 |          1 |          2 |         21 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/application_record.rb                                          | Ruby         |          3 |          0 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/favorite.rb                                                    | Ruby         |          4 |          0 |          1 |          5 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/game_record.rb                                                 | Ruby         |          6 |          0 |          1 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/post_comment.rb                                                | Ruby         |          3 |          0 |          1 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/post_image.rb                                                  | Ruby         |         46 |          5 |          1 |         52 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/relationship.rb                                                | Ruby         |          6 |          0 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/report.rb                                                      | Ruby         |          4 |          0 |          1 |          5 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/selection.rb                                                   | Ruby         |          8 |          0 |          1 |          9 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/site.rb                                                        | Ruby         |          5 |          0 |          1 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/models/user.rb                                                        | Ruby         |         92 |         11 |         11 |        114 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/layouts/_flash_messages.html.erb                                | Ruby ERB     |          5 |          0 |          1 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/layouts/application.html.erb                                    | Ruby ERB     |         21 |          0 |          5 |         26 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/layouts/mailer.html.erb                                         | Ruby ERB     |         11 |          1 |          2 |         14 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/layouts/mailer.text.erb                                         | Ruby ERB     |          1 |          0 |          1 |          2 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/layouts/manager.html.erb                                        | Ruby ERB     |         13 |          0 |          5 |         18 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/layouts/site.html.erb                                           | Ruby ERB     |         23 |          0 |          5 |         28 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/confirmations/new.html.erb                  | Ruby ERB     |         12 |          0 |          5 |         17 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/mailer/confirmation_instructions.html.erb   | Ruby ERB     |          3 |          0 |          3 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/mailer/email_changed.html.erb               | Ruby ERB     |          6 |          0 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/mailer/password_change.html.erb             | Ruby ERB     |          2 |          0 |          2 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/mailer/reset_password_instructions.html.erb | Ruby ERB     |          5 |          0 |          4 |          9 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/mailer/unlock_instructions.html.erb         | Ruby ERB     |          4 |          0 |          4 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/passwords/edit.html.erb                     | Ruby ERB     |         20 |          0 |          6 |         26 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/passwords/new.html.erb                      | Ruby ERB     |         12 |          0 |          5 |         17 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/registrations/edit.html.erb                 | Ruby ERB     |         33 |          0 |         11 |         44 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/registrations/new.html.erb                  | Ruby ERB     |         23 |          0 |          7 |         30 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/sessions/new.html.erb                       | Ruby ERB     |         21 |          0 |          6 |         27 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/shared/_error_messages.html.erb             | Ruby ERB     |         15 |          0 |          1 |         16 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/shared/_links.html.erb                      | Ruby ERB     |         20 |          0 |          6 |         26 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/manager/admin_users/unlocks/new.html.erb                        | Ruby ERB     |         12 |          0 |          5 |         17 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/shared_site/_header_sign_out.html.erb                           | Ruby ERB     |         30 |          0 |          1 |         31 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/shared_site/_header_signed_in.html.erb                          | Ruby ERB     |        114 |          0 |          1 |        115 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/answers/_favorite.html.erb                                 | Ruby ERB     |         11 |          0 |          1 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/answers/_form.html.erb                                     | Ruby ERB     |         27 |          0 |          6 |         33 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/answers/_modal.html.erb                                    | Ruby ERB     |         35 |          0 |          1 |         36 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/answers/show.html.erb                                      | Ruby ERB     |        120 |          0 |          4 |        124 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/favorites/_favorite.html.erb                               | Ruby ERB     |         11 |          0 |          1 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/favorites/nanikiru.html.erb                                | Ruby ERB     |         10 |          0 |          1 |         11 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/game_records/new.html.erb                                  | Ruby ERB     |         27 |          0 |          8 |         35 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/homes/index.html.erb                                       | Ruby ERB     |          6 |          0 |          1 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/homes/login.html.erb                                       | Ruby ERB     |          1 |          0 |          1 |          2 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/kaminari/_first_page.html.erb                              | Ruby ERB     |          3 |          8 |          1 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/kaminari/_gap.html.erb                                     | Ruby ERB     |          1 |          7 |          1 |          9 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/kaminari/_last_page.html.erb                               | Ruby ERB     |          3 |          8 |          1 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/kaminari/_next_page.html.erb                               | Ruby ERB     |          3 |          8 |          1 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/kaminari/_page.html.erb                                    | Ruby ERB     |          3 |          9 |          1 |         13 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/kaminari/_paginator.html.erb                               | Ruby ERB     |         17 |          8 |          1 |         26 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/kaminari/_prev_page.html.erb                               | Ruby ERB     |          3 |          8 |          1 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/_card.html.erb                                 | Ruby ERB     |         49 |          0 |          7 |         56 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/_selection_fields.html.erb                     | Ruby ERB     |          4 |          0 |          1 |          5 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/_style.html.erb                                | Ruby ERB     |         10 |          0 |          1 |         11 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/created.html.erb                               | Ruby ERB     |         14 |          0 |          1 |         15 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/edit.html.erb                                  | Ruby ERB     |         81 |          0 |          6 |         87 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/index.html.erb                                 | Ruby ERB     |         67 |          0 |          2 |         69 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/index_3p.html.erb                              | Ruby ERB     |          6 |          0 |          1 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/index_4p.html.erb                              | Ruby ERB     |          6 |          0 |          1 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/index_all.html.erb                             | Ruby ERB     |          6 |          0 |          1 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/index_other.html.erb                           | Ruby ERB     |          6 |          0 |          1 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/new.html.erb                                   | Ruby ERB     |         73 |          0 |          5 |         78 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/selected.html.erb                              | Ruby ERB     |         22 |          0 |          1 |         23 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/show.html.erb                                  | Ruby ERB     |         65 |          0 |          1 |         66 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/post_images/test_image.html.erb                            | Ruby ERB     |         43 |          0 |          6 |         49 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/relationships/_follow_button.html.erb                      | Ruby ERB     |         13 |          0 |          1 |         14 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/reports/edit.html.erb                                      | Ruby ERB     |          4 |          0 |          3 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/reports/index.html.erb                                     | Ruby ERB     |         26 |          0 |          6 |         32 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/reports/show.html.erb                                      | Ruby ERB     |         15 |          0 |          5 |         20 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/selections/_form.html.erb                                  | Ruby ERB     |         23 |          0 |          5 |         28 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/selections/edit.html.erb                                   | Ruby ERB     |          4 |          0 |          3 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/selections/index.html.erb                                  | Ruby ERB     |         24 |          0 |          6 |         30 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/selections/new.html.erb                                    | Ruby ERB     |          3 |          0 |          3 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/selections/show.html.erb                                   | Ruby ERB     |         11 |          0 |          4 |         15 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/selections/show.json.jbuilder                              | Ruby         |          1 |          0 |          1 |          2 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/users/_prof.html.erb                                       | Ruby ERB     |         54 |          0 |          1 |         55 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/users/edit.html.erb                                        | Ruby ERB     |        125 |          0 |          8 |        133 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/users/follow_nanikiru.html.erb                             | Ruby ERB     |          6 |          0 |          1 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/users/follower_index.html.erb                              | Ruby ERB     |         41 |          0 |          3 |         44 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/users/following_index.html.erb                             | Ruby ERB     |         41 |          0 |          3 |         44 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/users/index.html.erb                                       | Ruby ERB     |         46 |          0 |          2 |         48 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/users/show.html.erb                                        | Ruby ERB     |        101 |          0 |         10 |        111 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/users/twitter.html.erb                                     | Ruby ERB     |         12 |          0 |          3 |         15 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/site/users/welcome.html.erb                                     | Ruby ERB     |        134 |          0 |         14 |        148 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/confirmations/new.html.erb                                | Ruby ERB     |         12 |          0 |          5 |         17 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/mailer/confirmation_instructions.html.erb                 | Ruby ERB     |          3 |          0 |          3 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/mailer/email_changed.html.erb                             | Ruby ERB     |          6 |          0 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/mailer/password_change.html.erb                           | Ruby ERB     |          2 |          0 |          2 |          4 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/mailer/reset_password_instructions.html.erb               | Ruby ERB     |          5 |          0 |          4 |          9 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/mailer/unlock_instructions.html.erb                       | Ruby ERB     |          4 |          0 |          4 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/passwords/edit.html.erb                                   | Ruby ERB     |         20 |          0 |          6 |         26 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/passwords/new.html.erb                                    | Ruby ERB     |         12 |          0 |          5 |         17 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/registrations/edit.html.erb                               | Ruby ERB     |         33 |          0 |         12 |         45 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/registrations/new.html.erb                                | Ruby ERB     |         66 |          0 |         14 |         80 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/sessions/new.html.erb                                     | Ruby ERB     |         35 |          0 |         12 |         47 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/shared/_error_messages.html.erb                           | Ruby ERB     |         15 |          0 |          1 |         16 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/shared/_links.html.erb                                    | Ruby ERB     |         19 |          0 |          6 |         25 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/app/views/users/unlocks/new.html.erb                                      | Ruby ERB     |         12 |          0 |          5 |         17 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config.ru                                                                 | Ruby         |          2 |          1 |          3 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/application.rb                                                     | Ruby         |         13 |          7 |          4 |         24 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/boot.rb                                                            | Ruby         |          3 |          0 |          2 |          5 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/cable.yml                                                          | YAML         |          6 |          0 |          3 |          9 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/environment.rb                                                     | Ruby         |          2 |          2 |          2 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/environments/development.rb                                        | Ruby         |         27 |         22 |         19 |         68 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/environments/production.rb                                         | Ruby         |         22 |         48 |         26 |         96 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/environments/test.rb                                               | Ruby         |         16 |         19 |         12 |         47 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/application_controller_renderer.rb                    | Ruby         |          1 |          7 |          2 |         10 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/assets.rb                                             | Ruby         |          2 |          9 |          4 |         15 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/backtrace_silencers.rb                                | Ruby         |          0 |          5 |          3 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/content_security_policy.rb                            | Ruby         |          0 |         20 |          6 |         26 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/cookies_serializer.rb                                 | Ruby         |          1 |          3 |          2 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/devise.rb                                             | Ruby         |         16 |        231 |         54 |        301 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/filter_parameter_logging.rb                           | Ruby         |          1 |          2 |          2 |          5 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/inflections.rb                                        | Ruby         |          0 |         14 |          3 |         17 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/kaminari_config.rb                                    | Ruby         |          2 |         10 |          1 |         13 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/mime_types.rb                                         | Ruby         |          0 |          3 |          2 |          5 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/initializers/wrap_parameters.rb                                    | Ruby         |          3 |          8 |          4 |         15 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/devise.en.yml                                              | YAML         |         63 |          1 |          2 |         66 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/devise.ja.yml                                              | YAML         |        142 |          0 |          1 |        143 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/en.yml                                                     | YAML         |          2 |         30 |          2 |         34 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/models/game_record/ability/ja.yml                          | YAML         |         26 |          0 |          1 |         27 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/models/game_record/game_name/ja.yml                        | YAML         |         16 |          0 |          1 |         17 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/models/game_record/game_type/ja.yml                        | YAML         |          7 |          0 |          1 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/models/post_image/image_type/ja.yml                        | YAML         |          7 |          0 |          1 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/models/report/report_type/ja.yml                           | YAML         |          9 |          0 |          1 |         10 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/models/selection/ja.yml                                    | YAML         |         47 |          0 |          1 |         48 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/models/user/dan_3p_proper/ja.yml                           | YAML         |         17 |          0 |          1 |         18 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/locales/models/user/dan_4p_proper/ja.yml                           | YAML         |         17 |          0 |          1 |         18 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/puma.rb                                                            | Ruby         |         17 |         26 |          6 |         49 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/routes.rb                                                          | Ruby         |         35 |          7 |          2 |         44 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/spring.rb                                                          | Ruby         |          6 |          0 |          1 |          7 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/config/storage.yml                                                        | YAML         |          6 |         23 |          6 |         35 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191106063031_devise_create_users.rb                          | Ruby         |         24 |         16 |          9 |         49 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191106063117_devise_create_admin_users.rb                    | Ruby         |         19 |         16 |         10 |         45 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191106100157_create_answers.rb                               | Ruby         |          9 |          0 |          3 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191106100259_create_selections.rb                            | Ruby         |          9 |          0 |          1 |         10 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191106100450_create_reports.rb                               | Ruby         |         10 |          0 |          2 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191106101155_create_game_records.rb                          | Ruby         |         12 |          0 |          2 |         14 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191106101343_create_post_images.rb                           | Ruby         |         11 |          0 |          2 |         13 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191115074722_create_post_comments.rb                         | Ruby         |          9 |          0 |          2 |         11 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191117073254_create_favorites.rb                             | Ruby         |         10 |          0 |          2 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20191117144234_create_relationships.rb                         | Ruby         |         10 |          0 |          3 |         13 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/migrate/20200205100429_add_columns_to_users.rb                         | Ruby         |          8 |          0 |          1 |          9 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/schema.rb                                                              | Ruby         |        103 |         11 |         13 |        127 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/db/seeds.rb                                                               | Ruby         |         58 |          7 |          8 |         73 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/package.json                                                              | JSON         |          5 |          0 |          1 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/public/404.html                                                           | HTML         |         61 |          1 |          6 |         68 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/public/422.html                                                           | HTML         |         61 |          1 |          6 |         68 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/public/500.html                                                           | HTML         |         60 |          1 |          6 |         67 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/application_system_test_case.rb                                      | Ruby         |          4 |          0 |          2 |          6 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/answers_controller_test.rb                               | Ruby         |         38 |          0 |         11 |         49 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/favorites_controller_test.rb                             | Ruby         |         38 |          0 |         11 |         49 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/game_records_controller_test.rb                          | Ruby         |         38 |          0 |         11 |         49 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/post_comment_controller_test.rb                          | Ruby         |          0 |         11 |          4 |         15 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/post_images_controller_test.rb                           | Ruby         |         38 |          0 |         11 |         49 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/reports_controller_test.rb                               | Ruby         |         38 |          0 |         11 |         49 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/selections_controller_test.rb                            | Ruby         |         38 |          0 |         11 |         49 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/site/homes_controller_test.rb                            | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/site/post_comment_controller_test.rb                     | Ruby         |         11 |          0 |          4 |         15 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/site/relationships_controller_test.rb                    | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/controllers/site/sessions_controller_test.rb                         | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/admin_users.yml                                             | YAML         |          2 |          8 |          2 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/answers.yml                                                 | YAML         |          8 |          1 |          3 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/favorites.yml                                               | YAML         |          6 |          1 |          3 |         10 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/game_records.yml                                            | YAML         |         12 |          1 |          3 |         16 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/post_comments.yml                                           | YAML         |          6 |          1 |          3 |         10 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/post_images.yml                                             | YAML         |         10 |          1 |          3 |         14 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/relationships.yml                                           | YAML         |          2 |          8 |          2 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/reports.yml                                                 | YAML         |          8 |          1 |          3 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/selections.yml                                              | YAML         |          6 |          1 |          3 |         10 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/fixtures/users.yml                                                   | YAML         |          2 |          8 |          2 |         12 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/admin_user_test.rb                                            | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/answer_test.rb                                                | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/favorite_test.rb                                              | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/game_record_test.rb                                           | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/post_comment_test.rb                                          | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/post_image_test.rb                                            | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/relationship_test.rb                                          | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/report_test.rb                                                | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/selection_test.rb                                             | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/models/user_test.rb                                                  | Ruby         |          3 |          3 |          2 |          8 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/system/answers_test.rb                                               | Ruby         |         37 |          0 |         11 |         48 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/system/favorites_test.rb                                             | Ruby         |         35 |          0 |         11 |         46 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/system/game_records_test.rb                                          | Ruby         |         41 |          0 |         11 |         52 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/system/post_images_test.rb                                           | Ruby         |         39 |          0 |         11 |         50 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/system/reports_test.rb                                               | Ruby         |         37 |          0 |         11 |         48 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/system/selections_test.rb                                            | Ruby         |         35 |          0 |         11 |         46 |
+| /Users/nakamurakeisuke/Desktop/work/vagrant/Nanikiru/test/test_helper.rb                                                       | Ruby         |          6 |          2 |          3 |         11 |
+| Total                                                                                                                          |              |      5,207 |      1,224 |      1,273 |      7,704 |
++--------------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
